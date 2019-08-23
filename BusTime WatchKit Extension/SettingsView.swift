@@ -1,23 +1,23 @@
 //
-//  ContentView.swift
+//  SettingsView.swift
 //  BusTime WatchKit Extension
 //
-//  Created by Håkon Strandlie on 20/06/2019.
+//  Created by Håkon Strandlie on 07/07/2019.
 //  Copyright © 2019 Håkon Strandlie. All rights reserved.
 //
 
 import SwiftUI
 
-struct ContentView : View {
+struct SettingsView : View {
     var body: some View {
-        Text("Hello World")
+        Text("Look at all my settings!")
     }
 }
 
 #if DEBUG
-struct ContentView_Previews : PreviewProvider {
+struct SettingsView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SettingsView()
     }
 }
 #endif
