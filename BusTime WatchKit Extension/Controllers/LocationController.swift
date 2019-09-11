@@ -12,7 +12,6 @@ import CoreLocation
 class LocationController: NSObject, CLLocationManagerDelegate {
    
     let locationManager = CLLocationManager()
-    let apiController = APIController()
     
     static let shared = LocationController()
     
@@ -39,7 +38,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func getNearbyStopsTo(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) -> [BusStop] {
-        return apiController.getNearbyStopsToAPIRequest(coordinate: coordinate, limitStops: limitStops, radius: radius)
+        return APIController.shared.getNearbyStopsToAPIRequest(coordinate: coordinate, limitStops: limitStops, radius: radius)
     }
     
     static func formattedDistanceBetween(location1: CLLocation?, location2: CLLocation?) -> String {
@@ -50,12 +49,18 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         return String(format: "%.0f", distance) + " m"
     }
     
+    static func actualDistanceBetween(location1: CLLocation?, location2: CLLocation?) -> Double? {
+        guard let location1 = location1, let location2 = location2 else {
+            return nil
+        }
+        return location1.distance(from: location2)
+    }
+    
     
     /**
      Only the most recent location is relevant to us.
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //print("Got new location: \(locations)")
         User.shared.currentLocation = locations.last
         if let currentUserLocation = User.shared.currentLocation {
             BusStopList.shared.setNearbyStops(getNearbyStopsTo(coordinate: currentUserLocation))

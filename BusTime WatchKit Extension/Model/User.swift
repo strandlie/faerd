@@ -24,7 +24,7 @@ class User: ObservableObject {
         }
     }
     
-    static let shared = User()
+    static let shared = User(initialLocation: CLLocation(latitude: 63.4329, longitude: 10.4090))
     
     convenience init(initialLocation: CLLocation) {
         self.init()

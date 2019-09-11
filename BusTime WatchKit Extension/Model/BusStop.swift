@@ -15,7 +15,9 @@ struct BusStop: Identifiable, Decodable {
     let id: Int
     let name: String // Name of BusStop
     let location: CLLocation
-    let lines: [Int]
+    let lines: [String]
+    let direction: Direction
+    let departures: [Departure] = []
     
     enum CodingKeys: String, CodingKey {
         case longitude = "x"
@@ -27,45 +29,112 @@ struct BusStop: Identifiable, Decodable {
         case zone
     }
     
+    enum Direction: String {
+        case towardsCity = "Inn mot byen"
+        case fromCity = "Ut fra byen"
+        case undefined = ""
+    }
+    
+    /**
+        Initializer with lat/long as Floats
+     */
+    init(id: Int, name: String, longitude: Float, latitude: Float, lines: [String], direction: Direction) {
+        self.id = id
+        self.name = name
+        self.location = CLLocation(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+        self.lines = lines
+        self.direction = direction
+        
+        self.getRealtimeDepartures()
+        
+    }
+    
+    /**
+        Initializer with CLLocation
+     */
+    init(id: Int, name: String, location: CLLocation, lines: [String], direction: Direction) {
+        self.id = id
+        self.name = name
+        self.location = location
+        self.lines = lines
+        self.direction = direction
+        
+        self.getRealtimeDepartures()
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        var identification = try container.decode(String.self, forKey: .identification)
-        
-        /*
-            Extract stopID from identification-field
-            If identification does not contain : something is very broken
-        */
-        let colonRange: Range<String.Index> = identification.range(of: ":")!
-        identification = String(identification[identification.startIndex..<colonRange.lowerBound])
-        let id = Int(identification)!
-        
-        /*
-            Extract name from name-field. This means removing
-            the (Trondheim) substring
-         */
-        var longName = try container.decode(String.self, forKey: .name)
-        let parantRange: Range<String.Index> = longName.range(of: "(")!
-        longName = String(longName[longName.startIndex..<parantRange.lowerBound])
-        let name = String(longName).trimmingCharacters(in: .whitespacesAndNewlines)
+       
+        let id = BusStop.getCorrectIdFrom(initial: try container.decode(String.self, forKey: .identification))
+        let name = BusStop.getShortNameFrom(fullName: try container.decode(String.self, forKey: .name))
+        let direction = BusStop.getDirectionFrom(id: id)
         
         let longitude = try container.decode(Float.self, forKey: .longitude)
         let latitude = try container.decode(Float.self, forKey: . latitude)
         
         let location = CLLocation(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
         
-        let lines = try container.decode(Array<Int>.self, forKey: .lines)
+        let lines = try container.decode(Array<String>.self, forKey: .lines)
         
-        self.init(id: id, name: name, location: location, lines: lines)
-        
+        self.init(id: id, name: name, location: location, lines: lines, direction: direction)
         
     }
     
-    init(id: Int, name: String, location: CLLocation, lines: [Int]) {
-        self.id = id
-        self.name = name
-        self.location = location
-        self.lines = lines
+    
+    
+    init(fromFullName fullName: String, fromInitialId initialId: String, longitude: Double, latitude: Double, lines: Array<String> ) {
+        let name = BusStop.getShortNameFrom(fullName: fullName)
+        let id = BusStop.getCorrectIdFrom(initial: initialId)
+        let location = CLLocation(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
+        let direction = BusStop.getDirectionFrom(id: id)
+        
+        
+        self.init(id: id, name: name, location: location, lines: lines, direction: direction)
+    }
+    
+    /*
+        Extract stopID from identification-field
+        If identification does not contain : something is very broken
+    */
+    static func getCorrectIdFrom(initial: String) -> Int {
+        let colonRange: Range<String.Index> = initial.range(of: ":")!
+        let newId = String(initial[initial.startIndex..<colonRange.lowerBound])
+        return Int(newId)!
+    }
+    
+    /*
+        Extract name from name-field. This means removing
+        the (Trondheim) substring
+    */
+    static func getShortNameFrom(fullName: String) -> String {
+        guard let paranthesisRange: Range<String.Index> = fullName.range(of: "(") else {
+            fatalError("Unexpected format. No paranthesis in identification of BusStop.")
+        }
+        let shortName = String(fullName[fullName.startIndex..<paranthesisRange.lowerBound])
+        return String(shortName).trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    /**
+        Extract the direction from the id. The logic is assumed to be:
+     
+        If the 5'th position in the ID is '1', then the bus has direction towards the city centre
+        else the 5'th position is '0' and the bus has direction from the city centre.
+     
+        This should be properly tested.
+     */
+    static func getDirectionFrom(id: Int) -> Direction {
+        let id = String(id)
+        if id.count == 8 {
+            let index5 = id.index(id.startIndex, offsetBy: 4)
+            let position5 = String(id[index5])
+            
+            return position5 == "1" ? .towardsCity : .fromCity
+        }
+        return .undefined
+    }
+    
+    func getRealtimeDepartures() {
+        APIController.shared.getRealtimeDeparturesForAPIRequest(busStop: self)
     }
 }
 

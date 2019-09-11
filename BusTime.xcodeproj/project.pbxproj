@@ -3,21 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069E4B0857E707368CA59D38 /* Pods_BusTime_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297DB428A2218AE482BD471E /* Pods_BusTime_WatchKit_App.framework */; };
 		30482CE822BC1CE000D7850D /* BusTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		30482CEE22BC1CE000D7850D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEC22BC1CE000D7850D /* Interface.storyboard */; };
 		30482CF022BC1CE200D7850D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEF22BC1CE200D7850D /* Assets.xcassets */; };
 		30482CF722BC1CE200D7850D /* BusTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30482CF622BC1CE200D7850D /* BusTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		30482CFC22BC1CE200D7850D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482CFB22BC1CE200D7850D /* ContentView.swift */; };
 		30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482CFD22BC1CE200D7850D /* HostingController.swift */; };
 		30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */; };
 		30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D0122BC1CE200D7850D /* NotificationController.swift */; };
 		30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D0322BC1CE200D7850D /* NotificationView.swift */; };
 		30482D0622BC1CE300D7850D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482D0522BC1CE300D7850D /* Assets.xcassets */; };
 		30482D0922BC1CE300D7850D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482D0822BC1CE300D7850D /* Preview Assets.xcassets */; };
+		30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1A22BC1EFE00D7850D /* BusStop.swift */; };
+		30482D1D22BD216300D7850D /* StopsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1C22BD216300D7850D /* StopsListView.swift */; };
+		30482D2022BD26C500D7850D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1F22BD26C500D7850D /* APIController.swift */; };
+		30482D2522BFB85A00D7850D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D2422BFB85A00D7850D /* User.swift */; };
+		30482D2722BFBE4200D7850D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D2622BFBE4200D7850D /* LocationController.swift */; };
+		307F44D92325A4DD00BDC858 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307F44D82325A4DD00BDC858 /* Departure.swift */; };
+		3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F8EB230B2BBC009CE82B /* BusStopList.swift */; };
+		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
+		3155098B9FCDF0EA86AE3BC7 /* Pods_BusTime_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C205C905569B9C16BFEBC26 /* Pods_BusTime_WatchKit_Extension.framework */; };
+		9205E3A5F825EA5228A3BDC2 /* Pods_BusTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,13 +73,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11BB672AD707365677CC1D72 /* Pods-BusTime WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		1D7E84358167A70055C16DF5 /* Pods-BusTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime.debug.xcconfig"; path = "Target Support Files/Pods-BusTime/Pods-BusTime.debug.xcconfig"; sourceTree = "<group>"; };
+		297DB428A2218AE482BD471E /* Pods_BusTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CE322BC1CE000D7850D /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CED22BC1CE000D7850D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		30482CEF22BC1CE200D7850D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30482CF122BC1CE200D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30482CF622BC1CE200D7850D /* BusTime WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BusTime WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		30482CFB22BC1CE200D7850D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30482CFD22BC1CE200D7850D /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		30482D0122BC1CE200D7850D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -78,13 +90,44 @@
 		30482D0822BC1CE300D7850D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30482D0A22BC1CE300D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30482D0B22BC1CE300D7850D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		30482D1A22BC1EFE00D7850D /* BusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
+		30482D1C22BD216300D7850D /* StopsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsListView.swift; sourceTree = "<group>"; };
+		30482D1F22BD26C500D7850D /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		30482D2422BFB85A00D7850D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		30482D2622BFBE4200D7850D /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		307F44D82325A4DD00BDC858 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		3092F8EB230B2BBC009CE82B /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
+		30C330CF2306DD2700BCE0DF /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
+		3B11F3421213249F898347EB /* Pods-BusTime WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		41FD27BB2C38EA5D987D0178 /* Pods-BusTime WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit App/Pods-BusTime WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		5C205C905569B9C16BFEBC26 /* Pods_BusTime_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime.release.xcconfig"; path = "Target Support Files/Pods-BusTime/Pods-BusTime.release.xcconfig"; sourceTree = "<group>"; };
+		81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit App/Pods-BusTime WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		179029BC487042CDE986C876 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				069E4B0857E707368CA59D38 /* Pods_BusTime_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30482CF322BC1CE200D7850D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3155098B9FCDF0EA86AE3BC7 /* Pods_BusTime_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2774FCAD9A9C291546E235 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9205E3A5F825EA5228A3BDC2 /* Pods_BusTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +140,8 @@
 				30482CEB22BC1CE000D7850D /* BusTime WatchKit App */,
 				30482CFA22BC1CE200D7850D /* BusTime WatchKit Extension */,
 				30482CE422BC1CE000D7850D /* Products */,
+				35FB1FB854D711B6D224AE29 /* Pods */,
+				B538DE58A449D7DE85682FD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,15 +168,17 @@
 		30482CFA22BC1CE200D7850D /* BusTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				30482CFB22BC1CE200D7850D /* ContentView.swift */,
+				30482D1E22BD26B200D7850D /* Controllers */,
+				30482D1922BC1ECE00D7850D /* Model */,
 				30482CFD22BC1CE200D7850D /* HostingController.swift */,
 				30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */,
-				30482D0122BC1CE200D7850D /* NotificationController.swift */,
 				30482D0322BC1CE200D7850D /* NotificationView.swift */,
+				30482D1C22BD216300D7850D /* StopsListView.swift */,
 				30482D0522BC1CE300D7850D /* Assets.xcassets */,
 				30482D0A22BC1CE300D7850D /* Info.plist */,
 				30482D0B22BC1CE300D7850D /* PushNotificationPayload.apns */,
 				30482D0722BC1CE300D7850D /* Preview Content */,
+				30C330CF2306DD2700BCE0DF /* StopDetailView.swift */,
 			);
 			path = "BusTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -144,6 +191,50 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		30482D1922BC1ECE00D7850D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30482D1A22BC1EFE00D7850D /* BusStop.swift */,
+				30482D2422BFB85A00D7850D /* User.swift */,
+				3092F8EB230B2BBC009CE82B /* BusStopList.swift */,
+				307F44D82325A4DD00BDC858 /* Departure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30482D1E22BD26B200D7850D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30482D0122BC1CE200D7850D /* NotificationController.swift */,
+				30482D1F22BD26C500D7850D /* APIController.swift */,
+				30482D2622BFBE4200D7850D /* LocationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		35FB1FB854D711B6D224AE29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D7E84358167A70055C16DF5 /* Pods-BusTime.debug.xcconfig */,
+				7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */,
+				41FD27BB2C38EA5D987D0178 /* Pods-BusTime WatchKit App.debug.xcconfig */,
+				81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */,
+				11BB672AD707365677CC1D72 /* Pods-BusTime WatchKit Extension.debug.xcconfig */,
+				3B11F3421213249F898347EB /* Pods-BusTime WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B538DE58A449D7DE85682FD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */,
+				297DB428A2218AE482BD471E /* Pods_BusTime_WatchKit_App.framework */,
+				5C205C905569B9C16BFEBC26 /* Pods_BusTime_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,8 +242,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30482D1622BC1CE300D7850D /* Build configuration list for PBXNativeTarget "BusTime" */;
 			buildPhases = (
+				68A4576EF4DA5173AEAFBB60 /* [CP] Check Pods Manifest.lock */,
 				30482CE122BC1CE000D7850D /* Resources */,
 				30482D1522BC1CE300D7850D /* Embed Watch Content */,
+				8C2774FCAD9A9C291546E235 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,8 +261,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30482D1222BC1CE300D7850D /* Build configuration list for PBXNativeTarget "BusTime WatchKit App" */;
 			buildPhases = (
+				145CD84110EB8107CE487A1D /* [CP] Check Pods Manifest.lock */,
 				30482CE522BC1CE000D7850D /* Resources */,
 				30482D1122BC1CE300D7850D /* Embed App Extensions */,
+				179029BC487042CDE986C876 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30482D0E22BC1CE300D7850D /* Build configuration list for PBXNativeTarget "BusTime WatchKit Extension" */;
 			buildPhases = (
+				A59F62CF490430A8D695915A /* [CP] Check Pods Manifest.lock */,
 				30482CF222BC1CE200D7850D /* Sources */,
 				30482CF322BC1CE200D7850D /* Frameworks */,
 				30482CF422BC1CE200D7850D /* Resources */,
+				9A6357CDA0E93C7438D774E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,15 +364,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		145CD84110EB8107CE487A1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusTime WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68A4576EF4DA5173AEAFBB60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A6357CDA0E93C7438D774E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A59F62CF490430A8D695915A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BusTime WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30482CF222BC1CE200D7850D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
+				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
+				30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */,
 				30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */,
-				30482CFC22BC1CE200D7850D /* ContentView.swift in Sources */,
+				307F44D92325A4DD00BDC858 /* Departure.swift in Sources */,
+				3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */,
 				30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */,
+				30482D2022BD26C500D7850D /* APIController.swift in Sources */,
 				30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */,
+				30482D1D22BD216300D7850D /* StopsListView.swift in Sources */,
+				30482D2522BFB85A00D7850D /* User.swift in Sources */,
 				30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +611,7 @@
 		};
 		30482D0F22BC1CE300D7850D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11BB672AD707365677CC1D72 /* Pods-BusTime WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +635,7 @@
 		};
 		30482D1022BC1CE300D7850D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B11F3421213249F898347EB /* Pods-BusTime WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +659,7 @@
 		};
 		30482D1322BC1CE300D7850D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FD27BB2C38EA5D987D0178 /* Pods-BusTime WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -485,6 +678,7 @@
 		};
 		30482D1422BC1CE300D7850D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -503,6 +697,7 @@
 		};
 		30482D1722BC1CE300D7850D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D7E84358167A70055C16DF5 /* Pods-BusTime.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -515,6 +710,7 @@
 		};
 		30482D1822BC1CE300D7850D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
