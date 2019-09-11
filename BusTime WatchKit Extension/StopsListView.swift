@@ -25,7 +25,7 @@ struct StopsListView : View {
     
     var body: some View {
         VStack {
-            List(nearbyStops.stops.filter({$0.lines.count > 0}).sorted(by: sortClosure)) { busStop in
+            List(nearbyStops.stops.filter({_ in true/*$0.lines.count > 0*/}).sorted(by: sortClosure)) { busStop in
                 NavigationLink(destination: StopDetailView(stop: busStop, distance: self.nearbyStops.distances[busStop.id]!)) {
                     HStack(){
                         ZStack(alignment: .leading) {
@@ -41,9 +41,6 @@ struct StopsListView : View {
                                 .truncationMode(.tail)
                                 .font(.callout)
                                 .lineLimit(2)
-                            Text(busStop.direction.rawValue)
-                                .font(.footnote)
-                                .lineLimit(1)
                                 
                         }
                            

@@ -37,8 +37,8 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func getNearbyStopsTo(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) -> [BusStop] {
-        return APIController.shared.getNearbyStopsToAPIRequest(coordinate: coordinate, limitStops: limitStops, radius: radius)
+    func updateNearbyStopsTo(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) {
+        APIController.shared.updateNearbyStopsToAPIRequest(coordinate: coordinate, limitStops: limitStops, radius: radius)
     }
     
     static func formattedDistanceBetween(location1: CLLocation?, location2: CLLocation?) -> String {
@@ -63,7 +63,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         User.shared.currentLocation = locations.last
         if let currentUserLocation = User.shared.currentLocation {
-            BusStopList.shared.setNearbyStops(getNearbyStopsTo(coordinate: currentUserLocation))
+            updateNearbyStopsTo(coordinate: currentUserLocation)
         }
         
     }

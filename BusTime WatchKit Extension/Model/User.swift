@@ -31,11 +31,4 @@ class User: ObservableObject {
         self.currentLocation = initialLocation
     }
     
-    func getNearbyStops() -> [BusStop] {
-        guard let currentLocation = currentLocation else {
-            return []
-        }
-        return LocationController.shared.getNearbyStopsTo(coordinate: currentLocation)
-    }
-    
 }

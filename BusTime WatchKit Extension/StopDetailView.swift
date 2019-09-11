@@ -19,12 +19,10 @@ struct StopDetailView: View {
                 .bold()
                 .font(.callout)
                 .truncationMode(.middle)
-            Text(self.stop.direction.rawValue)
-                .font(.footnote)
             Text(distance)
                 .bold()
             
-            List(stop.lines, id: \.self) { line in
+            List(stop.lines.map({$0}), id: \.self) { line in
                 HStack {
                     Text(String(line))
                         .bold()
@@ -41,7 +39,7 @@ struct StopDetailView: View {
 #if DEBUG
 struct StopDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        StopDetailView(stop: BusStop(id: 16010050, name: "Studentersamfundet 3", location: CLLocation(latitude: 63.4324, longitude: 10.4073), lines: ["1", "2", "3"], direction: .towardsCity), distance: "104m")
+        StopDetailView(stop: BusStop(id: "16010050", name: "Studentersamfundet 3", location: CLLocation(latitude: 63.4324, longitude: 10.4073)), distance: "104m")
     }
 }
 #endif

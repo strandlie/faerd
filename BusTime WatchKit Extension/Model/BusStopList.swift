@@ -18,29 +18,26 @@ class BusStopList: ObservableObject {
         }
     }
     
-    var distances: [Int: String]
+    var distances: [String: String]
     
     static let shared = BusStopList()
     
-    func get(for id: Int) -> BusStop? {
+    func get(for id: String) -> BusStop? {
         return stops.first { $0.id == id }
     }
     
     init() {
         self.stops = [
-            BusStop(id: 16010050, name: "Bakkegata", location: CLLocation(latitude: 63.4324, longitude: 10.4073), lines: ["1", "2", "3"], direction: .fromCity),
-            BusStop(id: 16010404, name: "Solsiden", location:
-                CLLocation(latitude: 63.4340, longitude: 10.4135), lines: ["1", "2", "3"], direction: .fromCity),
-            BusStop(id: 16010022, name: "Olav Tryggvasons gate 2", location:
+            BusStop(id: "16010050", name: "Bakkegata", location: CLLocation(latitude: 63.4324, longitude: 10.4073)),
+            BusStop(id: "16010404", name: "Solsiden", location:
+                CLLocation(latitude: 63.4340, longitude: 10.4135)),
+            BusStop(id: "16010022", name: "Olav Tryggvasons gate 2", location:
             CLLocation(latitude: 63.4333, longitude:
-                10.4012), lines: ["1", "2", "3"], direction: .fromCity),
-            BusStop(id: 16010017, name: "Olav Tryggvasons gate 3", location: CLLocation(latitude: 63.4338, longitude: 10.4003), lines: ["1", "2", "3"], direction: .fromCity)
+                10.4012)),
+            BusStop(id: "16010017", name: "Olav Tryggvasons gate 3", location: CLLocation(latitude: 63.4338, longitude: 10.4003))
         ]
         //self.stops = []
-        self.distances = [16010050:"50 m", 16010404: "70 m", 16010022: "200 m", 16010017: "230 m"]
+        self.distances = ["16010050":"50 m", "16010404": "70 m", "16010022": "200 m", "16010017": "230 m"]
     }
     
-    func setNearbyStops(_ stops: [BusStop]) {
-        self.stops = stops
-    }
 }

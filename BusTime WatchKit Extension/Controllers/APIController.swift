@@ -12,22 +12,12 @@ import Alamofire
 
 class APIController: NSObject  {
     let GLOBAL_MAX_STOPS = 30
-    let SEARCH_RADIUS = 1000.0
+    let SEARCH_RADIUS = 500.0
     
-    let REST_API_ENDPOINT = "https://rp.atb.no/scripts/TravelMagic/TravelMagicWE.dll/mapjson"
+    let REST_API_ENDPOINT = "https://api.entur.io/geocoder/v1/reverse?"
     let SOAP_API_ENDPOINT = "http://st.atb.no:90/SMWS/SMService.svc"
     
-    let API_REQUESTOR_REF = "ATB"
-    
-    enum CodingKeys: String, CodingKey {
-        case longitude = "x"
-        case latitude = "y"
-        case identification = "v"
-        case name = "n"
-        case lines = "l"
-        case serviceTypes = "st"
-        case zone
-    }
+    let API_REQUESTOR_REF = "strandlie_development - BussTid"
     
     static let shared = APIController()
     
@@ -35,47 +25,59 @@ class APIController: NSObject  {
         
     }
     
-    func getNearbyStopsToAPIRequest(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) -> [BusStop] {
-        let eastLimit = locationWithBearing(bearing: 45, distanceMeters: radius ?? SEARCH_RADIUS, origin: coordinate.coordinate)
-        let westLimit = locationWithBearing(bearing: 225, distanceMeters: radius ?? SEARCH_RADIUS, origin: coordinate.coordinate)
-        
+    enum CodingKeys: String, CodingKey {
+        case longitude = "point.lon"
+        case latitude = "point.lat"
+        case identification = "id"
+        case name = "name"
+        case properties = "properties"
+        case geometry = "geometry"
+        case stopsList = "features"
+        case coordinates = "coordinates"
+    }
+    
+    func updateNearbyStopsToAPIRequest(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) {
+
         let parameters: Parameters = [
-            "x1": min(eastLimit.longitude, westLimit.longitude),
-            "y1": min(eastLimit.latitude, westLimit.latitude),
-            "x2": max(eastLimit.longitude, westLimit.longitude),
-            "y2": max(eastLimit.latitude, westLimit.latitude)
+            "point.lat": coordinate.coordinate.latitude,
+            "point.lon": coordinate.coordinate.longitude,
+            "boundary.circle.radius": SEARCH_RADIUS / 1000,
+            "size": limitStops ?? GLOBAL_MAX_STOPS,
+            "layers": "venue"
+        ]
+        
+        let headers: HTTPHeaders = [
+            "ET-Client-Name": "strandlie_development - busstid"
         ]
         
         
-        AF.request(REST_API_ENDPOINT, parameters: parameters).responseJSON { response in
+        AF.request(REST_API_ENDPOINT, parameters: parameters, headers: headers).responseJSON { response in
             switch response.result {
             case .success(let value):
-                if let stopsArray = value as? Array<Dictionary<String, Any>> {
-                    stopsArray.forEach { stop in
-
-                        guard let name = stop[CodingKeys.name.rawValue] as? String,
-                            let id = stop[CodingKeys.identification.rawValue] as? String,
-                            let longitude = stop[CodingKeys.longitude.rawValue] as? Double,
-                            let latitude = stop[CodingKeys.latitude.rawValue] as? Double,
-                            let lines = stop[CodingKeys.lines.rawValue] as? Array<String> else {
-                                fatalError("Unexpected format. Does not have all the expected fields.")
-                        }
-                        
-                        
-                        if BusStopList.shared.get(for: BusStop.getCorrectIdFrom(initial: id)) == nil {
-                            // Only add a new busStop if none exists with the same ID
-                            let busStop = BusStop(fromFullName: name, fromInitialId: id, longitude: longitude, latitude: latitude, lines: lines)
-                            BusStopList.shared.stops.append(busStop)
-                        }
-                        
+                print(value)
+                guard let body = value as? Dictionary<String, Any>, let stopsArray = body[CodingKeys.stopsList.rawValue] as? Array<Dictionary<String, Any>>  else {
+                    fatalError("Unexpected format for body or stopsArray. Got: \(value)")
+                }
+                
+                stopsArray.forEach { stop in
+                    guard let properties = stop[CodingKeys.properties.rawValue] as? Dictionary<String, Any>,
+                        let geometry = stop[CodingKeys.geometry.rawValue] as? Dictionary<String, Any>,
+                        let coordinates = geometry[CodingKeys.coordinates.rawValue] as? Array<Double>,
+                        let id = properties[CodingKeys.identification.rawValue] as? String,
+                        let name = properties[CodingKeys.name.rawValue] as? String
+                    else {
+                        fatalError("Unexpected format for properties, geometry, coordinates, id or name. Got: \(stop)")
                     }
                     
-                } else {
-                    fatalError("Unexpected format. Got: \(value)")
+                    let longitude = Float(coordinates[0])
+                    let latitude = Float(coordinates[1])
+                    
+                    let busStop = BusStop(id: id, name: name, longitude: longitude, latitude: latitude)
+                    BusStopList.shared.stops.append(busStop)
+                    
                 }
+                
                     
-                    
-               
                 
             case .failure(let value):
                 print("Failure!")
@@ -84,11 +86,6 @@ class APIController: NSObject  {
             }
             
         }
-        
-        
-        
-        return []
-        
     }
     
     
