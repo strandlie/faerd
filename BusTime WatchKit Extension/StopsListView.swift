@@ -25,8 +25,8 @@ struct StopsListView : View {
     
     var body: some View {
         VStack {
-            List(nearbyStops.stops.filter({_ in true/*$0.lines.count > 0*/}).sorted(by: sortClosure)) { busStop in
-                NavigationLink(destination: StopDetailView(stop: busStop, distance: self.nearbyStops.distances[busStop.id]!)) {
+            List(nearbyStops.stops.sorted(by: sortClosure)) { busStop in
+                NavigationLink(destination: StopDetailView(stop: busStop, distance: self.nearbyStops.distances[busStop.id]!, departureList: busStop.departures)) {
                     HStack(){
                         ZStack(alignment: .leading) {
                             Text("999 m")
@@ -48,7 +48,16 @@ struct StopsListView : View {
                 }
             }
                     
+        }.onAppear(perform: updateStops)
+    }
+    
+    private func updateStops() {
+        while nearbyStops.stops.count == 0 {
+            if let currentLocation = User.shared.currentLocation {
+                LocationController.shared.updateNearbyStopsTo(coordinate: currentLocation)
+            }
         }
+        
     }
 }
 

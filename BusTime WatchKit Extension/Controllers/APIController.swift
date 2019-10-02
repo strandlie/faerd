@@ -15,9 +15,11 @@ class APIController: NSObject  {
     let SEARCH_RADIUS = 500.0
     
     let REST_API_ENDPOINT = "https://api.entur.io/geocoder/v1/reverse?"
-    let SOAP_API_ENDPOINT = "http://st.atb.no:90/SMWS/SMService.svc"
+    let GRAPHQL_API_ENDPOINT = "https://api.entur.io/journey-planner/v2/graphql"
     
     let API_REQUESTOR_REF = "strandlie_development - BussTid"
+    
+    let DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
     
     static let shared = APIController()
     
@@ -47,37 +49,21 @@ class APIController: NSObject  {
         ]
         
         let headers: HTTPHeaders = [
-            "ET-Client-Name": "strandlie_development - busstid"
+            "ET-Client-Name": API_REQUESTOR_REF
         ]
         
-        
-        AF.request(REST_API_ENDPOINT, parameters: parameters, headers: headers).responseJSON { response in
+        AF.request(REST_API_ENDPOINT, parameters: parameters, headers: headers).responseDecodable { (response: DataResponse<NearbyStopsResponse>) in
             switch response.result {
-            case .success(let value):
-                print(value)
-                guard let body = value as? Dictionary<String, Any>, let stopsArray = body[CodingKeys.stopsList.rawValue] as? Array<Dictionary<String, Any>>  else {
-                    fatalError("Unexpected format for body or stopsArray. Got: \(value)")
+            case .success(let nearbyStops):
+                var stops = [BusStop]()
+                
+                nearbyStops.features.forEach { stop in
+                    let busStop = BusStop(id: stop.properties.id, name: stop.properties.name, longitude: stop.geometry.longitude, latitude: stop.geometry.latitude)
+                    
+                    stops.append(busStop)
                 }
                 
-                stopsArray.forEach { stop in
-                    guard let properties = stop[CodingKeys.properties.rawValue] as? Dictionary<String, Any>,
-                        let geometry = stop[CodingKeys.geometry.rawValue] as? Dictionary<String, Any>,
-                        let coordinates = geometry[CodingKeys.coordinates.rawValue] as? Array<Double>,
-                        let id = properties[CodingKeys.identification.rawValue] as? String,
-                        let name = properties[CodingKeys.name.rawValue] as? String
-                    else {
-                        fatalError("Unexpected format for properties, geometry, coordinates, id or name. Got: \(stop)")
-                    }
-                    
-                    let longitude = Float(coordinates[0])
-                    let latitude = Float(coordinates[1])
-                    
-                    let busStop = BusStop(id: id, name: name, longitude: longitude, latitude: latitude)
-                    BusStopList.shared.stops.append(busStop)
-                    
-                }
-                
-                    
+                BusStopList.shared.stops = stops
                 
             case .failure(let value):
                 print("Failure!")
@@ -86,84 +72,56 @@ class APIController: NSObject  {
             }
             
         }
+        
     }
     
     
-    
-    func locationWithBearing(bearing:Double, distanceMeters:Double, origin:CLLocationCoordinate2D) -> CLLocationCoordinate2D {
-        let distRadians = distanceMeters / (6372797.6)
-        
-        let rbearing = bearing * Double.pi / 180.0
-        
-        let lat1 = origin.latitude * Double.pi / 180
-        let lon1 = origin.longitude * Double.pi / 180
-        
-        let lat2 = asin(sin(lat1) * cos(distRadians) + cos(lat1) * sin(distRadians) * cos(rbearing))
-        let lon2 = lon1 + atan2(sin(rbearing) * sin(distRadians) * cos(lat1), cos(distRadians) - sin(lat1) * sin(lat2))
-        
-        return CLLocationCoordinate2D(latitude: lat2 * 180 / Double.pi, longitude: lon2 * 180 / Double.pi)
-    }
-    
-    
-    //MARK: XML requests
+    //MARK: GraphQL requests
     
     func getRealtimeDeparturesForAPIRequest(busStop: BusStop) {
-        let date = Date()
-        let calendar = Calendar.current
-        
-        let year = String(calendar.component(.year, from: date))
-        var month = String(calendar.component(.month, from: date))
-        var day = String(calendar.component(.day, from: date))
-        var hour = String(calendar.component(.hour, from: date))
-        var minute = String(calendar.component(.minute, from: date))
-        var second = String(calendar.component(.second, from: date))
-        
-        
-        
-        func formatTime(unit: String) -> String {
-            guard let unitInt = Int(unit) else {
-                fatalError("Some wrong formatting somewhere. Value: \(unit)")
-            }
-            return unitInt < 10 ? "0\(unitInt)" : String(unitInt)
+
+        let graphQLQuery = GraphQLQuery(stopID: busStop.id)
+        guard let queryString = try? JSONEncoder().encode(graphQLQuery) else {
+            fatalError("graphQLQuery does not have the expected format.")
         }
         
-        month = formatTime(unit: month)
-        day = formatTime(unit: day)
-        hour = formatTime(unit: hour)
-        minute = formatTime(unit: minute)
-        second = formatTime(unit: second)
-        
-        
-        var xmlBody = ""
-        xmlBody += "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:siri=\"http://www.siri.org.uk/siri\">"
-           xmlBody += "<soapenv:Header/>"
-            xmlBody += "<soapenv:Body>"
-              xmlBody += "<siri:GetStopMonitoring>"
-                 xmlBody += "<ServiceRequestInfo>"
-                    xmlBody += "<siri:RequestTimestamp>\(year)-\(month)-\(day)T\(hour):\(minute):\(second)+02:00</siri:RequestTimestamp>"
-                    xmlBody += "<siri:RequestorRef>\(API_REQUESTOR_REF)</siri:RequestorRef>"
-                 xmlBody += "</ServiceRequestInfo>"
-                 xmlBody += "<Request version=\"1.4\">"
-                    xmlBody += "<siri:RequestTimestamp>\(year)-\(month)-\(day)T\(hour):\(minute):\(second)+02:00</siri:RequestTimestamp>"
-                    xmlBody += "<siri:MonitoringRef>\(busStop.id)</siri:MonitoringRef>"
-                 xmlBody += "</Request>"
-              xmlBody += "</siri:GetStopMonitoring>"
-           xmlBody += "</soapenv:Body>"
-        xmlBody += "</soapenv:Envelope>"
-        
-        
         let headers: HTTPHeaders = [
-            "Content-Type": "text/xml; charset=UTF-8",
-            "SOAPAction": "GetStopMonitoring",
-            "UserAgent": "BusTimeApp",
-            "AcceptEncoding": "gzip,deflate",
-            "Cache-Control": "no-cache",
-            "Host": "st.atb.no:90",
-            "Connection": "keep-alive"
+            "Content-Type": "application/json",
+            "ET-Client-Name": API_REQUESTOR_REF
         ]
         
-        AF.request(SOAP_API_ENDPOINT, method: .post, encoding: xmlBody, headers: headers).responseString { response in
-            print(response)
+        guard let url = URL(string: GRAPHQL_API_ENDPOINT) else {
+            fatalError("GRAPHQL_API_ENDPOINT is not valid string. Got: \(GRAPHQL_API_ENDPOINT)")
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpBody = queryString
+        urlRequest.method = .post
+        urlRequest.headers = headers
+        
+        AF.request(urlRequest).responseDecodable { (response: DataResponse<GraphQLResponse>) in
+            
+            switch response.result {
+            case .success(let graphQLResponse):
+                
+                var departures = [Departure]()
+                let calls = graphQLResponse.data.stopPlace.estimatedCalls
+                calls.forEach { departure in
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = self.DATE_TIME_FORMAT
+                    guard let time = formatter.date(from: departure.expectedArrivalTime) else {
+                        fatalError("Unexpected date format. Got: \(departure.expectedArrivalTime), expected: \(self.DATE_TIME_FORMAT)")
+                    }
+                    
+                    departures.append(Departure(time: time, isRealTime: departure.realtime, destinationName: departure.destinationDisplay.frontText, publicCode: departure.serviceJourney.journeyPattern.line.publicCode))
+                }
+                
+                busStop.departures.departures = departures
+            
+            case .failure(let error):
+                print(error)
+                fatalError()
+            }
         }
     }
     

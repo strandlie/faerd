@@ -15,8 +15,7 @@ struct BusStop: Identifiable, Decodable {
     let id: String
     let name: String // Name of BusStop
     let location: CLLocation
-    let lines: [String]
-    let departures: [Departure]
+    let departures: DepartureList
     
     enum CodingKeys: String, CodingKey {
         case longitude = "point.lon"
@@ -38,8 +37,7 @@ struct BusStop: Identifiable, Decodable {
         self.id = id
         self.name = name
         self.location = CLLocation(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
-        self.lines = []
-        self.departures = []
+        self.departures = DepartureList()
         
         self.updateRealtimeDepartures()
         
@@ -52,8 +50,7 @@ struct BusStop: Identifiable, Decodable {
         self.id = id
         self.name = name
         self.location = location
-        self.lines = []
-        self.departures = []
+        self.departures = DepartureList()
         
         self.updateRealtimeDepartures()
     }
@@ -75,7 +72,7 @@ struct BusStop: Identifiable, Decodable {
     }
     
     func updateRealtimeDepartures() {
-        
+        APIController.shared.getRealtimeDeparturesForAPIRequest(busStop: self)
     }
 
 }
