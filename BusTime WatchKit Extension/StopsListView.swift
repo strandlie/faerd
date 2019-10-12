@@ -27,37 +27,45 @@ struct StopsListView : View {
         VStack {
             List(nearbyStops.stops.sorted(by: sortClosure)) { busStop in
                 NavigationLink(destination: StopDetailView(stop: busStop, distance: self.nearbyStops.distances[busStop.id]!, departureList: busStop.departures)) {
-                    HStack(){
+                    HStack{
                         ZStack(alignment: .leading) {
                             Text("999 m")
                                 .opacity(0)
                                 .accessibility(hidden: true)
-                            Text(self.nearbyStops.distances[busStop.id]!)
-                                .font(.caption)
+                            VStack {
+                                Text(self.nearbyStops.distances[busStop.id]!)
+                                    .font(.caption)
+                            }
                         }
-                        VStack(alignment: .leading, spacing: 2) {
+                            .layoutPriority(0.6)
+                        Image(busStop.types[0].rawValue).colorInvert()
+                        VStack(alignment: .leading) {
                             Text(busStop.name)
+                                .font(.footnote)
                                 .bold()
                                 .truncationMode(.tail)
-                                .font(.callout)
                                 .lineLimit(2)
-                                
                         }
-                           
-                    }.navigationBarTitle(Text("Nærmeste"))
+                            .layoutPriority(0.4)
+                    }
+                        .navigationBarTitle(Text("Nærmeste"))
                 }
             }
                     
         }.onAppear(perform: updateStops)
     }
     
+    /*
+     Update the nearbyStops, each time the StopsListView appears
+     Currently there is a bug that makes it only get called
+     the first time this view appears, but this is apparently fixed
+     in XCode 11.2
+     */
     private func updateStops() {
-        
         if let currentLocation = User.shared.currentLocation {
             LocationController.shared.updateNearbyStopsTo(coordinate: currentLocation)
-        
+                
         }
-        
     }
 }
 

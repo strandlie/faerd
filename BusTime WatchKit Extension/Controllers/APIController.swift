@@ -15,7 +15,7 @@ class APIController: NSObject  {
     static let shared = APIController()
     
     let GLOBAL_MAX_STOPS = 30
-    let SEARCH_RADIUS = 500.0
+    let SEARCH_RADIUS = 800.0
     
     let REST_API_ENDPOINT = "https://api.entur.io/geocoder/v1/reverse?"
     let GRAPHQL_API_ENDPOINT = "https://api.entur.io/journey-planner/v2/graphql"
@@ -56,7 +56,7 @@ class APIController: NSObject  {
                 var stops = [BusStop]()
                 
                 nearbyStops.features.forEach { stop in
-                    let busStop = BusStop(id: stop.properties.id, name: stop.properties.name, longitude: stop.geometry.longitude, latitude: stop.geometry.latitude)
+                    let busStop = BusStop(id: stop.properties.id, name: stop.properties.name, types: stop.properties.category, longitude: stop.geometry.longitude, latitude: stop.geometry.latitude)
                     
                     stops.append(busStop)
                 }

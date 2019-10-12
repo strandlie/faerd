@@ -27,6 +27,8 @@ struct NearbyStopsResponse: Decodable {
         struct Properties: Decodable {
             let id: String
             let name: String
+            let category: [String]
+            
         }
         
         let geometry: Geometry

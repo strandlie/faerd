@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2ACFDD7C-2390-4B14-8164-C7055D8B41DB"
-            shouldBeEnabled = "Yes"
+            uuid = "B462F2BF-977E-447E-BB44-08EAC4FA56F5"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BusTime WatchKit Extension/StopsListView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "updateStops()"
-            landmarkType = "7">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B462F2BF-977E-447E-BB44-08EAC4FA56F5 - 89ab03d7f22621eb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;BusTime_WatchKit_Extension.BusStop&gt;, Swift.String, SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.Text) -&gt; some&gt;&gt;.0, BusTime_WatchKit_Extension.StopDetailView&gt;&gt;&gt;&gt; in BusTime_WatchKit_Extension.StopsListView.body.getter : some"
+                  moduleName = "BusTime WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hstrandlie/Documents/AppDevelopment/BusTime/bustime/BusTime%20WatchKit%20Extension/StopsListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "43">
+               </Location>
+               <Location
+                  uuid = "B462F2BF-977E-447E-BB44-08EAC4FA56F5 - 734beec0665e7761"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (BusTime_WatchKit_Extension.BusStop) -&gt; SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.Text) -&gt; some&gt;&gt;.0, BusTime_WatchKit_Extension.StopDetailView&gt; in closure #1 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;BusTime_WatchKit_Extension.BusStop&gt;, Swift.String, SwiftUI.HStack&lt;SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.navigationBarTitle(SwiftUI.Text) -&gt; some&gt;&gt;.0, BusTime_WatchKit_Extension.StopDetailView&gt;&gt;&gt;&gt; in BusTime_WatchKit_Extension.StopsListView.body.getter : some"
+                  moduleName = "BusTime WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hstrandlie/Documents/AppDevelopment/BusTime/bustime/BusTime%20WatchKit%20Extension/StopsListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "687">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

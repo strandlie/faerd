@@ -153,8 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				30482CEC22BC1CE000D7850D /* Interface.storyboard */,
-				30482CEF22BC1CE200D7850D /* Assets.xcassets */,
 				30482CF122BC1CE200D7850D /* Info.plist */,
+				30482CEF22BC1CE200D7850D /* Assets.xcassets */,
 			);
 			path = "BusTime WatchKit App";
 			sourceTree = "<group>";
