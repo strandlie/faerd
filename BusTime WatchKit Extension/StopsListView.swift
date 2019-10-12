@@ -52,10 +52,10 @@ struct StopsListView : View {
     }
     
     private func updateStops() {
-        while nearbyStops.stops.count == 0 {
-            if let currentLocation = User.shared.currentLocation {
-                LocationController.shared.updateNearbyStopsTo(coordinate: currentLocation)
-            }
+        
+        if let currentLocation = User.shared.currentLocation {
+            LocationController.shared.updateNearbyStopsTo(coordinate: currentLocation)
+        
         }
         
     }

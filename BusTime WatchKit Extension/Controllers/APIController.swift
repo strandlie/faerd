@@ -24,6 +24,7 @@ class APIController: NSObject  {
     static let shared = APIController()
     
     override init() {
+        print("APIController initialized!")
         
     }
     
@@ -52,7 +53,7 @@ class APIController: NSObject  {
             "ET-Client-Name": API_REQUESTOR_REF
         ]
         
-        AF.request(REST_API_ENDPOINT, parameters: parameters, headers: headers).responseDecodable { (response: DataResponse<NearbyStopsResponse>) in
+        AF.request(REST_API_ENDPOINT, parameters: parameters, headers: headers).responseDecodable { (response: DataResponse<NearbyStopsResponse, AFError>) in
             switch response.result {
             case .success(let nearbyStops):
                 var stops = [BusStop]()
@@ -99,7 +100,7 @@ class APIController: NSObject  {
         urlRequest.method = .post
         urlRequest.headers = headers
         
-        AF.request(urlRequest).responseDecodable { (response: DataResponse<GraphQLResponse>) in
+        AF.request(urlRequest).responseDecodable { (response: DataResponse<GraphQLResponse, AFError>) in
             
             switch response.result {
             case .success(let graphQLResponse):

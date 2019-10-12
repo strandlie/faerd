@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		069E4B0857E707368CA59D38 /* Pods_BusTime_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297DB428A2218AE482BD471E /* Pods_BusTime_WatchKit_App.framework */; };
 		30482CE822BC1CE000D7850D /* BusTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		30482CEE22BC1CE000D7850D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEC22BC1CE000D7850D /* Interface.storyboard */; };
 		30482CF022BC1CE200D7850D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEF22BC1CE200D7850D /* Assets.xcassets */; };
@@ -26,7 +25,11 @@
 		307F44D92325A4DD00BDC858 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307F44D82325A4DD00BDC858 /* Departure.swift */; };
 		3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F8EB230B2BBC009CE82B /* BusStopList.swift */; };
 		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
-		3155098B9FCDF0EA86AE3BC7 /* Pods_BusTime_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C205C905569B9C16BFEBC26 /* Pods_BusTime_WatchKit_Extension.framework */; };
+		8B5097F2234FCB05005F3119 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5097F1234FCB05005F3119 /* Alamofire */; };
+		8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7B2346738400C77E59 /* DepartureList.swift */; };
+		8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */; };
+		8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */; };
+		8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */; };
 		9205E3A5F825EA5228A3BDC2 /* Pods_BusTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +107,10 @@
 		5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime.release.xcconfig"; path = "Target Support Files/Pods-BusTime/Pods-BusTime.release.xcconfig"; sourceTree = "<group>"; };
 		81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit App/Pods-BusTime WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		8BDFFF7B2346738400C77E59 /* DepartureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureList.swift; sourceTree = "<group>"; };
+		8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLQuery.swift; sourceTree = "<group>"; };
+		8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
+		8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyStopsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069E4B0857E707368CA59D38 /* Pods_BusTime_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3155098B9FCDF0EA86AE3BC7 /* Pods_BusTime_WatchKit_Extension.framework in Frameworks */,
+				8B5097F2234FCB05005F3119 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +200,10 @@
 		30482D1922BC1ECE00D7850D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8BDFFF7B2346738400C77E59 /* DepartureList.swift */,
+				8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */,
+				8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */,
+				8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */,
 				30482D1A22BC1EFE00D7850D /* BusStop.swift */,
 				30482D2422BFB85A00D7850D /* User.swift */,
 				3092F8EB230B2BBC009CE82B /* BusStopList.swift */,
@@ -284,13 +294,15 @@
 				30482CF222BC1CE200D7850D /* Sources */,
 				30482CF322BC1CE200D7850D /* Frameworks */,
 				30482CF422BC1CE200D7850D /* Resources */,
-				9A6357CDA0E93C7438D774E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "BusTime WatchKit Extension";
+			packageProductDependencies = (
+				8B5097F1234FCB05005F3119 /* Alamofire */,
+			);
 			productName = "BusTime WatchKit Extension";
 			productReference = 30482CF622BC1CE200D7850D /* BusTime WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -317,7 +329,7 @@
 				};
 			};
 			buildConfigurationList = 30482CE022BC1CE000D7850D /* Build configuration list for PBXProject "BusTime" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -325,6 +337,9 @@
 				Base,
 			);
 			mainGroup = 30482CDC22BC1CE000D7850D;
+			packageReferences = (
+				8B5097F0234FCB05005F3119 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 30482CE422BC1CE000D7850D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -409,23 +424,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9A6357CDA0E93C7438D774E8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A59F62CF490430A8D695915A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,14 +455,18 @@
 			files = (
 				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
 				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
+				8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */,
+				8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */,
 				30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */,
 				30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */,
+				8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */,
 				307F44D92325A4DD00BDC858 /* Departure.swift in Sources */,
 				3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */,
 				30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */,
 				30482D2022BD26C500D7850D /* APIController.swift in Sources */,
 				30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */,
 				30482D1D22BD216300D7850D /* StopsListView.swift in Sources */,
+				8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */,
 				30482D2522BFB85A00D7850D /* User.swift in Sources */,
 				30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */,
 			);
@@ -616,6 +618,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BusTime WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "BusTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -640,6 +643,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"BusTime WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "BusTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -664,6 +668,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				IBSC_MODULE = BusTime_WatchKit_Extension;
 				INFOPLIST_FILE = "BusTime WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime.watchkitapp;
@@ -683,6 +688,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				IBSC_MODULE = BusTime_WatchKit_Extension;
 				INFOPLIST_FILE = "BusTime WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime.watchkitapp;
@@ -701,6 +707,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -714,6 +721,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,6 +769,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B5097F0234FCB05005F3119 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = "5.0.0-rc.2";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B5097F1234FCB05005F3119 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5097F0234FCB05005F3119 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 30482CDD22BC1CE000D7850D /* Project object */;
 }
