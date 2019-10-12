@@ -25,12 +25,11 @@
 		307F44D92325A4DD00BDC858 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307F44D82325A4DD00BDC858 /* Departure.swift */; };
 		3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F8EB230B2BBC009CE82B /* BusStopList.swift */; };
 		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
-		8B5097F2234FCB05005F3119 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5097F1234FCB05005F3119 /* Alamofire */; };
+		8B16119F2351E96A008156E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B16119E2351E96A008156E0 /* Alamofire */; };
 		8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7B2346738400C77E59 /* DepartureList.swift */; };
 		8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */; };
 		8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */; };
 		8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */; };
-		9205E3A5F825EA5228A3BDC2 /* Pods_BusTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,9 +75,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		11BB672AD707365677CC1D72 /* Pods-BusTime WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		1D7E84358167A70055C16DF5 /* Pods-BusTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime.debug.xcconfig"; path = "Target Support Files/Pods-BusTime/Pods-BusTime.debug.xcconfig"; sourceTree = "<group>"; };
-		297DB428A2218AE482BD471E /* Pods_BusTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CE322BC1CE000D7850D /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CED22BC1CE000D7850D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -101,12 +97,6 @@
 		307F44D82325A4DD00BDC858 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		3092F8EB230B2BBC009CE82B /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
 		30C330CF2306DD2700BCE0DF /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
-		3B11F3421213249F898347EB /* Pods-BusTime WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit Extension/Pods-BusTime WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		41FD27BB2C38EA5D987D0178 /* Pods-BusTime WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit App/Pods-BusTime WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		5C205C905569B9C16BFEBC26 /* Pods_BusTime_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime.release.xcconfig"; path = "Target Support Files/Pods-BusTime/Pods-BusTime.release.xcconfig"; sourceTree = "<group>"; };
-		81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusTime WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-BusTime WatchKit App/Pods-BusTime WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		8BDFFF7B2346738400C77E59 /* DepartureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureList.swift; sourceTree = "<group>"; };
 		8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLQuery.swift; sourceTree = "<group>"; };
 		8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
@@ -125,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B5097F2234FCB05005F3119 /* Alamofire in Frameworks */,
+				8B16119F2351E96A008156E0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9205E3A5F825EA5228A3BDC2 /* Pods_BusTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +135,6 @@
 				30482CEB22BC1CE000D7850D /* BusTime WatchKit App */,
 				30482CFA22BC1CE200D7850D /* BusTime WatchKit Extension */,
 				30482CE422BC1CE000D7850D /* Products */,
-				35FB1FB854D711B6D224AE29 /* Pods */,
 				B538DE58A449D7DE85682FD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -222,25 +210,9 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		35FB1FB854D711B6D224AE29 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1D7E84358167A70055C16DF5 /* Pods-BusTime.debug.xcconfig */,
-				7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */,
-				41FD27BB2C38EA5D987D0178 /* Pods-BusTime WatchKit App.debug.xcconfig */,
-				81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */,
-				11BB672AD707365677CC1D72 /* Pods-BusTime WatchKit Extension.debug.xcconfig */,
-				3B11F3421213249F898347EB /* Pods-BusTime WatchKit Extension.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B538DE58A449D7DE85682FD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5D7FCBDD61AC3C0A63FCDA4C /* Pods_BusTime.framework */,
-				297DB428A2218AE482BD471E /* Pods_BusTime_WatchKit_App.framework */,
-				5C205C905569B9C16BFEBC26 /* Pods_BusTime_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -252,7 +224,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30482D1622BC1CE300D7850D /* Build configuration list for PBXNativeTarget "BusTime" */;
 			buildPhases = (
-				68A4576EF4DA5173AEAFBB60 /* [CP] Check Pods Manifest.lock */,
 				30482CE122BC1CE000D7850D /* Resources */,
 				30482D1522BC1CE300D7850D /* Embed Watch Content */,
 				8C2774FCAD9A9C291546E235 /* Frameworks */,
@@ -271,7 +242,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30482D1222BC1CE300D7850D /* Build configuration list for PBXNativeTarget "BusTime WatchKit App" */;
 			buildPhases = (
-				145CD84110EB8107CE487A1D /* [CP] Check Pods Manifest.lock */,
 				30482CE522BC1CE000D7850D /* Resources */,
 				30482D1122BC1CE300D7850D /* Embed App Extensions */,
 				179029BC487042CDE986C876 /* Frameworks */,
@@ -290,7 +260,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30482D0E22BC1CE300D7850D /* Build configuration list for PBXNativeTarget "BusTime WatchKit Extension" */;
 			buildPhases = (
-				A59F62CF490430A8D695915A /* [CP] Check Pods Manifest.lock */,
 				30482CF222BC1CE200D7850D /* Sources */,
 				30482CF322BC1CE200D7850D /* Frameworks */,
 				30482CF422BC1CE200D7850D /* Resources */,
@@ -301,7 +270,7 @@
 			);
 			name = "BusTime WatchKit Extension";
 			packageProductDependencies = (
-				8B5097F1234FCB05005F3119 /* Alamofire */,
+				8B16119E2351E96A008156E0 /* Alamofire */,
 			);
 			productName = "BusTime WatchKit Extension";
 			productReference = 30482CF622BC1CE200D7850D /* BusTime WatchKit Extension.appex */;
@@ -338,7 +307,7 @@
 			);
 			mainGroup = 30482CDC22BC1CE000D7850D;
 			packageReferences = (
-				8B5097F0234FCB05005F3119 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8B16119D2351E96A008156E0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 30482CE422BC1CE000D7850D /* Products */;
 			projectDirPath = "";
@@ -378,75 +347,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		145CD84110EB8107CE487A1D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BusTime WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		68A4576EF4DA5173AEAFBB60 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BusTime-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A59F62CF490430A8D695915A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BusTime WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30482CF222BC1CE200D7850D /* Sources */ = {
@@ -613,7 +513,6 @@
 		};
 		30482D0F22BC1CE300D7850D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11BB672AD707365677CC1D72 /* Pods-BusTime WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -638,7 +537,6 @@
 		};
 		30482D1022BC1CE300D7850D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B11F3421213249F898347EB /* Pods-BusTime WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -663,7 +561,6 @@
 		};
 		30482D1322BC1CE300D7850D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41FD27BB2C38EA5D987D0178 /* Pods-BusTime WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -683,7 +580,6 @@
 		};
 		30482D1422BC1CE300D7850D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81E73916AE402E9A90BABBDC /* Pods-BusTime WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -703,7 +599,6 @@
 		};
 		30482D1722BC1CE300D7850D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D7E84358167A70055C16DF5 /* Pods-BusTime.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -717,7 +612,6 @@
 		};
 		30482D1822BC1CE300D7850D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D2B131C9E70F5303F7EC6AB /* Pods-BusTime.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -771,7 +665,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8B5097F0234FCB05005F3119 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		8B16119D2351E96A008156E0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -782,9 +676,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8B5097F1234FCB05005F3119 /* Alamofire */ = {
+		8B16119E2351E96A008156E0 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8B5097F0234FCB05005F3119 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 8B16119D2351E96A008156E0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

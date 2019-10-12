@@ -11,6 +11,9 @@ import CoreLocation
 import Alamofire
 
 class APIController: NSObject  {
+    
+    static let shared = APIController()
+    
     let GLOBAL_MAX_STOPS = 30
     let SEARCH_RADIUS = 500.0
     
@@ -21,12 +24,6 @@ class APIController: NSObject  {
     
     let DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
     
-    static let shared = APIController()
-    
-    override init() {
-        print("APIController initialized!")
-        
-    }
     
     enum CodingKeys: String, CodingKey {
         case longitude = "point.lon"

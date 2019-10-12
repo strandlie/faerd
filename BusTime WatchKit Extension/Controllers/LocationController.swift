@@ -10,10 +10,10 @@ import Foundation
 import CoreLocation
 
 class LocationController: NSObject, CLLocationManagerDelegate {
-   
-    let locationManager = CLLocationManager()
     
     static let shared = LocationController()
+   
+    let locationManager = CLLocationManager()
     
     func enableBasicLocationServices() {
         locationManager.delegate = self

@@ -12,21 +12,12 @@ import SwiftUI
 import Combine
 
 class User: ObservableObject {
-    
-    typealias PublisherType = PassthroughSubject<Void, Never>
-    
-    var willChange = PublisherType()
-    var currentLocation: CLLocation? {
-        didSet {
-            //print("New location set: \(currentLocation)")
-            self.willChange.send(Void())
-            
-        }
-    }
-    
     static let shared = User()
     
-    convenience init(initialLocation: CLLocation) {
+    @Published var currentLocation: CLLocation?
+        
+    
+    convenience init(initialLocation: CLLocation?) {
         self.init()
         self.currentLocation = initialLocation
     }

@@ -10,6 +10,9 @@ import Foundation
 import CoreLocation
 
 class BusStopList: ObservableObject {
+    
+    static let shared = BusStopList()
+    
     @Published var stops: [BusStop] {
         didSet {
             stops.forEach {
@@ -19,8 +22,6 @@ class BusStopList: ObservableObject {
     }
     
     var distances: [String: String]
-    
-    static let shared = BusStopList()
     
     func get(for id: String) -> BusStop? {
         return stops.first { $0.id == id }
