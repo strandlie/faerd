@@ -59,6 +59,14 @@ struct BusStop: Identifiable, Decodable {
         case undefined = ""
     }
     
+    init() {
+        self.id = "1"
+        self.name = "Studentersamfundet 3"
+        self.location = CLLocation(latitude: 63.4324, longitude: 10.4073)
+        self.departures = DepartureList()
+        self.types = [.bus]
+    }
+    
     /**
         Initializer with lat/long as Floats
      */

@@ -30,6 +30,8 @@
 		8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */; };
 		8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */; };
 		8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */; };
+		8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA76C92357A716008E8DA0 /* LineDetailView.swift */; };
+		8BEA76CE2357AED3008E8DA0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLQuery.swift; sourceTree = "<group>"; };
 		8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
 		8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyStopsResponse.swift; sourceTree = "<group>"; };
+		8BEA76C92357A716008E8DA0 /* LineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetailView.swift; sourceTree = "<group>"; };
+		8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,11 +172,13 @@
 				30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */,
 				30482D0322BC1CE200D7850D /* NotificationView.swift */,
 				30482D1C22BD216300D7850D /* StopsListView.swift */,
+				30C330CF2306DD2700BCE0DF /* StopDetailView.swift */,
+				8BEA76C92357A716008E8DA0 /* LineDetailView.swift */,
 				30482D0522BC1CE300D7850D /* Assets.xcassets */,
 				30482D0A22BC1CE300D7850D /* Info.plist */,
 				30482D0B22BC1CE300D7850D /* PushNotificationPayload.apns */,
 				30482D0722BC1CE300D7850D /* Preview Content */,
-				30C330CF2306DD2700BCE0DF /* StopDetailView.swift */,
+				8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */,
 			);
 			path = "BusTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -355,6 +361,8 @@
 			files = (
 				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
 				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
+				8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */,
+				8BEA76CE2357AED3008E8DA0 /* SettingsView.swift in Sources */,
 				8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */,
 				8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */,
 				30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */,

@@ -25,32 +25,58 @@ struct StopsListView : View {
     
     var body: some View {
         VStack {
-            List(nearbyStops.stops.sorted(by: sortClosure)) { busStop in
-                NavigationLink(destination: StopDetailView(stop: busStop, distance: self.nearbyStops.distances[busStop.id]!, departureList: busStop.departures)) {
-                    HStack{
-                        ZStack(alignment: .leading) {
-                            Text("999 m")
-                                .opacity(0)
-                                .accessibility(hidden: true)
-                            VStack {
-                                Text(self.nearbyStops.distances[busStop.id]!)
-                                    .font(.caption)
-                            }
-                        }
-                            .layoutPriority(0.6)
-                        Image(busStop.types[0].rawValue).colorInvert()
-                        VStack(alignment: .leading) {
-                            Text(busStop.name)
-                                .font(.footnote)
-                                .bold()
-                                .truncationMode(.tail)
-                                .lineLimit(2)
-                        }
-                            .layoutPriority(0.4)
-                    }
-                        .navigationBarTitle(Text("Nærmeste"))
-                }
+            nearbyStops.stops.count == 0
+            ? VStack {
+                Spacer()
+                Text("Ingen stopp i nærheten")
             }
+            : nil
+            
+           
+            List {
+                NavigationLink(destination: SettingsView()) {
+                    HStack {
+                        Spacer()
+                        Text("Innstillinger")
+                            .font(.callout)
+                        Spacer()
+                    }
+                }
+                
+                ForEach(nearbyStops.stops.sorted(by: sortClosure)){ busStop in
+                    NavigationLink(destination: StopDetailView(
+                                        stop: busStop,
+                                        distance: self.nearbyStops.distances[busStop.id]!,
+                                        departureList: busStop.departures))
+                    {
+                        HStack{
+                            ZStack(alignment: .leading) {
+                                Text("999 m")
+                                    .opacity(0)
+                                    .accessibility(hidden: true)
+                                VStack {
+                                    Text(self.nearbyStops.distances[busStop.id]!)
+                                        .font(.caption)
+                                }
+                            }
+                                .layoutPriority(0.4)
+                            Image(busStop.types[0].rawValue)
+                                .layoutPriority(0.4)
+                            //TODO: Still not aligning to leading. Try with ZStack
+                            VStack(alignment: .leading) {
+                                Text(busStop.name)
+                                    .font(.footnote)
+                                    .bold()
+                                    .truncationMode(.tail)
+                                    .lineLimit(2)
+                                    
+                            }
+                                .layoutPriority(0.3)
+                        }
+                            .navigationBarTitle(Text("Nærmeste"))
+                    }.listRowPlatterColor(.red)
+                }
+            }.multilineTextAlignment(.center)
                     
         }.onAppear(perform: updateStops)
     }
