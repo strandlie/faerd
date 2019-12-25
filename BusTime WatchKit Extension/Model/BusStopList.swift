@@ -28,7 +28,7 @@ class BusStopList: ObservableObject {
     }
     
     func append(_ stop: BusStop) {
-        if self.stops.first(where: {$0.id == stop.id}) != nil {
+        if self.stops.contains(stop) {
             distances[stop.id] = LocationController.formattedDistanceBetween(location1: stop.location, location2: User.shared.currentLocation)
         } else {
             self.stops.append(stop)

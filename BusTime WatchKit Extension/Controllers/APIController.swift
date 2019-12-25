@@ -38,6 +38,9 @@ class APIController: NSObject  {
     
     func updateNearbyStopsToAPIRequest(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) {
 
+        // Set global fetching state
+        AppState.shared.isFetching = true
+        
         let parameters: Parameters = [
             "point.lat": coordinate.coordinate.latitude,
             "point.lon": coordinate.coordinate.longitude,
@@ -54,20 +57,27 @@ class APIController: NSObject  {
             switch response.result {
             case .success(let nearbyStops):
                 var stops = [BusStop]()
-                
                 nearbyStops.features.forEach { stop in
                     let busStop = BusStop(id: stop.properties.id, name: stop.properties.name, types: stop.properties.category, longitude: stop.geometry.longitude, latitude: stop.geometry.latitude)
                     
                     stops.append(busStop)
                 }
-                
-                BusStopList.shared.stops = stops
+                let difference = stops.difference(from: BusStopList.shared.stops)
+                for change in difference {
+                    switch(change) {
+                        case let .insert(_, newElement, _):
+                            BusStopList.shared.stops.append(newElement)
+                        case let .remove(offset, _, _):
+                            BusStopList.shared.stops.remove(at: offset)
+                    }
+                }
                 
             case .failure(let value):
                 print("Failure!")
                 print("Value: \(value)")
                 
             }
+            AppState.shared.isFetching = false
             
         }
         
@@ -77,7 +87,8 @@ class APIController: NSObject  {
     //MARK: GraphQL requests
     
     func getRealtimeDeparturesForAPIRequest(busStop: BusStop) {
-
+        AppState.shared.isFetching = true
+        
         let graphQLQuery = GraphQLQuery(stopID: busStop.id)
         guard let queryString = try? JSONEncoder().encode(graphQLQuery) else {
             fatalError("graphQLQuery does not have the expected format.")
@@ -113,13 +124,14 @@ class APIController: NSObject  {
                     
                     departures.append(Departure(time: time, isRealTime: departure.realtime, destinationName: departure.destinationDisplay.frontText, publicCode: departure.serviceJourney.journeyPattern.line.publicCode))
                 }
-                
+                // TODO: Change this to do a difference, like done for BusStop above. 
                 busStop.departures.departures = departures
             
             case .failure(let error):
                 print(error)
                 fatalError()
             }
+            AppState.shared.isFetching = false
         }
     }
     

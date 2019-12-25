@@ -38,6 +38,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func updateNearbyStopsTo(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) {
+        
         APIController.shared.updateNearbyStopsToAPIRequest(coordinate: coordinate, limitStops: limitStops, radius: radius)
     }
     
@@ -61,10 +62,14 @@ class LocationController: NSObject, CLLocationManagerDelegate {
      Only the most recent location is relevant to us.
      */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        User.shared.currentLocation = locations.last
-        if let currentUserLocation = User.shared.currentLocation {
-            updateNearbyStopsTo(coordinate: currentUserLocation)
+        if locations.count > 0 {
+            User.shared.currentLocation = locations.last
+            if let currentLocation = User.shared.currentLocation {
+                updateNearbyStopsTo(coordinate: currentLocation)
+            }
         }
+        
+        
         
     }
     

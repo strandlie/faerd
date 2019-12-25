@@ -10,6 +10,8 @@ import SwiftUI
 import Combine
 
 struct StopDetailView: View {
+    // Make the stop the ObservedObject, and make it subscribe to changes in DepartureList
+    // and publish these to the StopDetailView
     let stop: BusStop
     let distance: String
     
@@ -20,45 +22,45 @@ struct StopDetailView: View {
     }
     
     var body: some View {
-        VStack {
+        ScrollView {
             VStack {
                 Text(stop.name)
                     .bold()
-                    .lineLimit(2)
-                    .font(.footnote)
+                    .lineLimit(3)
+                    .font(.title)
                     .truncationMode(.middle)
                 HStack {
                     Text(distance)
-                        .font(.footnote)
+                        .font(.headline)
                     ForEach(stop.types, id: \.self) { type in
-                        Image(type.rawValue).colorInvert().colorMultiply(.red)
+                        IconController.getIcon(for: type)
+                            .font(.title)
                     }
                 }
             }
             departureList.departures.count == 0
                 ? VStack{
-                    Spacer()
                     Text("Ingen avganger")
                     }
                 : nil
-            List(departureList.departures.filter(filterClosure)) { departure in
+            
+            ForEach(departureList.departures.filter(filterClosure)) { departure in
                 
-                NavigationLink(destination: LineDetailView(departureList: DepartureList(departures: self.departureList.forPublicCode(departure.publicCode)), stop: self.stop, distance: self.distance)) {
+                NavigationLink(destination: LineDetailView(departureList: DepartureList(departures: self.departureList.filterDown(forPublicCode: departure.publicCode, forDestinationName: departure.destinationName)), stop: self.stop, distance: self.distance)) {
                     HStack {
                         ZStack(alignment: .leading) {
                             Text("123")
                                 .opacity(0)
                                 .accessibility(hidden: true)
                             Text(departure.publicCode)
-                                .bold()
-                                .font(.callout)
+                                .font(.subheadline)
                         }
                         ZStack(alignment: .leading) {
                             Text("111111111111111111")
                                 .opacity(0)
                                 .accessibility(hidden: true)
                             Text(departure.destinationName)
-                                .font(.footnote)
+                                .font(.headline)
                                 .truncationMode(.tail)
                                 .lineLimit(2)
                         }
@@ -68,7 +70,7 @@ struct StopDetailView: View {
                                 .accessibility(hidden: true)
                             Text(departure.formatTime(departure.time))
                                 .italic()
-                                .font(.callout)
+                                .font(.headline)
                                 .foregroundColor(departure.isRealTime ? .yellow : .white)
                         }
                     }
@@ -77,22 +79,15 @@ struct StopDetailView: View {
             }
          
         }
-        .onAppear(perform: updateDepartures)
         .navigationBarTitle("Avganger")
     }
     
-    private func updateDepartures() {
-        stop.updateRealtimeDepartures()
-    }
 }
 
 #if DEBUG
 struct StopDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        StopDetailView(stop: BusStop(),
-                        distance: "104m",
-                        departureList: DepartureList())
+        Spacer()
     }
 }
 #endif

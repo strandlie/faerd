@@ -14,13 +14,17 @@ import CoreLocation
  Icons by: https://www.flaticon.com/free-icon
  Attribution required
  */
-struct BusStop: Identifiable, Decodable {
+struct BusStop: Identifiable, Decodable, Equatable {
     
     let id: String
     let name: String // Name of BusStop
     let location: CLLocation
     let types: [StopType]
     let departures: DepartureList
+    
+    static func == (lhs: BusStop, rhs: BusStop) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     /*
      Enum for names returned by API
@@ -59,13 +63,6 @@ struct BusStop: Identifiable, Decodable {
         case undefined = ""
     }
     
-    init() {
-        self.id = "1"
-        self.name = "Studentersamfundet 3"
-        self.location = CLLocation(latitude: 63.4324, longitude: 10.4073)
-        self.departures = DepartureList()
-        self.types = [.bus]
-    }
     
     /**
         Initializer with lat/long as Floats

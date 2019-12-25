@@ -12,8 +12,8 @@ class DepartureList: ObservableObject {
     
     @Published var departures: [Departure]
     
-    func forPublicCode(_ publicCode: String) -> [Departure] {
-        return departures.filter { departure in departure.publicCode == publicCode
+    func filterDown(forPublicCode publicCode: String, forDestinationName destinationName: String) -> [Departure] {
+        return departures.filter { departure in departure.publicCode == publicCode && departure.destinationName == destinationName
         }
     }
     
@@ -24,6 +24,7 @@ class DepartureList: ObservableObject {
     
     init() {
         self.departures = []
+        /*
         let departure1 = Departure(time: Date(),
                                    isRealTime: true,
                                    destinationName: "Tyholt",
@@ -32,7 +33,7 @@ class DepartureList: ObservableObject {
                                    isRealTime: false,
                                    destinationName: "Strindheim",
                                    publicCode: "4")
-        self.departures = [departure1, departure2]
+        self.departures = [departure1, departure2]*/
     }
     
     

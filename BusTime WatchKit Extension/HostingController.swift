@@ -10,12 +10,18 @@ import WatchKit
 import Foundation
 import SwiftUI
 
-class HostingController : WKHostingController<StopsListView> {    
+class HostingController : WKHostingController<ContentView> {
     
-    override var body: StopsListView {
+    override var body: ContentView {
         LocationController.shared.enableBasicLocationServices()
-        return StopsListView(user: User.shared)
+        return ContentView()
     }
     
+}
+
+struct ContentView: View {
     
+    var body: some View {
+        StopsListView().environmentObject(AppState.shared)
+    }
 }

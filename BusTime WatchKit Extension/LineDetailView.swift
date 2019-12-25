@@ -14,67 +14,45 @@ struct LineDetailView: View {
     let distance: String
     
     var body: some View {
-        VStack {
-            HStack {
-                Text(departureList.departures[0].publicCode).bold()
-                    .lineLimit(2)
-                    .font(.footnote)
-                Text(" fra ")
-                    .font(.footnote)
-                Text(stop.name)
-                    .bold()
-                    .lineLimit(2)
-                    .font(.footnote)
-                    .truncationMode(.middle)
+        ScrollView {
+            VStack {
+                HStack {
+                    Text(departureList.departures[0].publicCode)
+                        .bold()
+                        .lineLimit(2)
+                        .font(.subheadline)
+                    Text(" til ")
+                }
+                Text(departureList.departures[0].destinationName)
+                .bold()
+                .lineLimit(2)
+                .font(.headline)
+                .truncationMode(.middle)
             }
             
+            
+            Divider().background(Color.red)
+            ForEach(departureList.departures) { departure in
+                HStack {
+                    Text(departure.formatTime(departure.time))
+                        .font(.body)
+                        .foregroundColor(departure.isRealTime ? .yellow : .white)
+                }
+                Spacer()
+                
+            }
+            Divider()
             HStack {
-                Text(distance)
-                    .font(.footnote)
-                ForEach(stop.types, id: \.self) { type in
-                    Image(type.rawValue).colorInvert().colorMultiply(.red)
-                }
+                Text("Avganger i")
+                Text("sanntid").foregroundColor(.yellow)
+                
             }
-            ScrollView() {
-                ForEach(departureList.departures) { departure in
-                    HStack {
-                        /*
-                        ZStack(alignment: .leading) {
-                            Text("123")
-                                .opacity(0)
-                                .accessibility(hidden: true)
-                            Text(departure.publicCode)
-                                .bold()
-                                .font(.callout)
-                        }*/
-                        
-                        ZStack(alignment: .leading) {
-                            Text("111111111111111111")
-                                .opacity(0)
-                                .accessibility(hidden: true)
-                            Text(departure.destinationName)
-                                .font(.footnote)
-                        }
-                        ZStack(alignment: .trailing) {
-                            Text("22:30")
-                                .opacity(0)
-                                .accessibility(hidden: true)
-                            Text(departure.formatTime(departure.time))
-                                .italic()
-                                .font(.callout)
-                                .foregroundColor(departure.isRealTime ? .yellow : .white)
-                        }
-                    }.lineLimit(3)
-                }
-                        
-            }
-        }
-        
+        }.navigationBarTitle("Avganger for")
     }
 }
 
 struct LineDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LineDetailView(departureList: DepartureList(), stop: BusStop(), distance: "183 m")
+        Spacer()
     }
 }

@@ -21,7 +21,7 @@ struct GraphQLQuery: Codable {
                     name
                     latitude
                     longitude
-                    estimatedCalls(timeRange: 72100, numberOfDepartures: 50) {
+                    estimatedCalls(timeRange: 72100, numberOfDepartures: 35) {
                         serviceJourney {
                             journeyPattern {
                                 line {

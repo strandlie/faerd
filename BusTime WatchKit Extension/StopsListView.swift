@@ -12,7 +12,9 @@ struct StopsListView : View {
     
     @ObservedObject var user: User = User.shared
     @ObservedObject var nearbyStops = BusStopList.shared
+    @EnvironmentObject var appState: AppState
     
+
     // Uses the shared instance of user to access the current location
     let sortClosure = { (busStop1: BusStop, busStop2: BusStop) -> Bool in
         guard let distance1 = LocationController.actualDistanceBetween(location1: busStop1.location, location2: User.shared.currentLocation),
@@ -24,69 +26,79 @@ struct StopsListView : View {
     }
     
     var body: some View {
-        VStack {
-            nearbyStops.stops.count == 0
-            ? VStack {
-                Spacer()
-                Text("Ingen stopp i nærheten")
-            }
-            : nil
-            
-           
-            List {
-                NavigationLink(destination: SettingsView()) {
-                    HStack {
+        GeometryReader { geometry in
+            ZStack {
+                VStack {
+                    self.nearbyStops.stops.count == 0
+                    ? VStack {
                         Spacer()
-                        Text("Innstillinger")
-                            .font(.callout)
-                        Spacer()
+                        Text("Ingen stopp i nærheten")
                     }
-                }
-                
-                ForEach(nearbyStops.stops.sorted(by: sortClosure)){ busStop in
-                    NavigationLink(destination: StopDetailView(
-                                        stop: busStop,
-                                        distance: self.nearbyStops.distances[busStop.id]!,
-                                        departureList: busStop.departures))
-                    {
-                        HStack{
-                            ZStack(alignment: .leading) {
-                                Text("999 m")
-                                    .opacity(0)
-                                    .accessibility(hidden: true)
-                                VStack {
-                                    Text(self.nearbyStops.distances[busStop.id]!)
-                                        .font(.caption)
+                    : nil
+                    
+                    ScrollView {
+                        HStack {
+                            Button(action: { print("User wants to see favorites") }) {
+                                Image(systemName: "star.fill")
+                                    .font(.system(size: 28))
+                                    .colorMultiply(.yellow)
+                            }
+                            NavigationLink(destination: SettingsView()) {
+                                    Image(systemName: "gear")
+                                        .font(.system(size: 28))
+                            }.background(Color.blue.cornerRadius(5))
+                            if (self.appState.isFetching)  {
+                                Button(action: {print("Something")}) {
+                                    ActivityIndicator()
+                                    .frame(width: geometry.size.width / 8, height: geometry.size.height / 8)
+                                }.disabled(true)
+                            } else {
+                                Button(action: { self.updateStops()}) {
+                                    Image(systemName: "arrow.clockwise")
+                                        .font(.system(size: 28))
                                 }
                             }
-                                .layoutPriority(0.4)
-                            Image(busStop.types[0].rawValue)
-                                .layoutPriority(0.4)
-                            //TODO: Still not aligning to leading. Try with ZStack
-                            VStack(alignment: .leading) {
-                                Text(busStop.name)
-                                    .font(.footnote)
-                                    .bold()
-                                    .truncationMode(.tail)
-                                    .lineLimit(2)
-                                    
-                            }
-                                .layoutPriority(0.3)
                         }
-                            .navigationBarTitle(Text("Nærmeste"))
-                    }.listRowPlatterColor(.red)
+                        
+                        ForEach(self.nearbyStops.stops.sorted(by: self.sortClosure)){ busStop in
+                            NavigationLink(destination: StopDetailView(
+                                                stop: busStop,
+                                                distance: self.nearbyStops.distances[busStop.id]!,
+                                                departureList: busStop.departures))
+                            {
+                                HStack {
+                                    ZStack(alignment: .leading) {
+                                        Text("999 m")
+                                            .opacity(0)
+                                            .accessibility(hidden: true)
+                                        VStack {
+                                            Text(self.nearbyStops.distances[busStop.id]!)
+                                                .font(.subheadline)
+                                        }
+                                    }.layoutPriority(0.4)
+                                    IconController.getIcon(for: busStop.types[0])
+                                        .layoutPriority(0.4)
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(busStop.name)
+                                            .font(.body)
+                                            .truncationMode(.tail)
+                                            .lineLimit(2)
+                                            
+                                    }.layoutPriority(0.3)
+                                    Spacer()
+                                }.navigationBarTitle(Text("Nærmeste"))
+                            }
+                        }
+                    }
+                            
                 }
-            }.multilineTextAlignment(.center)
-                    
-        }.onAppear(perform: updateStops)
+                .onAppear(perform: self.updateStops)
+            }
+        }
     }
     
-    /*
-     Update the nearbyStops, each time the StopsListView appears
-     Currently there is a bug that makes it only get called
-     the first time this view appears, but this is apparently fixed
-     in XCode 11.2
-     */
+
     private func updateStops() {
         if let currentLocation = User.shared.currentLocation {
             LocationController.shared.updateNearbyStopsTo(coordinate: currentLocation)
