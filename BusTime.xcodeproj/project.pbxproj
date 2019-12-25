@@ -20,12 +20,17 @@
 		30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1A22BC1EFE00D7850D /* BusStop.swift */; };
 		30482D1D22BD216300D7850D /* StopsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1C22BD216300D7850D /* StopsListView.swift */; };
 		30482D2022BD26C500D7850D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1F22BD26C500D7850D /* APIController.swift */; };
-		30482D2522BFB85A00D7850D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D2422BFB85A00D7850D /* User.swift */; };
 		30482D2722BFBE4200D7850D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D2622BFBE4200D7850D /* LocationController.swift */; };
 		307F44D92325A4DD00BDC858 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307F44D82325A4DD00BDC858 /* Departure.swift */; };
 		3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F8EB230B2BBC009CE82B /* BusStopList.swift */; };
 		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
 		8B16119F2351E96A008156E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B16119E2351E96A008156E0 /* Alamofire */; };
+		8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01323B41719006151FF /* RadioPicker.swift */; };
+		8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01423B41719006151FF /* ActivityIndicator.swift */; };
+		8BD0F01923B4172A006151FF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01723B4172A006151FF /* Settings.swift */; };
+		8BD0F01C23B4173B006151FF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01B23B4173B006151FF /* AppState.swift */; };
+		8BD0F02223B417F1006151FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02123B417F0006151FF /* User.swift */; };
+		8BD0F02423B4180D006151FF /* IconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02323B4180D006151FF /* IconController.swift */; };
 		8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7B2346738400C77E59 /* DepartureList.swift */; };
 		8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */; };
 		8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */; };
@@ -94,11 +99,16 @@
 		30482D1A22BC1EFE00D7850D /* BusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
 		30482D1C22BD216300D7850D /* StopsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsListView.swift; sourceTree = "<group>"; };
 		30482D1F22BD26C500D7850D /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
-		30482D2422BFB85A00D7850D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		30482D2622BFBE4200D7850D /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		307F44D82325A4DD00BDC858 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		3092F8EB230B2BBC009CE82B /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
 		30C330CF2306DD2700BCE0DF /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
+		8BD0F01323B41719006151FF /* RadioPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPicker.swift; sourceTree = "<group>"; };
+		8BD0F01423B41719006151FF /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		8BD0F01723B4172A006151FF /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8BD0F01B23B4173B006151FF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8BD0F02123B417F0006151FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8BD0F02323B4180D006151FF /* IconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconController.swift; sourceTree = "<group>"; };
 		8BDFFF7B2346738400C77E59 /* DepartureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureList.swift; sourceTree = "<group>"; };
 		8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLQuery.swift; sourceTree = "<group>"; };
 		8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
@@ -166,6 +176,7 @@
 		30482CFA22BC1CE200D7850D /* BusTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8BD0F01223B41719006151FF /* Utils */,
 				30482D1E22BD26B200D7850D /* Controllers */,
 				30482D1922BC1ECE00D7850D /* Model */,
 				30482CFD22BC1CE200D7850D /* HostingController.swift */,
@@ -199,9 +210,11 @@
 				8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */,
 				8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */,
 				30482D1A22BC1EFE00D7850D /* BusStop.swift */,
-				30482D2422BFB85A00D7850D /* User.swift */,
 				3092F8EB230B2BBC009CE82B /* BusStopList.swift */,
 				307F44D82325A4DD00BDC858 /* Departure.swift */,
+				8BD0F02123B417F0006151FF /* User.swift */,
+				8BD0F01723B4172A006151FF /* Settings.swift */,
+				8BD0F01B23B4173B006151FF /* AppState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,9 +224,19 @@
 			children = (
 				30482D0122BC1CE200D7850D /* NotificationController.swift */,
 				30482D1F22BD26C500D7850D /* APIController.swift */,
+				8BD0F02323B4180D006151FF /* IconController.swift */,
 				30482D2622BFBE4200D7850D /* LocationController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8BD0F01223B41719006151FF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0F01323B41719006151FF /* RadioPicker.swift */,
+				8BD0F01423B41719006151FF /* ActivityIndicator.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B538DE58A449D7DE85682FD3 /* Frameworks */ = {
@@ -366,16 +389,21 @@
 				8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */,
 				8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */,
 				30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */,
+				8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */,
 				30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */,
 				8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */,
+				8BD0F02423B4180D006151FF /* IconController.swift in Sources */,
+				8BD0F02223B417F1006151FF /* User.swift in Sources */,
 				307F44D92325A4DD00BDC858 /* Departure.swift in Sources */,
 				3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */,
 				30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */,
 				30482D2022BD26C500D7850D /* APIController.swift in Sources */,
 				30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */,
 				30482D1D22BD216300D7850D /* StopsListView.swift in Sources */,
+				8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */,
+				8BD0F01C23B4173B006151FF /* AppState.swift in Sources */,
 				8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */,
-				30482D2522BFB85A00D7850D /* User.swift in Sources */,
+				8BD0F01923B4172A006151FF /* Settings.swift in Sources */,
 				30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
