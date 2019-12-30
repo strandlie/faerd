@@ -10,15 +10,7 @@ import Foundation
 import Combine
 
 final class AppState: ObservableObject {
-    @Published var isFetching = false {
-        didSet {
-            if isFetching == true {
-                print("Beginning fetching")
-            } else {
-                print("Done fetching")
-            }
-        }
-    }
+    @Published var isFetching = false 
     
     static let shared = AppState()
 }

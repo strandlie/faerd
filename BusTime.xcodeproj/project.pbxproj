@@ -31,6 +31,14 @@
 		8BD0F01C23B4173B006151FF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01B23B4173B006151FF /* AppState.swift */; };
 		8BD0F02223B417F1006151FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02123B417F0006151FF /* User.swift */; };
 		8BD0F02423B4180D006151FF /* IconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02323B4180D006151FF /* IconController.swift */; };
+		8BD0F02623B41C26006151FF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02523B41C26006151FF /* FavoritesView.swift */; };
+		8BD0F02823B41C63006151FF /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02723B41C63006151FF /* Favorite.swift */; };
+		8BD0F02A23B41C6D006151FF /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02923B41C6D006151FF /* FavoriteList.swift */; };
+		8BD0F02C23B4C531006151FF /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02B23B4C531006151FF /* FavoritesController.swift */; };
+		8BD0F02E23B4C681006151FF /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */; };
+		8BD0F03123B9527E006151FF /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F03023B9527E006151FF /* StopButton.swift */; };
+		8BD0F03323B9555D006151FF /* FavoriteLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F03223B9555D006151FF /* FavoriteLineButton.swift */; };
+		8BD0F03523BA9ED4006151FF /* FavoriteStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F03423BA9ED4006151FF /* FavoriteStopButton.swift */; };
 		8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7B2346738400C77E59 /* DepartureList.swift */; };
 		8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */; };
 		8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */; };
@@ -109,6 +117,14 @@
 		8BD0F01B23B4173B006151FF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		8BD0F02123B417F0006151FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8BD0F02323B4180D006151FF /* IconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconController.swift; sourceTree = "<group>"; };
+		8BD0F02523B41C26006151FF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		8BD0F02723B41C63006151FF /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		8BD0F02923B41C6D006151FF /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
+		8BD0F02B23B4C531006151FF /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		8BD0F03023B9527E006151FF /* StopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
+		8BD0F03223B9555D006151FF /* FavoriteLineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLineButton.swift; sourceTree = "<group>"; };
+		8BD0F03423BA9ED4006151FF /* FavoriteStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStopButton.swift; sourceTree = "<group>"; };
 		8BDFFF7B2346738400C77E59 /* DepartureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureList.swift; sourceTree = "<group>"; };
 		8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLQuery.swift; sourceTree = "<group>"; };
 		8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
@@ -176,6 +192,7 @@
 		30482CFA22BC1CE200D7850D /* BusTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8BD0F02F23B9526A006151FF /* Views */,
 				8BD0F01223B41719006151FF /* Utils */,
 				30482D1E22BD26B200D7850D /* Controllers */,
 				30482D1922BC1ECE00D7850D /* Model */,
@@ -190,6 +207,7 @@
 				30482D0B22BC1CE300D7850D /* PushNotificationPayload.apns */,
 				30482D0722BC1CE300D7850D /* Preview Content */,
 				8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */,
+				8BD0F02523B41C26006151FF /* FavoritesView.swift */,
 			);
 			path = "BusTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -215,6 +233,8 @@
 				8BD0F02123B417F0006151FF /* User.swift */,
 				8BD0F01723B4172A006151FF /* Settings.swift */,
 				8BD0F01B23B4173B006151FF /* AppState.swift */,
+				8BD0F02723B41C63006151FF /* Favorite.swift */,
+				8BD0F02923B41C6D006151FF /* FavoriteList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				30482D0122BC1CE200D7850D /* NotificationController.swift */,
+				8BD0F02B23B4C531006151FF /* FavoritesController.swift */,
 				30482D1F22BD26C500D7850D /* APIController.swift */,
 				8BD0F02323B4180D006151FF /* IconController.swift */,
 				30482D2622BFBE4200D7850D /* LocationController.swift */,
@@ -235,8 +256,19 @@
 			children = (
 				8BD0F01323B41719006151FF /* RadioPicker.swift */,
 				8BD0F01423B41719006151FF /* ActivityIndicator.swift */,
+				8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8BD0F02F23B9526A006151FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0F03023B9527E006151FF /* StopButton.swift */,
+				8BD0F03223B9555D006151FF /* FavoriteLineButton.swift */,
+				8BD0F03423BA9ED4006151FF /* FavoriteStopButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B538DE58A449D7DE85682FD3 /* Frameworks */ = {
@@ -389,19 +421,27 @@
 				8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */,
 				8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */,
 				30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */,
+				8BD0F03123B9527E006151FF /* StopButton.swift in Sources */,
 				8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */,
+				8BD0F02E23B4C681006151FF /* UserDefaultsKeys.swift in Sources */,
 				30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */,
+				8BD0F02A23B41C6D006151FF /* FavoriteList.swift in Sources */,
 				8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */,
+				8BD0F02C23B4C531006151FF /* FavoritesController.swift in Sources */,
 				8BD0F02423B4180D006151FF /* IconController.swift in Sources */,
 				8BD0F02223B417F1006151FF /* User.swift in Sources */,
 				307F44D92325A4DD00BDC858 /* Departure.swift in Sources */,
+				8BD0F03323B9555D006151FF /* FavoriteLineButton.swift in Sources */,
 				3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */,
 				30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */,
+				8BD0F03523BA9ED4006151FF /* FavoriteStopButton.swift in Sources */,
 				30482D2022BD26C500D7850D /* APIController.swift in Sources */,
 				30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */,
 				30482D1D22BD216300D7850D /* StopsListView.swift in Sources */,
 				8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */,
 				8BD0F01C23B4173B006151FF /* AppState.swift in Sources */,
+				8BD0F02823B41C63006151FF /* Favorite.swift in Sources */,
+				8BD0F02623B41C26006151FF /* FavoritesView.swift in Sources */,
 				8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */,
 				8BD0F01923B4172A006151FF /* Settings.swift in Sources */,
 				30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */,

@@ -128,6 +128,7 @@ class APIController: NSObject  {
                 busStop.departures.departures = departures
             
             case .failure(let error):
+                print("Result: \(response.result)")
                 print(error)
                 fatalError()
             }

@@ -11,17 +11,19 @@ import SwiftUI
 
 struct IconController {
     
-    static let imageColorMapping: Dictionary<BusStop.StopType, Color> = [
-        .bus: .red,
-        .train: .blue,
-        .tram: .green,
-        .metro: .orange,
-        .ferry: .yellow,
-        .airport: .purple
+    static let imageColorMapping: Dictionary<String, Color> = [
+        BusStop.StopType.bus.rawValue: .red,
+        BusStop.StopType.train.rawValue: .blue,
+        BusStop.StopType.tram.rawValue: .green,
+        BusStop.StopType.metro.rawValue: .orange,
+        BusStop.StopType.ferry.rawValue: .yellow,
+        BusStop.StopType.airport.rawValue: .purple,
+        Favorite.FavoriteType.stop.rawValue: .white,
+        Favorite.FavoriteType.departure.rawValue: .pink
     ]
     
-    static func getIcon(for stopType: BusStop.StopType) -> some View {
-        return Image(stopType.rawValue)
+    static func getIcon(for stopType: String) -> some View {
+        return Image(stopType)
                 .renderingMode(.original)
                 .colorInvert()
                 .colorMultiply(imageColorMapping[stopType] ?? .accentColor)

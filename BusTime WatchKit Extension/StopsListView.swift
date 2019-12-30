@@ -66,28 +66,7 @@ struct StopsListView : View {
                                                 distance: self.nearbyStops.distances[busStop.id]!,
                                                 departureList: busStop.departures))
                             {
-                                HStack {
-                                    ZStack(alignment: .leading) {
-                                        Text("999 m")
-                                            .opacity(0)
-                                            .accessibility(hidden: true)
-                                        VStack {
-                                            Text(self.nearbyStops.distances[busStop.id]!)
-                                                .font(.subheadline)
-                                        }
-                                    }.layoutPriority(0.4)
-                                    IconController.getIcon(for: busStop.types[0])
-                                        .layoutPriority(0.4)
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(busStop.name)
-                                            .font(.body)
-                                            .truncationMode(.tail)
-                                            .lineLimit(2)
-                                            
-                                    }.layoutPriority(0.3)
-                                    Spacer()
-                                }.navigationBarTitle(Text("Nærmeste"))
+                                StopButton(distance: self.nearbyStops.distances[busStop.id]!, stop: busStop)
                             }
                         }
                     }

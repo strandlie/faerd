@@ -48,28 +48,36 @@ struct AboutScreen: View {
             
             Group {
                 HStack {
-                    IconController.getIcon(for: .bus)
+                    IconController.getIcon(for: BusStop.StopType.bus.rawValue)
                     Text("Icon made by Kirill Kazachek from www.flaticon.com")
                 }
                 HStack {
-                    IconController.getIcon(for: .tram)
+                    IconController.getIcon(for: BusStop.StopType.tram.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
                 }
                 HStack {
-                    IconController.getIcon(for: .metro)
+                    IconController.getIcon(for: BusStop.StopType.metro.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
                 }
                 HStack {
-                    IconController.getIcon(for: .train)
+                    IconController.getIcon(for: BusStop.StopType.train.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
                 }
                 HStack {
-                    IconController.getIcon(for: .airport)
+                    IconController.getIcon(for: BusStop.StopType.airport.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
                 }
                 HStack {
-                    IconController.getIcon(for: .ferry)
+                    IconController.getIcon(for: BusStop.StopType.ferry.rawValue)
                     Text("Icon made by Smashicons from www.flaticon.com")
+                }
+                HStack {
+                    IconController.getIcon(for: Favorite.FavoriteType.stop.rawValue)
+                    Text("Icon made by Freepik from www.flaticon.com")
+                }
+                HStack {
+                    IconController.getIcon(for: Favorite.FavoriteType.departure.rawValue)
+                    Text("Icon made by Freepik from www.flaticon.com")
                 }
             }
         }

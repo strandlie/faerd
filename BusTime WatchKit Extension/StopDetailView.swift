@@ -33,7 +33,7 @@ struct StopDetailView: View {
                     Text(distance)
                         .font(.headline)
                     ForEach(stop.types, id: \.self) { type in
-                        IconController.getIcon(for: type)
+                        IconController.getIcon(for: type.rawValue)
                             .font(.title)
                     }
                 }

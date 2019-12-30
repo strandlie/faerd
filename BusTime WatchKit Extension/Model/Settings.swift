@@ -11,7 +11,7 @@ import Combine
 
 final class Settings: ObservableObject {
     @Published var firstScreenSelection = { () -> FirstScreenSelection in
-        let savedValue = UserDefaults.standard.string(forKey: "firstScreen")
+        let savedValue = UserDefaults.standard.string(forKey: UserDefaultsKeys.firstScreen.rawValue)
         switch(savedValue) {
             case FirstScreenSelection.closest.rawValue:
                 return FirstScreenSelection.closest
@@ -31,7 +31,7 @@ final class Settings: ObservableObject {
     
     init() {
         canc = $firstScreenSelection.sink(receiveValue: { newValue in
-            UserDefaults.standard.set(newValue.rawValue, forKey: "firstScreen")
+            UserDefaults.standard.set(newValue.rawValue, forKey: UserDefaultsKeys.firstScreen.rawValue)
         })
     }
     

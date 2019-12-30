@@ -24,16 +24,7 @@ class DepartureList: ObservableObject {
     
     init() {
         self.departures = []
-        /*
-        let departure1 = Departure(time: Date(),
-                                   isRealTime: true,
-                                   destinationName: "Tyholt",
-                                   publicCode: "22")
-        let departure2 = Departure(time: Date(),
-                                   isRealTime: false,
-                                   destinationName: "Strindheim",
-                                   publicCode: "4")
-        self.departures = [departure1, departure2]*/
+       
     }
     
     
