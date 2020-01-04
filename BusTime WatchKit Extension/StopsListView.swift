@@ -38,14 +38,12 @@ struct StopsListView : View {
                     
                     ScrollView {
                         HStack {
-                            Button(action: { print("User wants to see favorites") }) {
-                                Image(systemName: "star.fill")
-                                    .font(.system(size: 28))
+                            NavigationLink(destination: FavoritesView()) {
+                                IconController.getSystemIcon(for: .star)
                                     .colorMultiply(.yellow)
                             }
                             NavigationLink(destination: SettingsView()) {
-                                    Image(systemName: "gear")
-                                        .font(.system(size: 28))
+                                IconController.getSystemIcon(for: .gear)
                             }.background(Color.blue.cornerRadius(5))
                             if (self.appState.isFetching)  {
                                 Button(action: {print("Something")}) {
@@ -54,8 +52,7 @@ struct StopsListView : View {
                                 }.disabled(true)
                             } else {
                                 Button(action: { self.updateStops()}) {
-                                    Image(systemName: "arrow.clockwise")
-                                        .font(.system(size: 28))
+                                    IconController.getSystemIcon(for: .refresh)
                                 }
                             }
                         }
@@ -77,6 +74,10 @@ struct StopsListView : View {
         }
     }
     
+    private func delete(at offsets: IndexSet) {
+        print(offsets)
+    }
+    
 
     private func updateStops() {
         if let currentLocation = User.shared.currentLocation {
@@ -89,7 +90,7 @@ struct StopsListView : View {
 #if DEBUG
 struct ListStopsView_Previews : PreviewProvider {
     static var previews: some View {
-        StopsListView()
+        EmptyView()
     }
 }
 #endif

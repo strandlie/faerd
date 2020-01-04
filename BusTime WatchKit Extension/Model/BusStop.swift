@@ -14,7 +14,7 @@ import CoreLocation
  Icons by: https://www.flaticon.com/free-icon
  Attribution required
  */
-struct BusStop: Identifiable, Decodable, Equatable {
+struct BusStop: Identifiable, Codable, Equatable {
     
     let id: String
     let name: String // Name of BusStop
@@ -42,13 +42,13 @@ struct BusStop: Identifiable, Decodable, Equatable {
         case metroStation = "metroStation"
         case ferryStop = "ferryStop"
         case airport = "airport"
-       
+        case harbourPort = "harbourPort"
     }
     
     /**
         Enum for icon image names
      */
-    enum StopType: String {
+    enum StopType: String, Codable {
         case bus = "Bus"
         case train = "Train"
         case tram = "Tram"
@@ -109,6 +109,15 @@ struct BusStop: Identifiable, Decodable, Equatable {
         
     }
     
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .identification)
+        try container.encode(name, forKey: .name)
+        try container.encode(location.coordinate.latitude, forKey: .latitude)
+        try container.encode(location.coordinate.longitude, forKey: .longitude)
+        try container.encode(types, forKey: .type)
+    }
+    
     private static func getStopTypes(_ type: [String]) -> [StopType] {
         var types = [StopType]()
         type.forEach {type in
@@ -128,6 +137,20 @@ struct BusStop: Identifiable, Decodable, Equatable {
                 theType = .ferry
             case CodingKeys.airport.rawValue:
                 theType = .airport
+            case CodingKeys.harbourPort.rawValue:
+                theType = .ferry
+            case StopType.bus.rawValue:
+                theType = .bus
+            case StopType.train.rawValue:
+                theType = .train
+            case StopType.tram.rawValue:
+                theType = .tram
+            case StopType.metro.rawValue:
+                theType = .metro
+            case StopType.ferry.rawValue:
+                theType = .ferry
+            case StopType.airport.rawValue:
+                theType = .airport
             default:
                 fatalError("Got unexpected stoptype. Got: \(type)")
             }
@@ -139,8 +162,10 @@ struct BusStop: Identifiable, Decodable, Equatable {
     }
     
     
-    func updateRealtimeDepartures() {
-        APIController.shared.getRealtimeDeparturesForAPIRequest(busStop: self)
+    func updateRealtimeDepartures(completion: @escaping (() -> Void) = {}) {
+        APIController.shared.getRealtimeDeparturesForAPIRequest(busStop: self) {
+            completion()
+        }
     }
 
 }

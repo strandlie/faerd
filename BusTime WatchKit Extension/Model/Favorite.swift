@@ -9,11 +9,11 @@
 import Foundation
 import Combine
 
-class Favorite: ObservableObject, Identifiable, Equatable {
+class Favorite: ObservableObject, Identifiable, Equatable, Codable {
     
-   static func == (lhs: Favorite, rhs: Favorite) -> Bool {
-    return lhs.id == rhs.id
-      }
+    static func == (lhs: Favorite, rhs: Favorite) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     let id: String
     let stop: BusStop

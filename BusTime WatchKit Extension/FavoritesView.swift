@@ -9,28 +9,52 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    
-    @ObservedObject var favoriteList: FavoriteList
-    
+
+    @EnvironmentObject var favoriteList: FavoriteList
     
     var body: some View {
-        List(favoriteList.favorites) { favorite in
-            if favorite.destinationName == nil {
-                NavigationLink(destination: StopDetailView(stop: favorite.stop, distance: "132 m", departureList: favorite.stop.departures)) {
-                    FavoriteStopButton(stop: favorite.stop)
+        Group {
+            favoriteList.favorites.count == 0
+                ? VStack {
+                    Spacer()
+                    Text("Du har ingen favoritter")
                 }
-            } else {
-                NavigationLink(destination: LineDetailView(departureList: DepartureList(departures: []), stop: favorite.stop, distance: "48m")) {
-                    FavoriteLineButton(destinationName: favorite.destinationName ?? "", publicCode: favorite.publicCode ?? "")
+            : nil
+            
+            List(favoriteList.favorites) { favorite in
+                if favorite.destinationName == nil {
+                    NavigationLink(destination: StopDetailView(stop: favorite.stop, distance: getDistance(from: favorite.stop), departureList: favorite.stop.departures)) {
+                        FavoriteStopButton(stop: favorite.stop)
+                    }
+                } else {
+                    NavigationLink(destination: LineDetailView(departureList: getDepartureList(from: favorite), stop: favorite.stop, distance: getDistance(from: favorite.stop))) {
+                        FavoriteLineButton(originName: favorite.stop.name, publicCode: favorite.publicCode ?? "")
+                    }
                 }
-            }
-        }.navigationBarTitle("Favoritter")
+            }.navigationBarTitle("Favoritter")
+                .onAppear(perform: {self.favoriteList.favorites = FavoritesController.shared.getFavorites()})
+        }
+        
     }
 }
 
-private func getDepartures(for favorite: Favorite) {
-    favorite.stop.updateRealtimeDepartures()
+private func getDepartureList(from favorite: Favorite) -> DepartureList {
+    guard let publicCode = favorite.publicCode, let destinationName = favorite.destinationName else {
+        fatalError("Trying to get departures for non-Line Favorite")
+    }
+    let departureList = DepartureList()
+    favorite.stop.updateRealtimeDepartures() {
+        departureList.departures = favorite.stop.departures.filterDown(forPublicCode: publicCode, forDestinationName: destinationName)
+    }
+    return departureList
+}
+
+private func getDistance(from stop: BusStop) -> String {
+    if let userLocation = User.shared.currentLocation {
+        return LocationController.formattedDistanceBetween(location1: userLocation, location2: stop.location)
+    }
     
+    return "-"
 }
 
 struct FavoritesView_Previews: PreviewProvider {
@@ -44,6 +68,6 @@ struct FavoritesView_Previews: PreviewProvider {
     static  let favorite1 = Favorite(stop2)
     
     static var previews: some View {
-        FavoritesView(favoriteList: FavoriteList(favorites: [favorite1, favorite2]))
+        FavoritesView().environmentObject(FavoriteList([favorite1, favorite2]))
     }
 }

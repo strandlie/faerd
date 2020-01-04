@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30482CE822BC1CE000D7850D /* BusTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		30482CE822BC1CE000D7850D /* Ferd.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* Ferd.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		30482CEE22BC1CE000D7850D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEC22BC1CE000D7850D /* Interface.storyboard */; };
 		30482CF022BC1CE200D7850D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEF22BC1CE200D7850D /* Assets.xcassets */; };
 		30482CF722BC1CE200D7850D /* BusTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30482CF622BC1CE200D7850D /* BusTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -82,7 +82,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				30482CE822BC1CE000D7850D /* BusTime WatchKit App.app in Embed Watch Content */,
+				30482CE822BC1CE000D7850D /* Ferd.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,8 +90,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		30482CE322BC1CE000D7850D /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BusTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CE322BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CE722BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CED22BC1CE000D7850D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		30482CEF22BC1CE200D7850D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30482CF122BC1CE200D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 		30482CE422BC1CE000D7850D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30482CE322BC1CE000D7850D /* BusTime.app */,
-				30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */,
+				30482CE322BC1CE000D7850D /* Ferd.app */,
+				30482CE722BC1CE000D7850D /* Ferd.app */,
 				30482CF622BC1CE200D7850D /* BusTime WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -296,7 +296,7 @@
 			);
 			name = BusTime;
 			productName = BusTime;
-			productReference = 30482CE322BC1CE000D7850D /* BusTime.app */;
+			productReference = 30482CE322BC1CE000D7850D /* Ferd.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
 		30482CE622BC1CE000D7850D /* BusTime WatchKit App */ = {
@@ -314,7 +314,7 @@
 			);
 			name = "BusTime WatchKit App";
 			productName = "BusTime WatchKit App";
-			productReference = 30482CE722BC1CE000D7850D /* BusTime WatchKit App.app */;
+			productReference = 30482CE722BC1CE000D7850D /* Ferd.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		30482CF522BC1CE200D7850D /* BusTime WatchKit Extension */ = {
@@ -645,7 +645,7 @@
 				IBSC_MODULE = BusTime_WatchKit_Extension;
 				INFOPLIST_FILE = "BusTime WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ferd;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -664,7 +664,7 @@
 				IBSC_MODULE = BusTime_WatchKit_Extension;
 				INFOPLIST_FILE = "BusTime WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ferd;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -681,7 +681,7 @@
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ferd;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -694,7 +694,7 @@
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.BusTime;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Ferd;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

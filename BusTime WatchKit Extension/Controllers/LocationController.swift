@@ -47,6 +47,9 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             return "-"
         }
         let distance = location1.distance(from: location2).rounded()
+        if distance > 1000 {
+            return String(format: "%.0f", distance / 1000) + " km"
+        }
         return String(format: "%.0f", distance) + " m"
     }
     

@@ -9,18 +9,21 @@
 import SwiftUI
 
 struct FavoriteLineButton: View {
-    let destinationName: String
+    let originName: String
     let publicCode: String
     
     var body: some View {
         HStack {
             IconController.getIcon(for: Favorite.FavoriteType.departure.rawValue)
             
-            VStack(alignment: .leading) {
-                Text(destinationName)
+            HStack {
+                
+                Text(originName)
                     .font(.headline)
                     .truncationMode(.tail)
                     .lineLimit(2)
+                Spacer()
+                Text(publicCode)
             }
             Spacer()
         }
@@ -28,9 +31,9 @@ struct FavoriteLineButton: View {
 }
 
 struct LineButton_Previews: PreviewProvider {
-    static let destinationName = "Tyholt"
+    static let originName = "Tyholt"
     static let publicCode = "22"
     static var previews: some View {
-        FavoriteLineButton(destinationName: destinationName, publicCode: publicCode)
+        FavoriteLineButton(originName: originName, publicCode: publicCode)
     }
 }

@@ -10,27 +10,43 @@ import SwiftUI
 
 struct LineDetailView: View {
     @ObservedObject var departureList: DepartureList
+    @EnvironmentObject var favoriteList: FavoriteList
+    
     let stop: BusStop
     let distance: String
     
+    private var publicCode: String {
+        return departureList.departures.count > 0 ? departureList.departures[0].publicCode : ""
+    }
+    
+    private var destinationName: String {
+        return departureList.departures.count > 0 ? departureList.departures[0].destinationName : ""
+    }
+    
     var body: some View {
         ScrollView {
-            VStack {
-                HStack {
-                    Text(departureList.departures[0].publicCode)
+            HStack {
+                Button(action: { self.toggleFavorite() }  ) {
+                    IconController.getSystemIcon(for: .star)
+                        .colorMultiply(favoriteList.existsLineFavorite(for: stop, destinationName: destinationName, publicCode: publicCode) ? .yellow : .white)
+                }.frame(width: 65)
+                .layoutPriority(0.2)
+                VStack {
+                    HStack {
+                        Text(publicCode)
+                            .bold()
+                            .lineLimit(2)
+                            .font(.subheadline)
+                        Text(" til ")
+                    }
+                    Text(destinationName)
                         .bold()
                         .lineLimit(2)
-                        .font(.subheadline)
-                    Text(" til ")
-                }
-                Text(departureList.departures[0].destinationName)
-                .bold()
-                .lineLimit(2)
-                .font(.headline)
-                .truncationMode(.middle)
+                        .font(.headline)
+                        .truncationMode(.middle)
+                }.layoutPriority(0.8)
             }
-            
-            
+
             Divider().background(Color.red)
             ForEach(departureList.departures) { departure in
                 HStack {
@@ -41,6 +57,11 @@ struct LineDetailView: View {
                 Spacer()
                 
             }
+            departureList.departures.count == 0
+            ? VStack{
+                Text("Ingen avganger")
+                }
+            : nil
             Divider()
             HStack {
                 Text("Avganger i")
@@ -48,6 +69,14 @@ struct LineDetailView: View {
                 
             }
         }.navigationBarTitle("Avganger for")
+    }
+    
+    private func toggleFavorite() {
+        if let existingFavorite = self.favoriteList.getLineFavorite(for: self.stop, destinationName: destinationName, publicCode: publicCode) {
+            self.favoriteList.remove(existingFavorite)
+        } else {
+            self.favoriteList.append(Favorite(self.stop, destinationName: destinationName, publicCode: publicCode))
+        }
     }
 }
 

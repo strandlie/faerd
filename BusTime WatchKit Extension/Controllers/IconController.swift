@@ -29,6 +29,26 @@ struct IconController {
                 .colorMultiply(imageColorMapping[stopType] ?? .accentColor)
     }
     
+    static func getSystemIcon(for name: SystemIcons) -> some View {
+        switch name {
+        case .star:
+            return Image(systemName: name.rawValue)
+                        .font(.system(size: 28))
+        case .gear:
+            return Image(systemName: name.rawValue)
+                        .font(.system(size: 28))
+        case .refresh:
+            return Image(systemName: name.rawValue)
+                        .font(.system(size: 28))
+        }
+    }
+    
+    enum SystemIcons: String {
+        case star = "star.fill"
+        case gear = "gear"
+        case refresh = "arrow.clockwise"
+    }
+    
     
     
 }

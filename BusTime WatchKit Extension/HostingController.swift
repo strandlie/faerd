@@ -23,5 +23,6 @@ struct ContentView: View {
     
     var body: some View {
         StopsListView().environmentObject(AppState.shared)
+        .environmentObject(FavoriteList())
     }
 }

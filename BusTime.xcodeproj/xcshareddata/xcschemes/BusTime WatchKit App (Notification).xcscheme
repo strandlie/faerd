@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-               BuildableName = "BusTime WatchKit App.app"
+               BuildableName = "Ferd.app"
                BlueprintName = "BusTime WatchKit App"
                ReferencedContainer = "container:BusTime.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30482CE222BC1CE000D7850D"
-               BuildableName = "BusTime.app"
+               BuildableName = "Ferd.app"
                BlueprintName = "BusTime"
                ReferencedContainer = "container:BusTime.xcodeproj">
             </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-            BuildableName = "BusTime WatchKit App.app"
+            BuildableName = "Ferd.app"
             BlueprintName = "BusTime WatchKit App"
             ReferencedContainer = "container:BusTime.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-            BuildableName = "BusTime WatchKit App.app"
+            BuildableName = "Ferd.app"
             BlueprintName = "BusTime WatchKit App"
             ReferencedContainer = "container:BusTime.xcodeproj">
          </BuildableReference>
@@ -93,7 +93,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-            BuildableName = "BusTime WatchKit App.app"
+            BuildableName = "Ferd.app"
             BlueprintName = "BusTime WatchKit App"
             ReferencedContainer = "container:BusTime.xcodeproj">
          </BuildableReference>

@@ -15,7 +15,6 @@ struct FavoriteStopButton: View {
         HStack {
             IconController.getIcon(for: Favorite.FavoriteType.stop.rawValue)
                 .layoutPriority(0.6)
-            
             VStack(alignment: .leading) {
                 Text(stop.name)
                     .font(.body)

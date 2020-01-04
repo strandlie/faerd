@@ -13,7 +13,7 @@ class DepartureList: ObservableObject {
     @Published var departures: [Departure]
     
     func filterDown(forPublicCode publicCode: String, forDestinationName destinationName: String) -> [Departure] {
-        return departures.filter { departure in departure.publicCode == publicCode && departure.destinationName == destinationName
+        return departures.filter { departure in departure.publicCode == publicCode && departure.destinationName == destinationName && departure.time.timeIntervalSinceNow >= 0
         }
     }
     

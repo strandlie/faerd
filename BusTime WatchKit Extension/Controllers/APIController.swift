@@ -86,7 +86,7 @@ class APIController: NSObject  {
     
     //MARK: GraphQL requests
     
-    func getRealtimeDeparturesForAPIRequest(busStop: BusStop) {
+    func getRealtimeDeparturesForAPIRequest(busStop: BusStop, completion: @escaping(() -> Void) = {}) {
         AppState.shared.isFetching = true
         
         let graphQLQuery = GraphQLQuery(stopID: busStop.id)
@@ -133,6 +133,7 @@ class APIController: NSObject  {
                 fatalError()
             }
             AppState.shared.isFetching = false
+            completion()
         }
     }
     
