@@ -44,7 +44,7 @@ private struct RadioOption: View {
 struct RadioPicker_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RadioPicker(options: [.closest, .favorites, .list], currentlySelected: .constant(.closest))
+            RadioPicker(options: [.favorites, .list], currentlySelected: .constant(.list))
         }
         
     }

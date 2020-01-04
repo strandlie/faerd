@@ -25,7 +25,7 @@ struct SettingsView: View {
             Spacer()
             VStack(alignment: .leading) {
                 Text("Startskjerm").font(.headline)
-                RadioPicker(options: [.list, .closest, .favorites], currentlySelected: $settings.firstScreenSelection)
+                RadioPicker(options: [.list, .favorites], currentlySelected: $settings.firstScreenSelection)
                 
             }
             

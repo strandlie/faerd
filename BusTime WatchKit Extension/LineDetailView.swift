@@ -68,7 +68,7 @@ struct LineDetailView: View {
                 Text("sanntid").foregroundColor(.yellow)
                 
             }
-        }.navigationBarTitle("Avganger for")
+        }.navigationBarTitle("Avganger")
     }
     
     private func toggleFavorite() {

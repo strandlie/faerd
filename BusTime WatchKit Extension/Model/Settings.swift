@@ -13,8 +13,6 @@ final class Settings: ObservableObject {
     @Published var firstScreenSelection = { () -> FirstScreenSelection in
         let savedValue = UserDefaults.standard.string(forKey: UserDefaultsKeys.firstScreen.rawValue)
         switch(savedValue) {
-            case FirstScreenSelection.closest.rawValue:
-                return FirstScreenSelection.closest
             case FirstScreenSelection.list.rawValue:
                 return FirstScreenSelection.list
             case FirstScreenSelection.favorites.rawValue:
@@ -44,13 +42,11 @@ final class Settings: ObservableObject {
 
 enum FirstScreenSelection: String, CaseIterable {
     case list = "Liste"
-    case closest = "Nærmest"
     case favorites = "Favoritter"
     
     init?(id: Int) {
         switch id {
         case 1: self = .list
-        case 2: self = .closest
         case 3: self = .favorites
         default: return nil
         }

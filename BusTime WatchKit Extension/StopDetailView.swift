@@ -10,8 +10,6 @@ import SwiftUI
 import Combine
 
 struct StopDetailView: View {
-    // Make the stop the ObservedObject, and make it subscribe to changes in DepartureList
-    // and publish these to the StopDetailView
     let stop: BusStop
     let distance: String
     

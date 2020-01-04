@@ -43,6 +43,7 @@ struct BusStop: Identifiable, Codable, Equatable {
         case ferryStop = "ferryStop"
         case airport = "airport"
         case harbourPort = "harbourPort"
+        case liftStation = "liftStation"
     }
     
     /**
@@ -55,6 +56,7 @@ struct BusStop: Identifiable, Codable, Equatable {
         case metro = "Metro"
         case ferry = "Ferry"
         case airport = "Plane"
+        case lift = "Lift"
     }
     
     enum Direction: String {
@@ -139,6 +141,8 @@ struct BusStop: Identifiable, Codable, Equatable {
                 theType = .airport
             case CodingKeys.harbourPort.rawValue:
                 theType = .ferry
+            case CodingKeys.liftStation.rawValue:
+                theType = .lift
             case StopType.bus.rawValue:
                 theType = .bus
             case StopType.train.rawValue:

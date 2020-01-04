@@ -18,6 +18,7 @@ struct IconController {
         BusStop.StopType.metro.rawValue: .orange,
         BusStop.StopType.ferry.rawValue: .yellow,
         BusStop.StopType.airport.rawValue: .purple,
+        BusStop.StopType.lift.rawValue: .white,
         Favorite.FavoriteType.stop.rawValue: .white,
         Favorite.FavoriteType.departure.rawValue: .pink
     ]

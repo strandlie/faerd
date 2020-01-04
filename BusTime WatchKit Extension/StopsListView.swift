@@ -14,6 +14,16 @@ struct StopsListView : View {
     @ObservedObject var nearbyStops = BusStopList.shared
     @EnvironmentObject var appState: AppState
     
+    /*
+        This is hacky and not really consistent with the semantics of @State.
+        Really want to fetch this with a binding from settings, but can't make
+        it work without proper error messages from SwiftUI.
+    */
+    @State private var firstViewSelection: Int? = Settings.shared.firstScreenSelection.hashValue
+    
+    let filterClosure = { (busStop: BusStop) -> Bool in
+        return busStop.departures.departures.count > 0
+    }
 
     // Uses the shared instance of user to access the current location
     let sortClosure = { (busStop1: BusStop, busStop2: BusStop) -> Bool in
@@ -38,7 +48,7 @@ struct StopsListView : View {
                     
                     ScrollView {
                         HStack {
-                            NavigationLink(destination: FavoritesView()) {
+                            NavigationLink(destination: FavoritesView(), tag: FirstScreenSelection.favorites.hashValue, selection: self.$firstViewSelection) {
                                 IconController.getSystemIcon(for: .star)
                                     .colorMultiply(.yellow)
                             }
@@ -57,7 +67,7 @@ struct StopsListView : View {
                             }
                         }
                         
-                        ForEach(self.nearbyStops.stops.sorted(by: self.sortClosure)){ busStop in
+                        ForEach(self.nearbyStops.stops.filter(self.filterClosure).sorted(by: self.sortClosure)){ busStop in
                             NavigationLink(destination: StopDetailView(
                                                 stop: busStop,
                                                 distance: self.nearbyStops.distances[busStop.id]!,
