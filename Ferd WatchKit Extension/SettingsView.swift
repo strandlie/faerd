@@ -48,7 +48,11 @@ struct AboutScreen: View {
     var body: some View {
         ScrollView {
             Text(description)
-            Text(website)
+            HStack {
+                Text(website)
+                Spacer()
+            }
+
                 
             Divider()
             VStack(alignment: .leading) {
@@ -63,38 +67,47 @@ struct AboutScreen: View {
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.bus.rawValue)
                     Text("Icon made by Kirill Kazachek from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.tram.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.metro.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.train.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.airport.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.ferry.rawValue)
                     Text("Icon made by Smashicons from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: BusStop.StopType.lift.rawValue)
                     Text("Icon made by Made from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: Favorite.FavoriteType.stop.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
+                    Spacer()
                 }
                 HStack {
                     IconController.getIcon(for: Favorite.FavoriteType.departure.rawValue)
                     Text("Icon made by Freepik from www.flaticon.com")
+                    Spacer()
                 }
             }
         }.navigationBarTitle(settings)
