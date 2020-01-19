@@ -18,7 +18,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                   LocationController.shared.updateNearbyStopsTo(coordinate: currentLocation)
                       
         } else {
-            let delay = DispatchTime.now() + .milliseconds(500)
+            let delay = DispatchTime.now() + .milliseconds(1000)
             DispatchQueue.main.asyncAfter(deadline: delay) {
                 LocationController.shared.updateStopsNearUser()
             }
