@@ -47,6 +47,7 @@ struct AboutScreen: View {
     
     var body: some View {
         ScrollView {
+            Image("Logo")
             Text(description)
             HStack {
                 Text(website)

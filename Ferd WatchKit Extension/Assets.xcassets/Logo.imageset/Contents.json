@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "idiom" : "watch",
+      "filename" : "white_logo_dark_background.jpg",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
