@@ -28,7 +28,7 @@ struct StopsListView : View {
     @State private var firstViewSelection: Int? = Settings.shared.firstScreenSelection.hashValue
     
     static let filterClosure = { (busStop: BusStop) -> Bool in
-        return busStop.departures.departures.count > 0 || AppState.shared.isFetching
+        return busStop.departures.departures.count > 0
     }
 
     // Uses the shared instance of user to access the current location

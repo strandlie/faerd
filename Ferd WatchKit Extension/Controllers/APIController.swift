@@ -77,6 +77,7 @@ class APIController: NSObject  {
                 print("Value: \(value)")
                 
             }
+            BusStopList.shared.updateDepartures()
             AppState.shared.isFetching = false
             
         }

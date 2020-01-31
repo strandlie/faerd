@@ -59,6 +59,13 @@ class BusStopList: ObservableObject {
         }
     }
     
+    func removeAll() {
+        self.stops.forEach { stop in
+            stop.departures.departures.removeAll()
+        }
+        self.stops.removeAll()
+    }
+    
     
     init() {
 

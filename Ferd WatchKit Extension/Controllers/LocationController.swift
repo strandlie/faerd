@@ -85,6 +85,16 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        switch(status) {
+        case .authorizedAlways, .authorizedWhenInUse:
+            AppState.shared.hasLocationAccess = true
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        case .denied, .notDetermined, .restricted:
+            BusStopList.shared.removeAll()
+        @unknown default:
+            fatalError("Unexpected location status: \(status)")
+        }
     }
     
 }
