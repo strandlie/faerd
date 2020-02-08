@@ -32,10 +32,6 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To be able to show you nearby stops. </string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>location</string>
-	</array>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>WKWatchOnly</key>
