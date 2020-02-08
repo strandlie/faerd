@@ -20,12 +20,7 @@ struct StopsListView : View {
     let open_iphone: LocalizedStringKey = "open_iphone"
     let instructions: LocalizedStringKey = "instructions"
     
-    /*
-        This is hacky and not really consistent with the semantics of @State.
-        Really want to fetch this with a binding from settings, but can't make
-        it work without proper error messages from SwiftUI.
-    */
-    @State private var firstViewSelection: Int? = Settings.shared.firstScreenSelection.hashValue
+    @State var firstScreenIsFavorites = Settings.shared.firstScreenSelection == .favorites
     
     static let filterClosure = { (busStop: BusStop) -> Bool in
         return busStop.departures.departures.count > 0
@@ -78,7 +73,7 @@ struct StopsListView : View {
                     self.appState.hasLocationAccess
                     ? ScrollView {
                         HStack {
-                            NavigationLink(destination: FavoritesView(), tag: FirstScreenSelection.favorites.hashValue, selection: self.$firstViewSelection) {
+                            NavigationLink(destination: FavoritesView(), isActive: self.$firstScreenIsFavorites) {
                                 IconController.getSystemIcon(for: .star)
                                     .colorMultiply(.yellow)
                             }
