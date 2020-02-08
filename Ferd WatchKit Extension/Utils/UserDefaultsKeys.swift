@@ -9,4 +9,5 @@
 enum UserDefaultsKeys: String {
     case firstScreen = "firstScreen"
     case favorites = "favorites"
+    case premiumFavoritesStatus = "premiumFavoritesStatus"
 }

@@ -17,9 +17,13 @@ struct FavoritesView: View {
     let favorites: LocalizedStringKey = "favorites"
     let press: LocalizedStringKey = "press"
     let to_begin: LocalizedStringKey = "to_begin"
+    let premium_favorites: LocalizedStringKey = "premium_favorites"
+    let max_favorites: LocalizedStringKey = "max_favorites"
+    let upgrade: LocalizedStringKey = "upgrade"
+    let benefits: LocalizedStringKey = "benefits"
     
     var body: some View {
-        Group {
+        ScrollView {
             favoriteList.favorites.count == 0
                 ? VStack {
                     Spacer()
@@ -32,8 +36,8 @@ struct FavoritesView: View {
                     Text(to_begin)
                 }
             : nil
-            
-            List(favoriteList.favorites) { favorite in
+                        
+            ForEach(favoriteList.favorites) { favorite in
                 if favorite.destinationName == nil {
                     NavigationLink(destination: StopDetailView(stop: favorite.stop, distance: getDistance(from: favorite.stop), departureList: favorite.stop.departures)) {
                         FavoriteStopButton(stop: favorite.stop)
@@ -45,6 +49,32 @@ struct FavoritesView: View {
                 }
             }.navigationBarTitle(favorites)
                 .onAppear(perform: {self.favoriteList.favorites = FavoritesController.shared.getFavorites()})
+            
+            
+            !favoriteList.canAddMoreFavorites
+                ? VStack {
+                    HStack {
+                        
+                        Text(premium_favorites)
+                            .font(.headline)
+                            .lineLimit(2)
+                        IconController.getSystemIcon(for: .star)
+                            .colorMultiply(.yellow)
+                    }
+                    
+                    Spacer()
+                    Text(max_favorites)
+                        .font(.body)
+                    Button(action: {StoreController.shared.userWantsToBuyPremiumFavorites()}) {
+                        Text(upgrade)
+                            .font(.headline)
+        
+                    }
+                    Text(benefits)
+                        .font(.body)
+                    }.padding()
+            : nil
+
         }
         
     }

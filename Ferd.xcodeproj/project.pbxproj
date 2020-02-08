@@ -25,7 +25,10 @@
 		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
 		8B16119F2351E96A008156E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B16119E2351E96A008156E0 /* Alamofire */; };
 		8B341E0C23C2463400E0B698 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B60A7CF23C1591600D97191 /* Localizable.strings */; };
+		8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7123EF2ACD00B7B597 /* StoreController.swift */; };
+		8B70FC7523EF440C00B7B597 /* FerdComplicationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7423EF440C00B7B597 /* FerdComplicationDataSource.swift */; };
 		8B93BC3B23D30BED005C9725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B93BC3A23D30BED005C9725 /* Assets.xcassets */; };
+		8BBF19E123EF1F7900B5A2DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */; };
 		8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01323B41719006151FF /* RadioPicker.swift */; };
 		8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01423B41719006151FF /* ActivityIndicator.swift */; };
 		8BD0F01923B4172A006151FF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01723B4172A006151FF /* Settings.swift */; };
@@ -114,7 +117,11 @@
 		8B341E0B23C2456400E0B698 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B60A7CE23C1591600D97191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B60A7D323C159E900D97191 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Interface.strings; sourceTree = "<group>"; };
+		8B70FC7123EF2ACD00B7B597 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		8B70FC7423EF440C00B7B597 /* FerdComplicationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerdComplicationDataSource.swift; sourceTree = "<group>"; };
 		8B93BC3A23D30BED005C9725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BBF19E223EF1F7900B5A2DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BBF19E423EF1F7D00B5A2DA /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BD0F01323B41719006151FF /* RadioPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPicker.swift; sourceTree = "<group>"; };
 		8BD0F01423B41719006151FF /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		8BD0F01723B4172A006151FF /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -196,7 +203,9 @@
 		30482CFA22BC1CE200D7850D /* Ferd WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8B70FC7323EF43CE00B7B597 /* Complications */,
 				8B60A7CF23C1591600D97191 /* Localizable.strings */,
+				8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */,
 				8BD0F02F23B9526A006151FF /* Views */,
 				8BD0F01223B41719006151FF /* Utils */,
 				30482D1E22BD26B200D7850D /* Controllers */,
@@ -252,8 +261,17 @@
 				30482D1F22BD26C500D7850D /* APIController.swift */,
 				8BD0F02323B4180D006151FF /* IconController.swift */,
 				30482D2622BFBE4200D7850D /* LocationController.swift */,
+				8B70FC7123EF2ACD00B7B597 /* StoreController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B70FC7323EF43CE00B7B597 /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+				8B70FC7423EF440C00B7B597 /* FerdComplicationDataSource.swift */,
+			);
+			path = Complications;
 			sourceTree = "<group>";
 		};
 		8BD0F01223B41719006151FF /* Utils */ = {
@@ -409,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30482D0922BC1CE300D7850D /* Preview Assets.xcassets in Resources */,
+				8BBF19E123EF1F7900B5A2DA /* InfoPlist.strings in Resources */,
 				8B341E0C23C2463400E0B698 /* Localizable.strings in Resources */,
 				30482D0622BC1CE300D7850D /* Assets.xcassets in Resources */,
 			);
@@ -422,6 +441,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
+				8B70FC7523EF440C00B7B597 /* FerdComplicationDataSource.swift in Sources */,
+				8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */,
 				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
 				8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */,
 				8BEA76CE2357AED3008E8DA0 /* SettingsView.swift in Sources */,
@@ -489,6 +510,15 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BBF19E223EF1F7900B5A2DA /* en */,
+				8BBF19E423EF1F7D00B5A2DA /* nb */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -543,6 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -598,6 +629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = Ferd;
@@ -628,7 +660,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -652,7 +684,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -671,7 +703,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -690,7 +722,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};

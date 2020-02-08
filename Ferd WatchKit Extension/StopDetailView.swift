@@ -21,8 +21,11 @@ struct StopDetailView: View {
     
     @ObservedObject var departureList: DepartureList
     @EnvironmentObject var favoriteList: FavoriteList
+    @EnvironmentObject var appState: AppState
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State var numDeparturesToLoad = 20
+    @State var favoritesWarningIsPresented = false
     
     static let filterClosure = { (departure: Departure) -> Bool in
         return departure.time.timeIntervalSinceNow >= 0
@@ -41,10 +44,20 @@ struct StopDetailView: View {
                     .font(.title)
                     .truncationMode(.middle)
                 HStack {
-                    Button(action: { self.toggleFavorite() }  ) {
+                    Button(action: {
+                        if (self.favoriteList.existsLocationFavorite(for: self.stop) || self.favoriteList.canAddMoreFavorites) {
+                            self.favoritesWarningIsPresented = false
+                            self.toggleFavorite()
+                        } else {
+                            self.favoritesWarningIsPresented = true
+                        }
+                        
+                    })
+                    {
                         IconController.getSystemIcon(for: .star)
                             .colorMultiply(favoriteList.existsLocationFavorite(for: stop) ? .yellow : .white)
                     }.frame(width: 50)
+                        
                     Text(distance)
                         .font(.headline)
                     ForEach(stop.types, id: \.self) { type in
@@ -105,6 +118,18 @@ struct StopDetailView: View {
             : nil
         }
         .navigationBarTitle(departures)
+        .onReceive(self.appState.$isInForeground) { value in
+            if !value {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }
+        .alert(isPresented: $favoritesWarningIsPresented, content: {
+            Alert(title: Text("Max number of favorites"),
+                  message: Text("Upgrade to Premium Favorites to store unlimited favorites"),
+                  dismissButton: .default(Text("OK")) {
+                    self.favoritesWarningIsPresented = false
+                })
+        })
     }
     
     private func toggleFavorite() {

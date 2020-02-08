@@ -23,7 +23,7 @@ struct FavoriteStopButton: View {
                     
             }.layoutPriority(0.4)
             Spacer()
-        }
+        }.padding()
     }
 }
 

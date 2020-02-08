@@ -10,14 +10,30 @@ import Foundation
 
 class FavoriteList: ObservableObject {
     
-    @Published var favorites: [Favorite]
+    static let FreeFavoriteLimit = 2
+    
+    @Published var favorites: [Favorite] {
+        didSet {
+            canAddMoreFavorites = FavoriteList.calculateAddStatus(for: favorites)
+        }
+    }
+    @Published var canAddMoreFavorites: Bool
     
     init(_ favorites: [Favorite]) {
         self.favorites = favorites
+        self.canAddMoreFavorites = FavoriteList.calculateAddStatus(for: favorites)
     }
     
     init() {
-        self.favorites = FavoritesController.shared.getFavorites()
+        let favorites = FavoritesController.shared.getFavorites()
+        self.canAddMoreFavorites = FavoriteList.calculateAddStatus(for: favorites)
+        self.favorites = favorites
+    }
+    
+    var count: Int {
+        get {
+            return self.favorites.count
+        }
     }
     
     func existsLocationFavorite(for stop: BusStop) -> Bool {
@@ -59,8 +75,13 @@ class FavoriteList: ObservableObject {
     
     
     func append(_ favorite: Favorite) {
-        self.favorites.append(favorite)
-        FavoritesController.shared.addFavorite(favorite)
+        if canAddMoreFavorites {
+            self.favorites.append(favorite)
+            FavoritesController.shared.addFavorite(favorite)
+        } else {
+            fatalError("Tried to append a new favorite when does not have premium status. Should never happen")
+        }
+        
     }
     
     func remove(_ favorite: Favorite) {
@@ -69,4 +90,10 @@ class FavoriteList: ObservableObject {
         }
         FavoritesController.shared.removeFavorite(favorite)
     }
+    
+    private static func calculateAddStatus(for favorites: [Favorite]) -> Bool {
+        return favorites.count < FavoriteList.FreeFavoriteLimit || AppState.shared.hasPremiumFavorites
+    }
+    
+    
 }

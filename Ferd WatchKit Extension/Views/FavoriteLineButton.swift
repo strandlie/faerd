@@ -26,7 +26,7 @@ struct FavoriteLineButton: View {
                 Text(publicCode)
             }
             Spacer()
-        }
+        }.padding()
     }
 }
 

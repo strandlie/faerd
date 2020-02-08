@@ -41,6 +41,10 @@
 "no_favorites" = "You have no favorites";
 "press" = "Press ";
 "to_begin" = " to add your first";
+"premium_favorites" = "Premium Favorites";
+"max_favorites" = "You have reached the maximum number of favorites.";
+"upgrade" = "Upgrade";
+"benefits" = "to Premium Favorites and unlock unlimited favorites, while supporting indie development 🤓";
 
 
 

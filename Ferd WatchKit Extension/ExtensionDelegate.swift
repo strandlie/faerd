@@ -24,6 +24,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
         BusStopList.shared.updateDepartures()
+        AppState.shared.isInForeground = true
     }
 
     func applicationWillResignActive() {
@@ -32,13 +33,22 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     func applicationDidEnterBackground() {
+        AppState.shared.isInForeground = false
         BusStopList.shared.clean()
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date.init(timeInterval: 1200, since: Date()), userInfo: nil, scheduledCompletion: backgroundRefreshRunning)
+    }
+    
+    private func backgroundRefreshRunning(error: Error?) {
+        if (error != nil) {
+            print("Error running background task: \(error.debugDescription)")
+        }
     }
     
     
 
     func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
+        print("Background task")
         for task in backgroundTasks {
             // Use a switch statement to check the task type
             switch task {

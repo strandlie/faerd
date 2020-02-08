@@ -42,7 +42,7 @@ struct LineDetailView: View {
                         Text(publicCode)
                             .bold()
                             .lineLimit(2)
-                            .font(.subheadline)
+                            .font(.headline)
                         Text(to)
                         
                     }
@@ -62,10 +62,10 @@ struct LineDetailView: View {
                 HStack {
                     departure.time.timeIntervalSinceNow > 45
                     ? Text(departure.timeToDeparture)
-                        .font(.callout)
+                        .font(.system(size: 23))
                         .foregroundColor(departure.isRealTime ? .yellow : .white)
                         : Text(StopDetailView.now)
-                        .font(.callout)
+                            .font(.system(size: 23))
                             .foregroundColor(departure.isRealTime ? .yellow : .white)
                 }
                 Spacer()
