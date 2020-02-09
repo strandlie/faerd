@@ -18,6 +18,11 @@ struct StopDetailView: View {
     let no_departures: LocalizedStringKey = "no_departures"
     let departures: LocalizedStringKey = "departures"
     let load_more: LocalizedStringKey = "load_more"
+    let max_favorites: LocalizedStringKey = "max_favorites"
+    let premium_required: LocalizedStringKey = "premium_required"
+    let upgrade_for_unlimited: LocalizedStringKey = "upgrade_for_unlimited"
+    let upgrade: LocalizedStringKey = "upgrade"
+    let keep_free: LocalizedStringKey = "keep_free"
     
     @ObservedObject var departureList: DepartureList
     @EnvironmentObject var favoriteList: FavoriteList
@@ -45,7 +50,7 @@ struct StopDetailView: View {
                     .truncationMode(.middle)
                 HStack {
                     Button(action: {
-                        if (self.favoriteList.existsLocationFavorite(for: self.stop) || self.favoriteList.canAddMoreFavorites) {
+                        if (self.favoriteList.existsLocationFavorite(for: self.stop) || self.favoriteList.canAddMoreFavorites()) {
                             self.favoritesWarningIsPresented = false
                             self.toggleFavorite()
                         } else {
@@ -124,11 +129,15 @@ struct StopDetailView: View {
             }
         }
         .alert(isPresented: $favoritesWarningIsPresented, content: {
-            Alert(title: Text("Max number of favorites"),
-                  message: Text("Upgrade to Premium Favorites to store unlimited favorites"),
-                  dismissButton: .default(Text("OK")) {
+            Alert(title: Text(premium_required),
+                  message: Text(max_favorites) + Text("\n\n") + Text(upgrade_for_unlimited),
+                  primaryButton: .default(Text(upgrade)) {
+                    StoreController.shared.userWantsToBuyPremiumFavorites()
+                    self.favoritesWarningIsPresented = false
+                    } , secondaryButton: .destructive(Text(keep_free)) {
                     self.favoritesWarningIsPresented = false
                 })
+            
         })
     }
     

@@ -51,7 +51,7 @@ struct FavoritesView: View {
                 .onAppear(perform: {self.favoriteList.favorites = FavoritesController.shared.getFavorites()})
             
             
-            !favoriteList.canAddMoreFavorites
+            !favoriteList.canAddMoreFavorites()
                 ? VStack {
                     HStack {
                         

@@ -12,11 +12,18 @@ struct LineDetailView: View {
     @ObservedObject var departureList: DepartureList
     @EnvironmentObject var favoriteList: FavoriteList
     
+    @State var favoritesWarningIsPresented = false
+    
     // MARK: Localization
     let to: LocalizedStringKey = "to"
     let departures_in: LocalizedStringKey = "departures_in"
     let realtime: LocalizedStringKey = "realtime"
     let no_departures: LocalizedStringKey = "no_departures"
+    let upgrade: LocalizedStringKey = "upgrade"
+    let max_favorites: LocalizedStringKey = "max_favorites"
+    let premium_required: LocalizedStringKey = "premium_required"
+    let upgrade_for_unlimited: LocalizedStringKey = "upgrade_for_unlimited"
+    let keep_free: LocalizedStringKey = "keep_free"
     
     let stop: BusStop
     let distance: String
@@ -32,7 +39,15 @@ struct LineDetailView: View {
     var body: some View {
         ScrollView {
             HStack {
-                Button(action: { self.toggleFavorite() }  ) {
+                Button(action: {
+                    if (self.favoriteList.existsLocationFavorite(for: self.stop) || self.favoriteList.canAddMoreFavorites()) {
+                        self.favoritesWarningIsPresented = false
+                        self.toggleFavorite()
+                    } else {
+                        self.favoritesWarningIsPresented = true
+                    }
+                    
+                }) {
                     IconController.getSystemIcon(for: .star)
                         .colorMultiply(favoriteList.existsLineFavorite(for: stop, destinationName: destinationName, publicCode: publicCode) ? .yellow : .white)
                 }.frame(width: 50)
@@ -62,10 +77,10 @@ struct LineDetailView: View {
                 HStack {
                     departure.time.timeIntervalSinceNow > 45
                     ? Text(departure.timeToDeparture)
-                        .font(.system(size: 23))
+                        .font(.system(size: 19))
                         .foregroundColor(departure.isRealTime ? .yellow : .white)
                         : Text(StopDetailView.now)
-                            .font(.system(size: 23))
+                            .font(.system(size: 19))
                             .foregroundColor(departure.isRealTime ? .yellow : .white)
                 }
                 Spacer()
@@ -83,6 +98,17 @@ struct LineDetailView: View {
                 
             }
         }
+        .alert(isPresented: $favoritesWarningIsPresented, content: {
+            Alert(title: Text(premium_required),
+                  message: Text(max_favorites) + Text("\n\n") + Text(upgrade_for_unlimited),
+                  primaryButton: .default(Text(upgrade)) {
+                    StoreController.shared.userWantsToBuyPremiumFavorites()
+                    self.favoritesWarningIsPresented = false
+                },
+                  secondaryButton: .destructive(Text(keep_free)) {
+                    self.favoritesWarningIsPresented = false
+            })
+        })
     }
     
     private func toggleFavorite() {
@@ -96,6 +122,6 @@ struct LineDetailView: View {
 
 struct LineDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        Spacer()
+        EmptyView()
     }
 }

@@ -12,21 +12,14 @@ class FavoriteList: ObservableObject {
     
     static let FreeFavoriteLimit = 2
     
-    @Published var favorites: [Favorite] {
-        didSet {
-            canAddMoreFavorites = FavoriteList.calculateAddStatus(for: favorites)
-        }
-    }
-    @Published var canAddMoreFavorites: Bool
+    @Published var favorites: [Favorite]
     
     init(_ favorites: [Favorite]) {
         self.favorites = favorites
-        self.canAddMoreFavorites = FavoriteList.calculateAddStatus(for: favorites)
     }
     
     init() {
         let favorites = FavoritesController.shared.getFavorites()
-        self.canAddMoreFavorites = FavoriteList.calculateAddStatus(for: favorites)
         self.favorites = favorites
     }
     
@@ -75,7 +68,7 @@ class FavoriteList: ObservableObject {
     
     
     func append(_ favorite: Favorite) {
-        if canAddMoreFavorites {
+        if canAddMoreFavorites() {
             self.favorites.append(favorite)
             FavoritesController.shared.addFavorite(favorite)
         } else {
@@ -91,8 +84,8 @@ class FavoriteList: ObservableObject {
         FavoritesController.shared.removeFavorite(favorite)
     }
     
-    private static func calculateAddStatus(for favorites: [Favorite]) -> Bool {
-        return favorites.count < FavoriteList.FreeFavoriteLimit || AppState.shared.hasPremiumFavorites
+    func canAddMoreFavorites() -> Bool {
+        return self.favorites.count < FavoriteList.FreeFavoriteLimit || AppState.shared.hasPremiumFavorites
     }
     
     

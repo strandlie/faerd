@@ -15,6 +15,7 @@ struct SettingsView: View {
     
     // MARK: Localization
     let about: LocalizedStringKey = "about"
+    let premium_features: LocalizedStringKey = "premium_features"
     let start_screen: LocalizedStringKey = "start_screen"
     
     var body: some View {
@@ -22,6 +23,9 @@ struct SettingsView: View {
             NavigationLink(destination: AboutScreen()) {
                 Text(about)
                     
+            }
+            NavigationLink(destination: PremiumScreen()) {
+                Text(premium_features)
             }
 
             Spacer()
@@ -38,6 +42,7 @@ struct SettingsView: View {
 struct AboutScreen: View {
     
     // MARK: Localization
+    let love: LocalizedStringKey = "love"
     let description: LocalizedStringKey = "description"
     let website: LocalizedStringKey = "website"
     let credits: LocalizedStringKey = "credits"
@@ -49,10 +54,11 @@ struct AboutScreen: View {
         ScrollView {
             Image("Logo")
             Text(description)
-            HStack {
-                Text(website)
-                Spacer()
-            }
+                .font(.caption)
+            Text(website)
+                .font(.caption)
+                .kerning(2)
+                .padding(.top)
 
                 
             Divider()
@@ -115,6 +121,13 @@ struct AboutScreen: View {
     }
 }
 
+struct PremiumScreen: View {
+    var body: some View {
+        EmptyView()
+    }
+    
+}
+
 
 
 struct SettingsView_Previews: PreviewProvider {
@@ -122,7 +135,7 @@ struct SettingsView_Previews: PreviewProvider {
         Group {
             SettingsView()
             AboutScreen()
-        }.environment(\.locale, .init(identifier: "en"))
+        }.environment(\.locale, .init(identifier: "no"))
         
     }
 }
