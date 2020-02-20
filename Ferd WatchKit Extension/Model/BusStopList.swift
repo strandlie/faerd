@@ -13,13 +13,7 @@ class BusStopList: ObservableObject {
     
     static let shared = BusStopList()
     
-    @Published var stops: [BusStop] {
-        didSet {
-            stops.forEach {
-                distances[$0.id] = User.shared.formattedDistance(to: $0.location)
-            }
-        }
-    }
+    @Published var stops: [BusStop]
     
     var distances: [String: String] = [:]
     
@@ -28,11 +22,10 @@ class BusStopList: ObservableObject {
     }
     
     func append(_ stop: BusStop) {
-        if self.stops.contains(stop) {
-            distances[stop.id] = User.shared.formattedDistance(to: stop.location)
-        } else {
+        if !self.stops.contains(stop) {
             self.stops.append(stop)
         }
+        distances[stop.id] = User.shared.formattedDistance(to: stop.location)
     }
     
     func remove(at offset: Int, for stop: BusStop) {

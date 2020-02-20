@@ -8,60 +8,19 @@
 
 import WatchKit
 
-class FerdComplicationDataSource: CLKComplicationDataSource {
+class FerdComplicationDataSource: NSObject, CLKComplicationDataSource {
+    
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        <#code#>
+        handler([])
     }
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        <#code#>
+        /*var template: CLKComplicationTemplate? = nil
+        switch(complication.family) {
+        case .modularSmall:
+            let modularSmallTemplate = CLKComplicationTemplateModularSm
+        }*/
     }
-    
-    func isEqual(_ object: Any?) -> Bool {
-        <#code#>
-    }
-    
-    var hash: Int
-    
-    var superclass: AnyClass?
-    
-    func `self`() -> Self {
-        <#code#>
-    }
-    
-    func perform(_ aSelector: Selector!) -> Unmanaged<AnyObject>! {
-        <#code#>
-    }
-    
-    func perform(_ aSelector: Selector!, with object: Any!) -> Unmanaged<AnyObject>! {
-        <#code#>
-    }
-    
-    func perform(_ aSelector: Selector!, with object1: Any!, with object2: Any!) -> Unmanaged<AnyObject>! {
-        <#code#>
-    }
-    
-    func isProxy() -> Bool {
-        <#code#>
-    }
-    
-    func isKind(of aClass: AnyClass) -> Bool {
-        <#code#>
-    }
-    
-    func isMember(of aClass: AnyClass) -> Bool {
-        <#code#>
-    }
-    
-    func conforms(to aProtocol: Protocol) -> Bool {
-        <#code#>
-    }
-    
-    func responds(to aSelector: Selector!) -> Bool {
-        <#code#>
-    }
-    
-    var description: String
     
 
 }
