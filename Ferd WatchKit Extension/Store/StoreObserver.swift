@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import StoreKit
+/*import StoreKit
 
 class StoreObserver: NSObject, SKPaymentTransactionObserver {
     
@@ -18,8 +18,9 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
     }
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        <#code#>
+        print()
     }
     
     
 }
+*/

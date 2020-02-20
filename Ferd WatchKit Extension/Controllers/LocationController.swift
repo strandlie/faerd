@@ -40,9 +40,9 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         
     }
     
-    func updateNearbyStopsTo(coordinate: CLLocation, limitStops: Int? = nil, radius: Double? = nil) {
+    func updateNearbyStopsTo(coordinate: CLLocation) {
         
-        APIController.shared.updateNearbyStopsToAPIRequest(coordinate: coordinate, limitStops: limitStops, radius: radius)
+        APIController.shared.updateNearbyStopsToAPIRequest(coordinate: coordinate)
     }
     
     static func formattedDistanceBetween(location1: CLLocation?, location2: CLLocation?) -> String {
