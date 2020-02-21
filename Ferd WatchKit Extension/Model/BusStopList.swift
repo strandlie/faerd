@@ -52,6 +52,12 @@ class BusStopList: ObservableObject {
         }
     }
     
+    func updateDistances() {
+        self.stops.forEach { stop in
+            distances[stop.id] = User.shared.formattedDistance(to: stop.location)
+        }
+    }
+    
     func removeAll() {
         self.stops.forEach { stop in
             stop.departures.departures.removeAll()

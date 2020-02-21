@@ -7,8 +7,9 @@
 //
 
 import Foundation
-/*import StoreKit
+import StoreKit
 
+/*
 class StoreObserver: NSObject, SKPaymentTransactionObserver {
     
     static let shared = StoreObserver()

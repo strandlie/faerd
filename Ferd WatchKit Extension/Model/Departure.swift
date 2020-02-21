@@ -38,7 +38,7 @@ class Departure: ObservableObject, Identifiable {
     
     
     static func formatTime(_ time: Date) -> String {
-        if time.timeIntervalSinceNow > 10 * 60 {
+        if time.timeIntervalSinceNow > 9 * 60 {
             /*
             If the departure is more than 10 minutes in the future, return
             the time of departure correctly formatted

@@ -91,6 +91,7 @@ class APIController: NSObject  {
                 
                 DispatchQueue.main.async {
                     BusStopList.shared.updateDepartures()
+                    BusStopList.shared.updateDistances()
                     AppState.shared.isFetching = false
                 }
                 
@@ -146,8 +147,12 @@ class APIController: NSObject  {
                     
                     departures.append(Departure(time: time, isRealTime: departure.realtime, destinationName: departure.destinationDisplay.frontText, publicCode: departure.serviceJourney.journeyPattern.line.publicCode))
                 }
-                busStop.departures.departures = departures
+                DispatchQueue.main.async {
+                    busStop.departures.departures = departures
+                }
+                
             }
+            BusStopList.shared.updateDistances()
             DispatchQueue.main.async {
                 AppState.shared.isFetching = false
             }
