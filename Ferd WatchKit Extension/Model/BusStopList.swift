@@ -21,6 +21,19 @@ class BusStopList: ObservableObject {
         return stops.first { $0.id == id }
     }
     
+    func getClosestToUser() -> BusStop? {
+        var closest: BusStop?
+        var minDist: Double = Double.infinity
+        stops.forEach { stop in
+            let distance = User.shared.actualDistance(to: stop.location) ?? Double.infinity
+            if (distance < minDist) {
+                closest = stop
+                minDist = distance
+            }
+        }
+        return closest
+    }
+    
     func append(_ stop: BusStop) {
         if !self.stops.contains(stop) {
             self.stops.append(stop)

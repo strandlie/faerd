@@ -95,10 +95,10 @@ struct StopsListView : View {
                         ForEach(self.nearbyStops.stops.filter(StopsListView.filterClosure).sorted(by: StopsListView.sortClosure)){ busStop in
                             NavigationLink(destination: StopDetailView(
                                                 stop: busStop,
-                                                distance: self.nearbyStops.distances[busStop.id]!,
+                                                distance: self.nearbyStops.distances[busStop.id] ?? "",
                                                 departureList: busStop.departures))
                             {
-                                StopButton(distance: self.nearbyStops.distances[busStop.id]!, stop: busStop)
+                                StopButton(distance: self.nearbyStops.distances[busStop.id] ?? "", stop: busStop)
                             }
                         }
                     }

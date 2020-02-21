@@ -25,7 +25,7 @@
 		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
 		8B341E0C23C2463400E0B698 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B60A7CF23C1591600D97191 /* Localizable.strings */; };
 		8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7123EF2ACD00B7B597 /* StoreController.swift */; };
-		8B70FC7523EF440C00B7B597 /* FerdComplicationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7423EF440C00B7B597 /* FerdComplicationDataSource.swift */; };
+		8B70FC7523EF440C00B7B597 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7423EF440C00B7B597 /* ComplicationController.swift */; };
 		8B774DEF23F87D170039EA19 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B774DEE23F87D170039EA19 /* StoreObserver.swift */; };
 		8B93BC3B23D30BED005C9725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B93BC3A23D30BED005C9725 /* Assets.xcassets */; };
 		8BBF19E123EF1F7900B5A2DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */; };
@@ -118,7 +118,7 @@
 		8B60A7CE23C1591600D97191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B60A7D323C159E900D97191 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Interface.strings; sourceTree = "<group>"; };
 		8B70FC7123EF2ACD00B7B597 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
-		8B70FC7423EF440C00B7B597 /* FerdComplicationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerdComplicationDataSource.swift; sourceTree = "<group>"; };
+		8B70FC7423EF440C00B7B597 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		8B774DEE23F87D170039EA19 /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
 		8B93BC3A23D30BED005C9725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BBF19E223EF1F7900B5A2DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 		8B70FC7323EF43CE00B7B597 /* Complications */ = {
 			isa = PBXGroup;
 			children = (
-				8B70FC7423EF440C00B7B597 /* FerdComplicationDataSource.swift */,
+				8B70FC7423EF440C00B7B597 /* ComplicationController.swift */,
 			);
 			path = Complications;
 			sourceTree = "<group>";
@@ -448,7 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
-				8B70FC7523EF440C00B7B597 /* FerdComplicationDataSource.swift in Sources */,
+				8B70FC7523EF440C00B7B597 /* ComplicationController.swift in Sources */,
 				8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */,
 				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
 				8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */,

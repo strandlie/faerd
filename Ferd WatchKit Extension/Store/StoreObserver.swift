@@ -9,7 +9,7 @@
 import Foundation
 import StoreKit
 
-/*
+
 class StoreObserver: NSObject, SKPaymentTransactionObserver {
     
     static let shared = StoreObserver()
@@ -24,4 +24,3 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
     
     
 }
-*/

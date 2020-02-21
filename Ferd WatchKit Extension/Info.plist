@@ -21,10 +21,14 @@
 	<key>CFBundleVersion</key>
 	<string>4</string>
 	<key>CLKComplicationPrincipalClass</key>
-	<string>FerdComplicationDataSource</string>
+	<string>$(PRODUCT_MODULE_NAME).ComplicationController</string>
 	<key>CLKComplicationSupportedFamilies</key>
 	<array>
+		<string>CLKComplicationFamilyExtraLarge</string>
+		<string>CLKComplicationFamilyGraphicCircular</string>
+		<string>CLKComplicationFamilyModularLarge</string>
 		<string>CLKComplicationFamilyModularSmall</string>
+		<string>CLKComplicationFamilyUtilitarianSmall</string>
 	</array>
 	<key>NSExtension</key>
 	<dict>
