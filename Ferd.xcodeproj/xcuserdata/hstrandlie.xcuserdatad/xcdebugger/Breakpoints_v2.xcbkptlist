@@ -247,54 +247,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8D7667DD-2161-4CD0-BF30-488ED676E4CD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Ferd WatchKit Extension/StopsListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "8D7667DD-2161-4CD0-BF30-488ED676E4CD - 85c2bf6402588570"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Ferd_WatchKit_Extension.StopsListView.body.getter : some"
-                  moduleName = "Ferd WatchKit Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hstrandlie/Documents/AppDevelopment/BusTime/bustime/Ferd%20WatchKit%20Extension/StopsListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "8D7667DD-2161-4CD0-BF30-488ED676E4CD - 89bf983b31867657"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SwiftUI.GeometryProxy) -&gt; SwiftUI.ZStack&lt;SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.colorMultiply(SwiftUI.Color) -&gt; some&gt;&gt;.0, SwiftUI.Text)&gt;&gt;, SwiftUI.Divider, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Spacer)&gt;&gt;)&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.ScrollView&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.colorMultiply(SwiftUI.Color) -&gt; some&gt;&gt;.0, Ferd_WatchKit_Extension.FavoritesView&gt;, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.background&lt;A where A1: SwiftUI.View&gt;(_: A1, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.disabled(Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.Button&lt;&lt;&lt;opaque return type of static Ferd_WatchKit_Extension.IconController.getSystemIcon(for: Ferd_WatchKit_Extension.IconController.SystemIcons) -&gt; some&gt;&gt;.0&gt;&gt;)&gt;&gt;, SwiftUI.ForEach&lt;Swift.Array&lt;Ferd_WatchKit_Extension.BusStop&gt;, Swift.String, SwiftUI.NavigationLink&lt;Ferd_WatchKit_Extension.StopButton, Ferd_WatchKit_Extension.StopDetailView&gt;&gt;)&gt;&gt;&gt;)&gt;&gt;&gt; in Ferd_WatchKit_Extension.StopsListView.body.getter : some"
-                  moduleName = "Ferd WatchKit Extension"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hstrandlie/Documents/AppDevelopment/BusTime/bustime/Ferd%20WatchKit%20Extension/StopsListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "568">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6BB3AA8D-CEA2-4CF9-AD26-6C0D397A68EC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
