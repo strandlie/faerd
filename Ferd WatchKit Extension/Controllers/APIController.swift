@@ -63,7 +63,8 @@ class APIController: NSObject  {
                 }
                 
                 if let error = error {
-                    fatalError("Data task error: " + error.localizedDescription + "\n")
+                    print("Data task error: " + error.localizedDescription + "\n")
+                    return
                 } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                     guard let nearbyStops = try? JSONDecoder().decode(NearbyStopsResponse.self, from: data) else {
                         fatalError("Decoding error with data: " + data.description)
@@ -131,7 +132,8 @@ class APIController: NSObject  {
             
             
             if let error = error {
-                fatalError("Data task error: " + error.localizedDescription + "\n")
+                print("Data task error: " + error.localizedDescription + "\n")
+                return
             } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 guard let graphQLResponse = try? JSONDecoder().decode(GraphQLResponse.self, from: data) else {
                     fatalError("Decoding GraphQLData error with data: " + data.description)

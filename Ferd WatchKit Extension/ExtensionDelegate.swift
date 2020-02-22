@@ -7,7 +7,7 @@
 //
 
 import WatchKit
-import StoreKit
+//import StoreKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import StoreKit
+/*import StoreKit
 
 
 class StoreObserver: NSObject, SKPaymentTransactionObserver {
@@ -24,3 +24,4 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
     
     
 }
+*/
