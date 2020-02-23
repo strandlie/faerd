@@ -340,5 +340,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34A86B34-6D3E-4C67-827B-F59EC0822BCC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ferd WatchKit Extension/FavoritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B1E3C03-E614-47B3-936D-418B16F08816"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ferd WatchKit Extension/Model/DepartureList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "filterDown(forPublicCode:forDestinationName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3B1E3C03-E614-47B3-936D-418B16F08816 - 968acd4cb63df2e0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ferd_WatchKit_Extension.DepartureList.filterDown(forPublicCode: Swift.String, forDestinationName: Swift.String) -&gt; Swift.Array&lt;Ferd_WatchKit_Extension.Departure&gt;"
+                  moduleName = "Ferd WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hstrandlie/Documents/AppDevelopment/BusTime/bustime/Ferd%20WatchKit%20Extension/Model/DepartureList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "278">
+               </Location>
+               <Location
+                  uuid = "3B1E3C03-E614-47B3-936D-418B16F08816 - 59b574f6f3b4e456"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Ferd_WatchKit_Extension.Departure) -&gt; Swift.Bool in Ferd_WatchKit_Extension.DepartureList.filterDown(forPublicCode: Swift.String, forDestinationName: Swift.String) -&gt; Swift.Array&lt;Ferd_WatchKit_Extension.Departure&gt;"
+                  moduleName = "Ferd WatchKit Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hstrandlie/Documents/AppDevelopment/BusTime/bustime/Ferd%20WatchKit%20Extension/Model/DepartureList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "402">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

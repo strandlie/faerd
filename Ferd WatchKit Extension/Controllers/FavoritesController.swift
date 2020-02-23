@@ -18,7 +18,6 @@ class FavoritesController {
         guard let favorites = try? JSONDecoder().decode([Favorite].self, from: encodedFavorites) else {
             fatalError("Encoding error when decoding favorites from UserDefaults")
         }
-        
         return favorites
     }
     

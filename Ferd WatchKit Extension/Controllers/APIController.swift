@@ -158,12 +158,13 @@ class APIController: NSObject  {
             DispatchQueue.main.async {
                 AppState.shared.isFetching = false
             }
+            completion()
         }
         DispatchQueue.main.async {
             AppState.shared.isFetching = true
         }
         dataTask?.resume()
         
-        completion()
+        
     }
 }
