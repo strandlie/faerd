@@ -114,6 +114,7 @@
 		307F44D82325A4DD00BDC858 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		3092F8EB230B2BBC009CE82B /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
 		30C330CF2306DD2700BCE0DF /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
+		8B0131A324026E3900B0A296 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B341E0B23C2456400E0B698 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B60A7CE23C1591600D97191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B60A7D323C159E900D97191 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Interface.strings; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 		30482CDC22BC1CE000D7850D = {
 			isa = PBXGroup;
 			children = (
+				8B0131A224026E3900B0A296 /* Ferd */,
 				30482CEB22BC1CE000D7850D /* Ferd WatchKit App */,
 				30482CFA22BC1CE200D7850D /* Ferd WatchKit Extension */,
 				30482CE422BC1CE000D7850D /* Products */,
@@ -265,6 +267,14 @@
 				8B70FC7123EF2ACD00B7B597 /* StoreController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B0131A224026E3900B0A296 /* Ferd */ = {
+			isa = PBXGroup;
+			children = (
+				8B0131A324026E3900B0A296 /* Info.plist */,
+			);
+			path = Ferd;
 			sourceTree = "<group>";
 		};
 		8B70FC7323EF43CE00B7B597 /* Complications */ = {
@@ -375,7 +385,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Håkon Strandlie";
 				TargetAttributes = {
 					30482CE222BC1CE000D7850D = {
@@ -744,6 +754,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				INFOPLIST_FILE = Ferd/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd;
 				PRODUCT_NAME = Ferd;
@@ -757,6 +768,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				INFOPLIST_FILE = Ferd/Info.plist;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd;
 				PRODUCT_NAME = Ferd;
