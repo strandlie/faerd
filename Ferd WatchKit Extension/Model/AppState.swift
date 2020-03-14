@@ -12,7 +12,6 @@ import WatchKit
 
 final class AppState: ObservableObject {
     @Published var isFetching = false
-    @Published var isInForeground = WKExtension.shared().applicationState == .active
     @Published var hasPremiumFavorites = StoreController.shared.getPremiumFavoritesStatus()
     @Published var hasLocationAccess = false
     

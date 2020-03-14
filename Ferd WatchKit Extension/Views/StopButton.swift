@@ -31,7 +31,6 @@ struct StopButton: View {
             
             VStack(alignment: .leading) {
                 Text(stop.name)
-                    .font(.body)
                     .truncationMode(.tail)
                     .lineLimit(2)
                     

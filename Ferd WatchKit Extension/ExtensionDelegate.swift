@@ -26,7 +26,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
         BusStopList.shared.updateDepartures()
-        AppState.shared.isInForeground = true
     }
 
     func applicationWillResignActive() {
@@ -35,7 +34,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     }
     
     func applicationDidEnterBackground() {
-        AppState.shared.isInForeground = false
         BusStopList.shared.clean()
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: Date.init(timeInterval: 1200, since: Date()), userInfo: nil, scheduledCompletion: backgroundRefreshRunning)
     }

@@ -42,6 +42,32 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             handler(nil)
         }
     }
+    
+    func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
+        guard let image = UIImage(named: "LogoOnly") else {
+            fatalError("Could not find the LogoOnly image")
+        }
+        switch(complication.family) {
+        case .modularSmall:
+            let template = CLKComplicationTemplateModularSmallSimpleImage()
+            template.imageProvider = CLKImageProvider(onePieceImage: image)
+            handler(template)
+        case .utilitarianSmall:
+            let template = CLKComplicationTemplateUtilitarianSmallSquare()
+            template.imageProvider = CLKImageProvider(onePieceImage: image)
+            handler(template)
+        case .extraLarge:
+            let template = CLKComplicationTemplateExtraLargeSimpleImage()
+            template.imageProvider = CLKImageProvider(onePieceImage: image)
+            handler(template)
+        case .graphicCircular:
+            let template = CLKComplicationTemplateGraphicCircularImage()
+            template.imageProvider = CLKFullColorImageProvider(fullColorImage: image)
+            handler(template)
+        default:
+            handler(nil)
+        }
+    }
 
     
 

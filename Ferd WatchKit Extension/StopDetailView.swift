@@ -26,14 +26,13 @@ struct StopDetailView: View {
     
     @ObservedObject var departureList: DepartureList
     @EnvironmentObject var favoriteList: FavoriteList
-    @EnvironmentObject var appState: AppState
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State var numDeparturesToLoad = 20
     @State var favoritesWarningIsPresented = false
     
+    // Show departures from 20 seconds ago and into the future
     static let filterClosure = { (departure: Departure) -> Bool in
-        return departure.time.timeIntervalSinceNow >= 0
+        return departure.time.timeIntervalSinceNow >= -20
     }
     
     static let sortClosure = { (departure1: Departure, departure2: Departure) -> Bool in
@@ -123,11 +122,6 @@ struct StopDetailView: View {
             : nil
         }
         .navigationBarTitle(departures)
-        .onReceive(self.appState.$isInForeground) { value in
-            if !value {
-                self.presentationMode.wrappedValue.dismiss()
-            }
-        }
         .alert(isPresented: $favoritesWarningIsPresented, content: {
             Alert(title: Text(premium_required),
                   message: Text(max_favorites) + Text("\n\n") + Text(upgrade_for_unlimited),
