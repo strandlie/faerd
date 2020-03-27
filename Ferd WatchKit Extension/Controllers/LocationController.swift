@@ -41,7 +41,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func updateNearbyStopsTo(coordinate: CLLocation) {
-        
         APIController.shared.updateNearbyStopsToAPIRequest(coordinate: coordinate)
     }
     

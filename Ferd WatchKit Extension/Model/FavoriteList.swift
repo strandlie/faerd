@@ -10,7 +10,7 @@ import Foundation
 
 class FavoriteList: ObservableObject {
     
-    static let FreeFavoriteLimit = 2
+    static let FreeFavoriteLimit = 3
     
     @Published var favorites: [Favorite]
     

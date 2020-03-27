@@ -37,13 +37,13 @@ class APIController: NSObject  {
         case coordinates = "coordinates"
     }
     
-    func updateNearbyStopsToAPIRequest(coordinate: CLLocation) {
+    func updateNearbyStopsToAPIRequest(coordinate: CLLocation, radius: Double = APIController.SEARCH_RADIUS) {
 
         if var urlComponents = URLComponents(string: APIController.REST_API_ENDPOINT) {
             urlComponents.queryItems = [
                 URLQueryItem(name: "point.lat", value: String(coordinate.coordinate.latitude)),
                 URLQueryItem(name: "point.lon", value: String(coordinate.coordinate.longitude)),
-                URLQueryItem(name: "boundary.circle.radius", value: String(APIController.SEARCH_RADIUS / 1000)),
+                URLQueryItem(name: "boundary.circle.radius", value: String(radius / 1000)),
                 URLQueryItem(name: "size", value: String(APIController.GLOBAL_MAX_STOPS)),
                 URLQueryItem(name: "layers", value: "venue")
             ]
