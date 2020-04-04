@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  Ferd
+
+  Created by Håkon Strandlie on 05/01/2020.
+  Copyright © 2020 Håkon Strandlie. All rights reserved.
+*/
+
+// Settings
+"list" = "Liste";
+"favorites" = "Favoritter";
+
+// StopsListView
+"no_stops" = "Ingen stopp i nærheten";
+"no_location_access" = "Vi har ikke tilgang til posisjonen din.";
+"open_iphone" = "Finn frem din iPhone";
+"instructions" = "gå til \n\nInnstillinger\n - Personvern\n - Stedstjenester\n - Ferd \n\nog velg \"Når appen er i bruk\" for å kunne bruke appen.";
+
+// StopDetailView
+"departures" = "Avganger";
+"no_departures" = "Ingen avganger";
+"now" = "Nå";
+"load_more" = "Last flere...";
+
+// LineDetailView
+"departures_in" = "Avganger i";
+"realtime" = "sanntid";
+"to" = " til ";
+
+// SettingsView
+"about" = "Om appen";
+"start_screen" = "Startskjerm";
+"description" = "er utviklet med kjærlighet for effektive reiser. Tilbakemeldinger og bug reports settes alltid pris på, og kan gjøres gjennom";
+"website" = " strandlie.co/ferd";
+"credits" = "Kreditering";
+"entur" = "Data hentes fra EnTur. developer.entur.org";
+"alamofire" = "Nettverking: AlamoFire. github.com/Alamofire";
+"settings" = "Innstillinger";
+"premium_features" = "Premium";
+
+// FavoritesView
+"no_favorites" = "Du har ingen favoritter";
+"press" = "Trykk på ";
+"to_begin" = " for å legge til din første";
+"premium_favorites" = "Premium Favoritter";
+"max_favorites" = "Du har nådd maksimalt antall favoritter i gratisversjonen av Ferd.";
+"upgrade" = "Oppgrader";
+"benefits" = "til Premium Favoritter og få tilgang til ubegrenset antall favoritter, samtidig som du støtter indieutvikling 🤓";
+
+// Alert
+"premium_required" = "Premium Favoritter";
+"upgrade_for_unlimited" = "Oppgrader til Premium Favoritter for å få tilgang til ubegrenset antall favoritter.";
+"keep_free" = "Behold gratisversjonen";

@@ -1,0 +1,821 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30482CE822BC1CE000D7850D /* Ferd.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* Ferd.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		30482CEE22BC1CE000D7850D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEC22BC1CE000D7850D /* Interface.storyboard */; };
+		30482CF722BC1CE200D7850D /* Ferd WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482CFD22BC1CE200D7850D /* HostingController.swift */; };
+		30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */; };
+		30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D0122BC1CE200D7850D /* NotificationController.swift */; };
+		30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D0322BC1CE200D7850D /* NotificationView.swift */; };
+		30482D0622BC1CE300D7850D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482D0522BC1CE300D7850D /* Assets.xcassets */; };
+		30482D0922BC1CE300D7850D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30482D0822BC1CE300D7850D /* Preview Assets.xcassets */; };
+		30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1A22BC1EFE00D7850D /* BusStop.swift */; };
+		30482D1D22BD216300D7850D /* StopsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1C22BD216300D7850D /* StopsListView.swift */; };
+		30482D2022BD26C500D7850D /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D1F22BD26C500D7850D /* APIController.swift */; };
+		30482D2722BFBE4200D7850D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482D2622BFBE4200D7850D /* LocationController.swift */; };
+		307F44D92325A4DD00BDC858 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307F44D82325A4DD00BDC858 /* Departure.swift */; };
+		3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F8EB230B2BBC009CE82B /* BusStopList.swift */; };
+		30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C330CF2306DD2700BCE0DF /* StopDetailView.swift */; };
+		8B341E0C23C2463400E0B698 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B60A7CF23C1591600D97191 /* Localizable.strings */; };
+		8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7123EF2ACD00B7B597 /* StoreController.swift */; };
+		8B70FC7523EF440C00B7B597 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70FC7423EF440C00B7B597 /* ComplicationController.swift */; };
+		8B774DEF23F87D170039EA19 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B774DEE23F87D170039EA19 /* StoreObserver.swift */; };
+		8B93BC3B23D30BED005C9725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B93BC3A23D30BED005C9725 /* Assets.xcassets */; };
+		8BBF19E123EF1F7900B5A2DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */; };
+		8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01323B41719006151FF /* RadioPicker.swift */; };
+		8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01423B41719006151FF /* ActivityIndicator.swift */; };
+		8BD0F01923B4172A006151FF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01723B4172A006151FF /* Settings.swift */; };
+		8BD0F01C23B4173B006151FF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01B23B4173B006151FF /* AppState.swift */; };
+		8BD0F02223B417F1006151FF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02123B417F0006151FF /* User.swift */; };
+		8BD0F02423B4180D006151FF /* IconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02323B4180D006151FF /* IconController.swift */; };
+		8BD0F02623B41C26006151FF /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02523B41C26006151FF /* FavoritesView.swift */; };
+		8BD0F02823B41C63006151FF /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02723B41C63006151FF /* Favorite.swift */; };
+		8BD0F02A23B41C6D006151FF /* FavoriteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02923B41C6D006151FF /* FavoriteList.swift */; };
+		8BD0F02C23B4C531006151FF /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02B23B4C531006151FF /* FavoritesController.swift */; };
+		8BD0F02E23B4C681006151FF /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */; };
+		8BD0F03123B9527E006151FF /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F03023B9527E006151FF /* StopButton.swift */; };
+		8BD0F03323B9555D006151FF /* FavoriteLineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F03223B9555D006151FF /* FavoriteLineButton.swift */; };
+		8BD0F03523BA9ED4006151FF /* FavoriteStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F03423BA9ED4006151FF /* FavoriteStopButton.swift */; };
+		8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7B2346738400C77E59 /* DepartureList.swift */; };
+		8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */; };
+		8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */; };
+		8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */; };
+		8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA76C92357A716008E8DA0 /* LineDetailView.swift */; };
+		8BEA76CE2357AED3008E8DA0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30482CE922BC1CE000D7850D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30482CDD22BC1CE000D7850D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30482CE622BC1CE000D7850D;
+			remoteInfo = "BusTime WatchKit App";
+		};
+		30482CF822BC1CE200D7850D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30482CDD22BC1CE000D7850D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30482CF522BC1CE200D7850D;
+			remoteInfo = "BusTime WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30482D1122BC1CE300D7850D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				30482CF722BC1CE200D7850D /* Ferd WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30482D1522BC1CE300D7850D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				30482CE822BC1CE000D7850D /* Ferd.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		30482CE322BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CE722BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CED22BC1CE000D7850D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		30482CF122BC1CE200D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ferd WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CFD22BC1CE200D7850D /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		30482D0122BC1CE200D7850D /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		30482D0322BC1CE200D7850D /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		30482D0522BC1CE300D7850D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30482D0822BC1CE300D7850D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30482D0A22BC1CE300D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30482D0B22BC1CE300D7850D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		30482D1A22BC1EFE00D7850D /* BusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
+		30482D1C22BD216300D7850D /* StopsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsListView.swift; sourceTree = "<group>"; };
+		30482D1F22BD26C500D7850D /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		30482D2622BFBE4200D7850D /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		307F44D82325A4DD00BDC858 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		3092F8EB230B2BBC009CE82B /* BusStopList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopList.swift; sourceTree = "<group>"; };
+		30C330CF2306DD2700BCE0DF /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
+		8B0131A324026E3900B0A296 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B341E0B23C2456400E0B698 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B60A7CE23C1591600D97191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B60A7D323C159E900D97191 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Interface.strings; sourceTree = "<group>"; };
+		8B70FC7123EF2ACD00B7B597 /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
+		8B70FC7423EF440C00B7B597 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		8B774DEE23F87D170039EA19 /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
+		8B93BC3A23D30BED005C9725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BBF19E223EF1F7900B5A2DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BBF19E423EF1F7D00B5A2DA /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BD0F01323B41719006151FF /* RadioPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPicker.swift; sourceTree = "<group>"; };
+		8BD0F01423B41719006151FF /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		8BD0F01723B4172A006151FF /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8BD0F01B23B4173B006151FF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8BD0F02123B417F0006151FF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8BD0F02323B4180D006151FF /* IconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconController.swift; sourceTree = "<group>"; };
+		8BD0F02523B41C26006151FF /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		8BD0F02723B41C63006151FF /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		8BD0F02923B41C6D006151FF /* FavoriteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteList.swift; sourceTree = "<group>"; };
+		8BD0F02B23B4C531006151FF /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		8BD0F03023B9527E006151FF /* StopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
+		8BD0F03223B9555D006151FF /* FavoriteLineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLineButton.swift; sourceTree = "<group>"; };
+		8BD0F03423BA9ED4006151FF /* FavoriteStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStopButton.swift; sourceTree = "<group>"; };
+		8BDFFF7B2346738400C77E59 /* DepartureList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureList.swift; sourceTree = "<group>"; };
+		8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLQuery.swift; sourceTree = "<group>"; };
+		8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphQLResponse.swift; sourceTree = "<group>"; };
+		8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyStopsResponse.swift; sourceTree = "<group>"; };
+		8BEA76C92357A716008E8DA0 /* LineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDetailView.swift; sourceTree = "<group>"; };
+		8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		179029BC487042CDE986C876 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30482CF322BC1CE200D7850D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C2774FCAD9A9C291546E235 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30482CDC22BC1CE000D7850D = {
+			isa = PBXGroup;
+			children = (
+				8B0131A224026E3900B0A296 /* Ferd */,
+				30482CEB22BC1CE000D7850D /* Ferd WatchKit App */,
+				30482CFA22BC1CE200D7850D /* Ferd WatchKit Extension */,
+				30482CE422BC1CE000D7850D /* Products */,
+				B538DE58A449D7DE85682FD3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		30482CE422BC1CE000D7850D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30482CE322BC1CE000D7850D /* Ferd.app */,
+				30482CE722BC1CE000D7850D /* Ferd.app */,
+				30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30482CEB22BC1CE000D7850D /* Ferd WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				30482CEC22BC1CE000D7850D /* Interface.storyboard */,
+				30482CF122BC1CE200D7850D /* Info.plist */,
+				8B93BC3A23D30BED005C9725 /* Assets.xcassets */,
+			);
+			path = "Ferd WatchKit App";
+			sourceTree = "<group>";
+		};
+		30482CFA22BC1CE200D7850D /* Ferd WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B774DED23F87CFF0039EA19 /* Store */,
+				8B70FC7323EF43CE00B7B597 /* Complications */,
+				8B60A7CF23C1591600D97191 /* Localizable.strings */,
+				8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */,
+				8BD0F02F23B9526A006151FF /* Views */,
+				8BD0F01223B41719006151FF /* Utils */,
+				30482D1E22BD26B200D7850D /* Controllers */,
+				30482D1922BC1ECE00D7850D /* Model */,
+				30482CFD22BC1CE200D7850D /* HostingController.swift */,
+				30482CFF22BC1CE200D7850D /* ExtensionDelegate.swift */,
+				30482D0322BC1CE200D7850D /* NotificationView.swift */,
+				30482D1C22BD216300D7850D /* StopsListView.swift */,
+				30C330CF2306DD2700BCE0DF /* StopDetailView.swift */,
+				8BEA76C92357A716008E8DA0 /* LineDetailView.swift */,
+				8BEA76CD2357AED3008E8DA0 /* SettingsView.swift */,
+				8BD0F02523B41C26006151FF /* FavoritesView.swift */,
+				30482D0522BC1CE300D7850D /* Assets.xcassets */,
+				30482D0A22BC1CE300D7850D /* Info.plist */,
+				30482D0B22BC1CE300D7850D /* PushNotificationPayload.apns */,
+				30482D0722BC1CE300D7850D /* Preview Content */,
+			);
+			path = "Ferd WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		30482D0722BC1CE300D7850D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				30482D0822BC1CE300D7850D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		30482D1922BC1ECE00D7850D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				307F44D82325A4DD00BDC858 /* Departure.swift */,
+				8BDFFF7B2346738400C77E59 /* DepartureList.swift */,
+				8BDFFF7C2346738500C77E59 /* GraphQLQuery.swift */,
+				8BDFFF7D2346738500C77E59 /* GraphQLResponse.swift */,
+				8BDFFF7E2346738500C77E59 /* NearbyStopsResponse.swift */,
+				30482D1A22BC1EFE00D7850D /* BusStop.swift */,
+				3092F8EB230B2BBC009CE82B /* BusStopList.swift */,
+				8BD0F02123B417F0006151FF /* User.swift */,
+				8BD0F01723B4172A006151FF /* Settings.swift */,
+				8BD0F01B23B4173B006151FF /* AppState.swift */,
+				8BD0F02723B41C63006151FF /* Favorite.swift */,
+				8BD0F02923B41C6D006151FF /* FavoriteList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30482D1E22BD26B200D7850D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30482D0122BC1CE200D7850D /* NotificationController.swift */,
+				8BD0F02B23B4C531006151FF /* FavoritesController.swift */,
+				30482D1F22BD26C500D7850D /* APIController.swift */,
+				8BD0F02323B4180D006151FF /* IconController.swift */,
+				30482D2622BFBE4200D7850D /* LocationController.swift */,
+				8B70FC7123EF2ACD00B7B597 /* StoreController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B0131A224026E3900B0A296 /* Ferd */ = {
+			isa = PBXGroup;
+			children = (
+				8B0131A324026E3900B0A296 /* Info.plist */,
+			);
+			path = Ferd;
+			sourceTree = "<group>";
+		};
+		8B70FC7323EF43CE00B7B597 /* Complications */ = {
+			isa = PBXGroup;
+			children = (
+				8B70FC7423EF440C00B7B597 /* ComplicationController.swift */,
+			);
+			path = Complications;
+			sourceTree = "<group>";
+		};
+		8B774DED23F87CFF0039EA19 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				8B774DEE23F87D170039EA19 /* StoreObserver.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		8BD0F01223B41719006151FF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0F01323B41719006151FF /* RadioPicker.swift */,
+				8BD0F01423B41719006151FF /* ActivityIndicator.swift */,
+				8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8BD0F02F23B9526A006151FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BD0F03023B9527E006151FF /* StopButton.swift */,
+				8BD0F03223B9555D006151FF /* FavoriteLineButton.swift */,
+				8BD0F03423BA9ED4006151FF /* FavoriteStopButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B538DE58A449D7DE85682FD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30482CE222BC1CE000D7850D /* Ferd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30482D1622BC1CE300D7850D /* Build configuration list for PBXNativeTarget "Ferd" */;
+			buildPhases = (
+				30482CE122BC1CE000D7850D /* Resources */,
+				30482D1522BC1CE300D7850D /* Embed Watch Content */,
+				8C2774FCAD9A9C291546E235 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30482CEA22BC1CE000D7850D /* PBXTargetDependency */,
+			);
+			name = Ferd;
+			productName = BusTime;
+			productReference = 30482CE322BC1CE000D7850D /* Ferd.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		30482CE622BC1CE000D7850D /* Ferd WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30482D1222BC1CE300D7850D /* Build configuration list for PBXNativeTarget "Ferd WatchKit App" */;
+			buildPhases = (
+				30482CE522BC1CE000D7850D /* Resources */,
+				30482D1122BC1CE300D7850D /* Embed App Extensions */,
+				179029BC487042CDE986C876 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30482CF922BC1CE200D7850D /* PBXTargetDependency */,
+			);
+			name = "Ferd WatchKit App";
+			productName = "BusTime WatchKit App";
+			productReference = 30482CE722BC1CE000D7850D /* Ferd.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		30482CF522BC1CE200D7850D /* Ferd WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30482D0E22BC1CE300D7850D /* Build configuration list for PBXNativeTarget "Ferd WatchKit Extension" */;
+			buildPhases = (
+				30482CF222BC1CE200D7850D /* Sources */,
+				30482CF322BC1CE200D7850D /* Frameworks */,
+				30482CF422BC1CE200D7850D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ferd WatchKit Extension";
+			packageProductDependencies = (
+			);
+			productName = "BusTime WatchKit Extension";
+			productReference = 30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30482CDD22BC1CE000D7850D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Håkon Strandlie";
+				TargetAttributes = {
+					30482CE222BC1CE000D7850D = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					30482CE622BC1CE000D7850D = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					30482CF522BC1CE200D7850D = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 30482CE022BC1CE000D7850D /* Build configuration list for PBXProject "Ferd" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				nb,
+			);
+			mainGroup = 30482CDC22BC1CE000D7850D;
+			packageReferences = (
+			);
+			productRefGroup = 30482CE422BC1CE000D7850D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30482CE222BC1CE000D7850D /* Ferd */,
+				30482CE622BC1CE000D7850D /* Ferd WatchKit App */,
+				30482CF522BC1CE200D7850D /* Ferd WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30482CE122BC1CE000D7850D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30482CE522BC1CE000D7850D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B93BC3B23D30BED005C9725 /* Assets.xcassets in Resources */,
+				30482CEE22BC1CE000D7850D /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30482CF422BC1CE200D7850D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30482D0922BC1CE300D7850D /* Preview Assets.xcassets in Resources */,
+				8BBF19E123EF1F7900B5A2DA /* InfoPlist.strings in Resources */,
+				8B341E0C23C2463400E0B698 /* Localizable.strings in Resources */,
+				30482D0622BC1CE300D7850D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30482CF222BC1CE200D7850D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
+				8B70FC7523EF440C00B7B597 /* ComplicationController.swift in Sources */,
+				8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */,
+				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
+				8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */,
+				8BEA76CE2357AED3008E8DA0 /* SettingsView.swift in Sources */,
+				8BDFFF802346738500C77E59 /* GraphQLQuery.swift in Sources */,
+				8BDFFF7F2346738500C77E59 /* DepartureList.swift in Sources */,
+				30482D1B22BC1EFE00D7850D /* BusStop.swift in Sources */,
+				8BD0F03123B9527E006151FF /* StopButton.swift in Sources */,
+				8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */,
+				8BD0F02E23B4C681006151FF /* UserDefaultsKeys.swift in Sources */,
+				30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */,
+				8BD0F02A23B41C6D006151FF /* FavoriteList.swift in Sources */,
+				8BDFFF812346738500C77E59 /* GraphQLResponse.swift in Sources */,
+				8B774DEF23F87D170039EA19 /* StoreObserver.swift in Sources */,
+				8BD0F02C23B4C531006151FF /* FavoritesController.swift in Sources */,
+				8BD0F02423B4180D006151FF /* IconController.swift in Sources */,
+				8BD0F02223B417F1006151FF /* User.swift in Sources */,
+				307F44D92325A4DD00BDC858 /* Departure.swift in Sources */,
+				8BD0F03323B9555D006151FF /* FavoriteLineButton.swift in Sources */,
+				3092F8EC230B2BBC009CE82B /* BusStopList.swift in Sources */,
+				30482D0222BC1CE200D7850D /* NotificationController.swift in Sources */,
+				8BD0F03523BA9ED4006151FF /* FavoriteStopButton.swift in Sources */,
+				30482D2022BD26C500D7850D /* APIController.swift in Sources */,
+				30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */,
+				30482D1D22BD216300D7850D /* StopsListView.swift in Sources */,
+				8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */,
+				8BD0F01C23B4173B006151FF /* AppState.swift in Sources */,
+				8BD0F02823B41C63006151FF /* Favorite.swift in Sources */,
+				8BD0F02623B41C26006151FF /* FavoritesView.swift in Sources */,
+				8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */,
+				8BD0F01923B4172A006151FF /* Settings.swift in Sources */,
+				30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30482CEA22BC1CE000D7850D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30482CE622BC1CE000D7850D /* Ferd WatchKit App */;
+			targetProxy = 30482CE922BC1CE000D7850D /* PBXContainerItemProxy */;
+		};
+		30482CF922BC1CE200D7850D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30482CF522BC1CE200D7850D /* Ferd WatchKit Extension */;
+			targetProxy = 30482CF822BC1CE200D7850D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30482CEC22BC1CE000D7850D /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30482CED22BC1CE000D7850D /* Base */,
+				8B60A7D323C159E900D97191 /* nb */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		8B60A7CF23C1591600D97191 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B60A7CE23C1591600D97191 /* en */,
+				8B341E0B23C2456400E0B698 /* nb */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BBF19E223EF1F7900B5A2DA /* en */,
+				8BBF19E423EF1F7D00B5A2DA /* nb */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30482D0C22BC1CE300D7850D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Ferd;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30482D0D22BC1CE300D7850D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Ferd;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30482D0F22BC1CE300D7850D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_ASSET_PATHS = "\"Ferd WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Ferd WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		30482D1022BC1CE300D7850D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_ASSET_PATHS = "\"Ferd WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Ferd WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		30482D1322BC1CE300D7850D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				IBSC_MODULE = Ferd_WatchKit_Extension;
+				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp;
+				PRODUCT_NAME = Ferd;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		30482D1422BC1CE300D7850D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				IBSC_MODULE = Ferd_WatchKit_Extension;
+				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp;
+				PRODUCT_NAME = Ferd;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		30482D1722BC1CE300D7850D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				INFOPLIST_FILE = Ferd/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd;
+				PRODUCT_NAME = Ferd;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		30482D1822BC1CE300D7850D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = ZNYSJ75KPC;
+				INFOPLIST_FILE = Ferd/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd;
+				PRODUCT_NAME = Ferd;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30482CE022BC1CE000D7850D /* Build configuration list for PBXProject "Ferd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30482D0C22BC1CE300D7850D /* Debug */,
+				30482D0D22BC1CE300D7850D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30482D0E22BC1CE300D7850D /* Build configuration list for PBXNativeTarget "Ferd WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30482D0F22BC1CE300D7850D /* Debug */,
+				30482D1022BC1CE300D7850D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30482D1222BC1CE300D7850D /* Build configuration list for PBXNativeTarget "Ferd WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30482D1322BC1CE300D7850D /* Debug */,
+				30482D1422BC1CE300D7850D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30482D1622BC1CE300D7850D /* Build configuration list for PBXNativeTarget "Ferd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30482D1722BC1CE300D7850D /* Debug */,
+				30482D1822BC1CE300D7850D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30482CDD22BC1CE000D7850D /* Project object */;
+}
