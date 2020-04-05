@@ -24,6 +24,4 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
     var isAuthorizedForPayments: Bool {
         return SKPaymentQueue.canMakePayments()
     }
-    
-    
 }

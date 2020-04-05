@@ -123,7 +123,13 @@ struct AboutScreen: View {
 
 struct PremiumScreen: View {
     var body: some View {
-        EmptyView()
+        List(ProductList.shared.products, id: \.self) { product in
+            Text(product)
+        }.onAppear(perform: { self.loadProducts() })
+    }
+    
+    private func loadProducts() {
+        StoreController.shared.fetchProductInformation()
     }
     
 }

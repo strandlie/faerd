@@ -29,13 +29,9 @@
 		8B774DEF23F87D170039EA19 /* StoreObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B774DEE23F87D170039EA19 /* StoreObserver.swift */; };
 		8B93BC3B23D30BED005C9725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B93BC3A23D30BED005C9725 /* Assets.xcassets */; };
 		8B9CBF7A243A5B0800749DDD /* ProductIds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B9CBF79243A5B0800749DDD /* ProductIds.plist */; };
-		8BB7D3FE242F46E6003EBC58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D3FD242F46E6003EBC58 /* AppDelegate.swift */; };
-		8BB7D400242F46E6003EBC58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D3FF242F46E6003EBC58 /* SceneDelegate.swift */; };
-		8BB7D402242F46E6003EBC58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D401242F46E6003EBC58 /* ContentView.swift */; };
-		8BB7D404242F46E7003EBC58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB7D403242F46E7003EBC58 /* Assets.xcassets */; };
-		8BB7D407242F46E7003EBC58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB7D406242F46E7003EBC58 /* Preview Assets.xcassets */; };
-		8BB7D40A242F46E7003EBC58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB7D408242F46E7003EBC58 /* LaunchScreen.storyboard */; };
-		8BB7D411242F4913003EBC58 /* StopsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB7D410242F4913003EBC58 /* StopsListView.swift */; };
+		8B9CBF7C243A890B00749DDD /* AppDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CBF7B243A890B00749DDD /* AppDataTypes.swift */; };
+		8B9CBF7E243A8A1F00749DDD /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CBF7D243A8A1F00749DDD /* AppExtensions.swift */; };
+		8B9CBF80243A8F2F00749DDD /* ProductsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9CBF7F243A8F2F00749DDD /* ProductsList.swift */; };
 		8BBF19E123EF1F7900B5A2DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */; };
 		8BD0F01523B41719006151FF /* RadioPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01323B41719006151FF /* RadioPicker.swift */; };
 		8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0F01423B41719006151FF /* ActivityIndicator.swift */; };
@@ -131,15 +127,9 @@
 		8B774DEE23F87D170039EA19 /* StoreObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreObserver.swift; sourceTree = "<group>"; };
 		8B93BC3A23D30BED005C9725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B9CBF79243A5B0800749DDD /* ProductIds.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ProductIds.plist; sourceTree = "<group>"; };
-		8BB7D3FB242F46E6003EBC58 /* Ferde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferde.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BB7D3FD242F46E6003EBC58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BB7D3FF242F46E6003EBC58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8BB7D401242F46E6003EBC58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8BB7D403242F46E7003EBC58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8BB7D406242F46E7003EBC58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8BB7D409242F46E7003EBC58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8BB7D40B242F46E7003EBC58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BB7D410242F4913003EBC58 /* StopsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsListView.swift; sourceTree = "<group>"; };
+		8B9CBF7B243A890B00749DDD /* AppDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataTypes.swift; sourceTree = "<group>"; };
+		8B9CBF7D243A8A1F00749DDD /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
+		8B9CBF7F243A8F2F00749DDD /* ProductsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsList.swift; sourceTree = "<group>"; };
 		8BBF19E223EF1F7900B5A2DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BBF19E423EF1F7D00B5A2DA /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BD0F01323B41719006151FF /* RadioPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPicker.swift; sourceTree = "<group>"; };
@@ -181,13 +171,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BB7D3F8242F46E6003EBC58 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8C2774FCAD9A9C291546E235 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,7 +187,6 @@
 				8B0131A224026E3900B0A296 /* Ferd */,
 				30482CEB22BC1CE000D7850D /* Ferd WatchKit App */,
 				30482CFA22BC1CE200D7850D /* Ferd WatchKit Extension */,
-				8BB7D3FC242F46E6003EBC58 /* FerdiOS */,
 				30482CE422BC1CE000D7850D /* Products */,
 				B538DE58A449D7DE85682FD3 /* Frameworks */,
 			);
@@ -216,7 +198,6 @@
 				30482CE322BC1CE000D7850D /* Ferd.app */,
 				30482CE722BC1CE000D7850D /* Ferd.app */,
 				30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */,
-				8BB7D3FB242F46E6003EBC58 /* Ferde.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -321,39 +302,9 @@
 			children = (
 				8B774DEE23F87D170039EA19 /* StoreObserver.swift */,
 				8B9CBF79243A5B0800749DDD /* ProductIds.plist */,
+				8B9CBF7F243A8F2F00749DDD /* ProductsList.swift */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		8BB7D3FC242F46E6003EBC58 /* FerdiOS */ = {
-			isa = PBXGroup;
-			children = (
-				8BB7D40F242F48F8003EBC58 /* Views */,
-				8BB7D3FD242F46E6003EBC58 /* AppDelegate.swift */,
-				8BB7D3FF242F46E6003EBC58 /* SceneDelegate.swift */,
-				8BB7D401242F46E6003EBC58 /* ContentView.swift */,
-				8BB7D403242F46E7003EBC58 /* Assets.xcassets */,
-				8BB7D408242F46E7003EBC58 /* LaunchScreen.storyboard */,
-				8BB7D40B242F46E7003EBC58 /* Info.plist */,
-				8BB7D405242F46E7003EBC58 /* Preview Content */,
-			);
-			path = FerdiOS;
-			sourceTree = "<group>";
-		};
-		8BB7D405242F46E7003EBC58 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				8BB7D406242F46E7003EBC58 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8BB7D40F242F48F8003EBC58 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8BB7D410242F4913003EBC58 /* StopsListView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		8BD0F01223B41719006151FF /* Utils */ = {
@@ -362,6 +313,8 @@
 				8BD0F01323B41719006151FF /* RadioPicker.swift */,
 				8BD0F01423B41719006151FF /* ActivityIndicator.swift */,
 				8BD0F02D23B4C681006151FF /* UserDefaultsKeys.swift */,
+				8B9CBF7B243A890B00749DDD /* AppDataTypes.swift */,
+				8B9CBF7D243A8A1F00749DDD /* AppExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -441,23 +394,6 @@
 			productReference = 30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		8BB7D3FA242F46E6003EBC58 /* FerdiOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BB7D40E242F46E7003EBC58 /* Build configuration list for PBXNativeTarget "FerdiOS" */;
-			buildPhases = (
-				8BB7D3F7242F46E6003EBC58 /* Sources */,
-				8BB7D3F8242F46E6003EBC58 /* Frameworks */,
-				8BB7D3F9242F46E6003EBC58 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FerdiOS;
-			productName = FerdiOS;
-			productReference = 8BB7D3FB242F46E6003EBC58 /* Ferde.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -476,9 +412,6 @@
 					};
 					30482CF522BC1CE200D7850D = {
 						CreatedOnToolsVersion = 11.0;
-					};
-					8BB7D3FA242F46E6003EBC58 = {
-						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -501,7 +434,6 @@
 				30482CE222BC1CE000D7850D /* Ferd */,
 				30482CE622BC1CE000D7850D /* Ferd WatchKit App */,
 				30482CF522BC1CE200D7850D /* Ferd WatchKit Extension */,
-				8BB7D3FA242F46E6003EBC58 /* FerdiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -535,16 +467,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BB7D3F9242F46E6003EBC58 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8BB7D40A242F46E7003EBC58 /* LaunchScreen.storyboard in Resources */,
-				8BB7D407242F46E7003EBC58 /* Preview Assets.xcassets in Resources */,
-				8BB7D404242F46E7003EBC58 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -554,6 +476,7 @@
 			files = (
 				30C330D02306DD2700BCE0DF /* StopDetailView.swift in Sources */,
 				8B70FC7523EF440C00B7B597 /* ComplicationController.swift in Sources */,
+				8B9CBF7C243A890B00749DDD /* AppDataTypes.swift in Sources */,
 				8B70FC7223EF2ACD00B7B597 /* StoreController.swift in Sources */,
 				30482D2722BFBE4200D7850D /* LocationController.swift in Sources */,
 				8BEA76CA2357A716008E8DA0 /* LineDetailView.swift in Sources */,
@@ -578,25 +501,16 @@
 				8BD0F03523BA9ED4006151FF /* FavoriteStopButton.swift in Sources */,
 				30482D2022BD26C500D7850D /* APIController.swift in Sources */,
 				30482D0022BC1CE200D7850D /* ExtensionDelegate.swift in Sources */,
+				8B9CBF7E243A8A1F00749DDD /* AppExtensions.swift in Sources */,
 				30482D1D22BD216300D7850D /* StopsListView.swift in Sources */,
 				8BD0F01623B41719006151FF /* ActivityIndicator.swift in Sources */,
 				8BD0F01C23B4173B006151FF /* AppState.swift in Sources */,
 				8BD0F02823B41C63006151FF /* Favorite.swift in Sources */,
 				8BD0F02623B41C26006151FF /* FavoritesView.swift in Sources */,
+				8B9CBF80243A8F2F00749DDD /* ProductsList.swift in Sources */,
 				8BDFFF822346738500C77E59 /* NearbyStopsResponse.swift in Sources */,
 				8BD0F01923B4172A006151FF /* Settings.swift in Sources */,
 				30482D0422BC1CE200D7850D /* NotificationView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8BB7D3F7242F46E6003EBC58 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8BB7D3FE242F46E6003EBC58 /* AppDelegate.swift in Sources */,
-				8BB7D400242F46E6003EBC58 /* SceneDelegate.swift in Sources */,
-				8BB7D411242F4913003EBC58 /* StopsListView.swift in Sources */,
-				8BB7D402242F46E6003EBC58 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,14 +546,6 @@
 				8B341E0B23C2456400E0B698 /* nb */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		8BB7D408242F46E7003EBC58 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8BB7D409242F46E7003EBC58 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		8BBF19E323EF1F7900B5A2DA /* InfoPlist.strings */ = {
@@ -902,48 +808,6 @@
 			};
 			name = Release;
 		};
-		8BB7D40C242F46E7003EBC58 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"FerdiOS/Preview Content\"";
-				DEVELOPMENT_TEAM = ZNYSJ75KPC;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FerdiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.strandlie.Ferd.iOS;
-				PRODUCT_NAME = Ferde;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8BB7D40D242F46E7003EBC58 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"FerdiOS/Preview Content\"";
-				DEVELOPMENT_TEAM = ZNYSJ75KPC;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FerdiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.strandlie.Ferd.iOS;
-				PRODUCT_NAME = Ferde;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -979,15 +843,6 @@
 			buildConfigurations = (
 				30482D1722BC1CE300D7850D /* Debug */,
 				30482D1822BC1CE300D7850D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8BB7D40E242F46E7003EBC58 /* Build configuration list for PBXNativeTarget "FerdiOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8BB7D40C242F46E7003EBC58 /* Debug */,
-				8BB7D40D242F46E7003EBC58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
