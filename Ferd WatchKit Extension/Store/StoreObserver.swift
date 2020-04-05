@@ -7,9 +7,7 @@
 //
 
 import Foundation
-/*
 import StoreKit
-
 
 class StoreObserver: NSObject, SKPaymentTransactionObserver {
     
@@ -23,5 +21,9 @@ class StoreObserver: NSObject, SKPaymentTransactionObserver {
         print()
     }
     
+    var isAuthorizedForPayments: Bool {
+        return SKPaymentQueue.canMakePayments()
+    }
     
-}*/
+    
+}
