@@ -65,13 +65,20 @@ struct FavoritesView: View {
                     Spacer()
                     Text(max_favorites)
                         .font(.body)
-                    Button(action: {StoreController.shared.userWantsToBuyPremiumFavorites()}) {
-                        Text(upgrade)
-                            .font(.headline)
+                    Button(action: {StoreController.shared.userWantsToBuy(feature: UserDefaultsKeys.premiumFavoritesStatus.rawValue)}) {
+                        VStack {
+                            Text(upgrade)
+                                .font(.headline)
+                            Text(StoreController.shared.premiumFavoritesProduct.regularPrice ?? "")
+                                .colorMultiply(.blue)
+                        }
+                        
         
                     }
                     Text(benefits)
                         .font(.body)
+                    
+                    
                     }.padding()
             : nil
 

@@ -122,14 +122,57 @@ struct AboutScreen: View {
 }
 
 struct PremiumScreen: View {
+    
+    let premiumFavoritesProduct = StoreController.shared.premiumFavoritesProduct
+    
     var body: some View {
-        List(ProductList.shared.products, id: \.self) { product in
-            Text(product)
+        ScrollView {
+            Group {
+                Text("Has Ferd ever been useful to you?").font(.headline)
+                Spacer()
+                Text("If so, I would really appreciate if you considered upgrading to Premium. Ferd exists because of amazing people like you.")
+                
+                Divider().background(Color.red)
+                
+                Text("Premium Favorites").font(.headline)
+                Spacer()
+                
+                Text("The maximum number of favorites in the free version of Ferd is 3.")
+                Spacer(minLength: 20)
+                Button(action: { self.buy(feature: UserDefaultsKeys.premiumFavoritesStatus.rawValue) }) {
+                    VStack {
+                        Text("Upgrade")
+                            .font(.headline)
+                        Text("\(premiumFavoritesProduct.regularPrice ?? "")")
+                            .colorMultiply(.blue)
+                    }
+                    
+                }
+                Text("to Premium Favorites and unlock unlimited favorites.")
+            }
+            
+            Divider().background(Color.red)
+            Spacer(minLength: 20)
+        
+            Button(action: {self.restore() }) {
+                Text("Restore")
+            }
+            
+            
         }.onAppear(perform: { self.loadProducts() })
+        .navigationBarTitle(Text("Premium"))
     }
     
     private func loadProducts() {
         StoreController.shared.fetchProductInformation()
+    }
+    
+    private func restore() {
+        StoreController.shared.restorePurchases()
+    }
+    
+    private func buy(feature: String) {
+        StoreController.shared.userWantsToBuy(feature: feature)
     }
     
 }
@@ -140,7 +183,7 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SettingsView()
-            AboutScreen()
+            PremiumScreen()
         }.environment(\.locale, .init(identifier: "no"))
         
     }

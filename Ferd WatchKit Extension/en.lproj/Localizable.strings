@@ -45,7 +45,7 @@
 "premium_favorites" = "Premium Favorites";
 "max_favorites" = "You have reached the maximum number of favorites in the free version of Ferd.";
 "upgrade" = "Upgrade";
-"benefits" = "to Premium Favorites and unlock unlimited favorites, while supporting indie development 🤓";
+"benefits" = "to Premium Favorites and unlock unlimited favorites.";
 
 // Alert
 "premium_required" = "Premium Required";

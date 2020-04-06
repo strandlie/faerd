@@ -12,7 +12,7 @@ import WatchKit
 
 final class AppState: ObservableObject {
     @Published var isFetching = false
-    @Published var hasPremiumFavorites = StoreController.shared.getPremiumFavoritesStatus()
+    @Published var hasPremiumFavorites = StoreController.shared.getProductStatus(for: UserDefaultsKeys.premiumFavoritesStatus.rawValue)
     @Published var hasLocationAccess = false
     
     static let shared = AppState()

@@ -102,7 +102,7 @@ struct LineDetailView: View {
             Alert(title: Text(premium_required),
                   message: Text(max_favorites) + Text("\n\n") + Text(upgrade_for_unlimited),
                   primaryButton: .default(Text(upgrade)) {
-                    StoreController.shared.userWantsToBuyPremiumFavorites()
+                    StoreController.shared.userWantsToBuy(feature: UserDefaultsKeys.premiumFavoritesStatus.rawValue)
                     self.favoritesWarningIsPresented = false
                 },
                   secondaryButton: .destructive(Text(keep_free)) {

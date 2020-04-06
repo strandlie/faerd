@@ -19,22 +19,44 @@ class StoreController: NSObject {
     
     fileprivate var invalidProductIdentifiers = [String]()
     
+    fileprivate var productRequest: SKProductsRequest!
     
-    func getPremiumFavoritesStatus() -> Bool {
-        return UserDefaults.standard.bool(forKey: UserDefaultsKeys.premiumFavoritesStatus.rawValue)
-        
+    fileprivate var purchasedProductIdentifiers = [String]()
+    
+    public var premiumFavoritesProduct: SKProduct {
+        guard let product = availableProducts.first else {
+            fatalError("Incorrect products available")
+        }
+        return product
     }
     
-    func setPremiumFavoritesStatus(_ status: Bool) {
-        UserDefaults.standard.set(status, forKey: UserDefaultsKeys.premiumFavoritesStatus.rawValue)
+    //MARK: Product Status
+    func getProductStatus(for feature: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: feature)
     }
     
-    func userWantsToBuyPremiumFavorites() {
-        // ....
-        setPremiumFavoritesStatus(true)
-        AppState.shared.hasPremiumFavorites = getPremiumFavoritesStatus()
+    func setProductStatus(_ status: Bool, for feature: String) {
+        UserDefaults.standard.set(status, forKey: feature)
     }
     
+    
+    // MARK: Purchasing
+    
+    /// User has an intention to buy a product
+    
+    public func userWantsToBuy(feature: String) {
+        if let product = availableProducts.first, feature == UserDefaultsKeys.premiumFavoritesStatus.rawValue {
+            purchaseProduct(product)
+        }
+    }
+    
+    /// Start payment workflow
+    private func purchaseProduct(_ product: SKProduct) {
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
+    }
+    
+    /// Get available products from App Store
     func fetchProductInformation() {
         if StoreObserver.shared.isAuthorizedForPayments {
             let resourceFile = ProductIdentifiers()
@@ -50,9 +72,13 @@ class StoreController: NSObject {
     func startProductRequest(with identifiers: [String]) {
         let productIdentifiers = Set(identifiers)
         
-        let productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+        productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
         productRequest.delegate = self
         productRequest.start()
+    }
+    
+    public func restorePurchases() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
 

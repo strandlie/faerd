@@ -13,6 +13,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         SKPaymentQueue.default().add(StoreObserver.shared)
+        StoreController.shared.fetchProductInformation()
     }
 
     func applicationDidBecomeActive() {
