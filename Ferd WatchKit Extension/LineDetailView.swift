@@ -13,6 +13,7 @@ struct LineDetailView: View {
     @EnvironmentObject var favoriteList: FavoriteList
     
     @State var favoritesWarningIsPresented = false
+    let premiumPrice = StoreController.shared.premiumFavoritesProduct.regularPrice ?? " "
     
     // MARK: Localization
     let to: LocalizedStringKey = "to"
@@ -101,7 +102,7 @@ struct LineDetailView: View {
         .alert(isPresented: $favoritesWarningIsPresented, content: {
             Alert(title: Text(premium_required),
                   message: Text(max_favorites) + Text("\n\n") + Text(upgrade_for_unlimited),
-                  primaryButton: .default(Text(upgrade)) {
+                  primaryButton: .default(Text(upgrade) + Text(" (\(premiumPrice))")) {
                     StoreController.shared.userWantsToBuy(feature: UserDefaultsKeys.premiumFavoritesStatus.rawValue)
                     self.favoritesWarningIsPresented = false
                 },

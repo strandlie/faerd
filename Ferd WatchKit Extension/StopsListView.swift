@@ -106,7 +106,7 @@ struct StopsListView : View {
                             
                 }
             }
-        }.navigationBarTitle("FERD")
+        }.navigationBarTitle("Ferd")
     }
     
 

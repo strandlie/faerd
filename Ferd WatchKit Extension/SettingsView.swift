@@ -11,10 +11,11 @@ import Combine
 
 struct SettingsView: View {
     
-    @ObservedObject var settings = Settings.shared
+    @ObservedObject var settingsObject = Settings.shared
     
     // MARK: Localization
     let about: LocalizedStringKey = "about"
+    let settings: LocalizedStringKey = "settings"
     let premium_features: LocalizedStringKey = "premium_features"
     let start_screen: LocalizedStringKey = "start_screen"
     
@@ -31,24 +32,25 @@ struct SettingsView: View {
             Spacer()
             VStack(alignment: .leading) {
                 Text(start_screen).font(.headline)
-                RadioPicker(options: [.list, .favorites], currentlySelected: $settings.firstScreenSelection)
+                RadioPicker(options: [.list, .favorites], currentlySelected: $settingsObject.firstScreenSelection)
                 
             }
             
-        }
+        }.navigationBarTitle(Text(settings))
     }
 }
 
 struct AboutScreen: View {
     
     // MARK: Localization
+    let about: LocalizedStringKey = "about"
     let love: LocalizedStringKey = "love"
     let description: LocalizedStringKey = "description"
     let website: LocalizedStringKey = "website"
     let credits: LocalizedStringKey = "credits"
     let entur: LocalizedStringKey = "entur"
     let alamofire: LocalizedStringKey = "alamofire"
-    let settings: LocalizedStringKey = "settings"
+    
     
     var body: some View {
         ScrollView {
@@ -117,7 +119,7 @@ struct AboutScreen: View {
                     Spacer()
                 }
             }
-        }.navigationBarTitle(settings)
+        }.navigationBarTitle(Text(about))
     }
 }
 
@@ -130,7 +132,7 @@ struct PremiumScreen: View {
             Group {
                 Text("Has Ferd ever been useful to you?").font(.headline)
                 Spacer()
-                Text("If so, I would really appreciate if you considered upgrading to Premium. Ferd exists because of amazing people like you.")
+                Text("If so, I would really appreciate if you considered upgrading to Premium. \nFerd exists because of amazing people like you. Thank you!")
                 
                 Divider().background(Color.red)
                 
@@ -148,7 +150,7 @@ struct PremiumScreen: View {
                     }
                     
                 }
-                Text("to Premium Favorites and unlock unlimited favorites.")
+                Text("to Premium Favorites and unlock as many favorites as you need.")
             }
             
             Divider().background(Color.red)
