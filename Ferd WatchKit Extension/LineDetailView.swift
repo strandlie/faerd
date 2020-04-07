@@ -88,16 +88,22 @@ struct LineDetailView: View {
                 
             }
             departureList.departures.count == 0
-            ? VStack{
+            ? VStack {
                 Text(no_departures)
-                }
-            : nil
-            Divider()
-            HStack {
-                Text(departures_in)
-                Text(realtime).foregroundColor(.yellow)
-                
             }
+            : nil
+            
+            departureList.departures.count > 0
+            ? VStack {
+                Divider()
+                HStack {
+                    Text(departures_in)
+                    Text(realtime).foregroundColor(.yellow)
+                    
+                }
+            }
+            : nil
+            
         }
         .alert(isPresented: $favoritesWarningIsPresented, content: {
             Alert(title: Text(premium_required),

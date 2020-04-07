@@ -49,7 +49,6 @@ struct AboutScreen: View {
     let website: LocalizedStringKey = "website"
     let credits: LocalizedStringKey = "credits"
     let entur: LocalizedStringKey = "entur"
-    let alamofire: LocalizedStringKey = "alamofire"
     
     
     var body: some View {
@@ -67,8 +66,6 @@ struct AboutScreen: View {
             VStack(alignment: .leading) {
                 Text(credits).font(.headline)
                 Text(entur)
-                Spacer()
-                Text(alamofire)
             }
             
             Divider()
@@ -126,38 +123,62 @@ struct AboutScreen: View {
 struct PremiumScreen: View {
     
     let premiumFavoritesProduct = StoreController.shared.premiumFavoritesProduct
+    @ObservedObject var appState = AppState.shared
+    
+    // MARK: Localization
+    let useful: LocalizedStringKey = "useful"
+    let consider_upgrade: LocalizedStringKey = "consider_upgrade"
+    let premium_favorites: LocalizedStringKey = "premium_favorites"
+    let max_num_favorites: LocalizedStringKey = "max_num_favorites"
+    let upgrade: LocalizedStringKey = "upgrade"
+    let benefits: LocalizedStringKey = "benefits"
+    let thank_you: LocalizedStringKey = "thank_you"
+    let bought: LocalizedStringKey = "bought"
+    let restore_string: LocalizedStringKey = "restore"
     
     var body: some View {
         ScrollView {
-            Group {
-                Text("Has Ferd ever been useful to you?").font(.headline)
+            
+            // Show ad when user has not bought Premium Favorites
+            !appState.hasPremiumFavorites
+            ? Group {
+                Text(useful).font(.headline)
                 Spacer()
-                Text("If so, I would really appreciate if you considered upgrading to Premium. \nFerd exists because of amazing people like you. Thank you!")
+                Text(consider_upgrade)
                 
                 Divider().background(Color.red)
                 
-                Text("Premium Favorites").font(.headline)
+                Text(premium_favorites).font(.headline)
                 Spacer()
                 
-                Text("The maximum number of favorites in the free version of Ferd is 3.")
+                Text(max_num_favorites)
                 Spacer(minLength: 20)
                 Button(action: { self.buy(feature: UserDefaultsKeys.premiumFavoritesStatus.rawValue) }) {
                     VStack {
-                        Text("Upgrade")
+                        Text(upgrade)
                             .font(.headline)
                         Text("\(premiumFavoritesProduct.regularPrice ?? "")")
                             .colorMultiply(.blue)
                     }
                     
                 }
-                Text("to Premium Favorites and unlock as many favorites as you need.")
+                Text(benefits)
             }
+            : nil
+            
+            appState.hasPremiumFavorites
+            ? Group {
+                Text(thank_you).font(.headline)
+                Spacer()
+                Text(bought)
+            }
+            : nil
             
             Divider().background(Color.red)
             Spacer(minLength: 20)
         
             Button(action: {self.restore() }) {
-                Text("Restore")
+                Text(restore_string)
             }
             
             
