@@ -157,7 +157,7 @@ struct PremiumScreen: View {
                     VStack {
                         Text(upgrade)
                             .font(.headline)
-                        Text("\(premiumFavoritesProduct.regularPrice ?? "")")
+                        Text("\(premiumFavoritesProduct?.regularPrice ?? "")")
                             .colorMultiply(.blue)
                     }
                     

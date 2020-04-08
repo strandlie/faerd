@@ -69,7 +69,7 @@ struct FavoritesView: View {
                         VStack {
                             Text(upgrade)
                                 .font(.headline)
-                            Text(StoreController.shared.premiumFavoritesProduct.regularPrice ?? "")
+                            Text(StoreController.shared.premiumFavoritesProduct?.regularPrice ?? "")
                                 .colorMultiply(.blue)
                         }
                         

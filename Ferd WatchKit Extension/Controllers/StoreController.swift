@@ -23,11 +23,8 @@ class StoreController: NSObject {
     
     fileprivate var purchasedProductIdentifiers = [String]()
     
-    public var premiumFavoritesProduct: SKProduct {
-        guard let product = availableProducts.first else {
-            fatalError("Incorrect products available")
-        }
-        return product
+    public var premiumFavoritesProduct: SKProduct? {
+        return availableProducts.first
     }
     
     //MARK: Product Status

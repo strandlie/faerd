@@ -13,7 +13,7 @@ struct LineDetailView: View {
     @EnvironmentObject var favoriteList: FavoriteList
     
     @State var favoritesWarningIsPresented = false
-    let premiumPrice = StoreController.shared.premiumFavoritesProduct.regularPrice ?? " "
+    let premiumPrice = StoreController.shared.premiumFavoritesProduct?.regularPrice ?? " "
     
     // MARK: Localization
     let to: LocalizedStringKey = "to"
@@ -40,39 +40,32 @@ struct LineDetailView: View {
     var body: some View {
         ScrollView {
             HStack {
+                Text(publicCode)
+                    .bold()
+                    .lineLimit(2)
+                    .font(.title)
                 Button(action: {
-                    if (self.favoriteList.existsLocationFavorite(for: self.stop) || self.favoriteList.canAddMoreFavorites()) {
+                    if (self.favoriteList.existsLineFavorite(for: self.stop, destinationName: self.destinationName, publicCode: self.publicCode) || self.favoriteList.canAddMoreFavorites()) {
                         self.favoritesWarningIsPresented = false
                         self.toggleFavorite()
                     } else {
                         self.favoritesWarningIsPresented = true
                     }
-                    
+                        
                 }) {
                     IconController.getSystemIcon(for: .star)
                         .colorMultiply(favoriteList.existsLineFavorite(for: stop, destinationName: destinationName, publicCode: publicCode) ? .yellow : .white)
                 }.frame(width: 50)
-                .layoutPriority(0.2)
-                VStack {
-                    HStack {
-                        Text(publicCode)
-                            .bold()
-                            .lineLimit(2)
-                            .font(.headline)
-                        Text(to)
-                        
-                    }
-                    HStack {
-                        Text(destinationName)
-                            .bold()
-                            .lineLimit(2)
-                            .font(.headline)
-                            .truncationMode(.middle)
-                    }
-                    
-                }.layoutPriority(0.8)
-            }
 
+                
+            }
+            
+            Text(to)
+            Text(destinationName)
+                .font(.headline)
+                .truncationMode(.middle)
+            
+            
             Divider().background(Color.red)
             ForEach(departureList.departures.filter(StopDetailView.filterClosure)) { departure in
                 HStack {
@@ -116,6 +109,7 @@ struct LineDetailView: View {
                     self.favoritesWarningIsPresented = false
             })
         })
+        .navigationBarTitle(stop.name)
     }
     
     private func toggleFavorite() {

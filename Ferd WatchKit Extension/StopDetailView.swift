@@ -30,7 +30,7 @@ struct StopDetailView: View {
     
     @State var numDeparturesToLoad = 20
     @State var favoritesWarningIsPresented = false
-    let premiumPrice = StoreController.shared.premiumFavoritesProduct.regularPrice ?? " "
+    let premiumPrice = StoreController.shared.premiumFavoritesProduct?.regularPrice ?? " "
     
     // Show departures from 20 seconds ago and into the future
     static let filterClosure = { (departure: Departure) -> Bool in
@@ -46,7 +46,7 @@ struct StopDetailView: View {
             VStack {
                 Text(stop.name)
                     .bold()
-                    .lineLimit(3)
+                    .lineLimit(4)
                     .font(.title)
                     .truncationMode(.middle)
                 HStack {
