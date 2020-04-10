@@ -34,7 +34,6 @@
 "website" = " strandlie.co/ferd";
 "credits" = "Credits";
 "entur" = "Data is fetched from EnTur. \ndeveloper.entur.org";
-"alamofire" = "Networking by AlamoFire. \ngithub.com/Alamofire";
 "settings" = "Settings";
 "premium_features" = "Premium";
 
@@ -45,13 +44,21 @@
 "premium_favorites" = "Premium Favorites";
 "max_favorites" = "You have reached the maximum number of favorites in the free version of Ferd.";
 "upgrade" = "Upgrade";
-"benefits" = "to Premium Favorites and unlock unlimited favorites, while supporting indie development 🤓";
+"benefits" = "to Premium Favorites and unlock as many favorites as you need.";
 
 // Alert
 "premium_required" = "Premium Required";
 "upgrade_for_unlimited" = "Upgrade to Premium Favorites to store an unlimited number.";
 "keep_free" = "Keep using free";
 
+// Premium Screen
+"useful" = "Has Ferd ever been useful to you?";
+"consider_upgrade" = "If so, I would really appreciate if you considered upgrading to Premium feature. \nFerd exists because of amazing people like you. Thank you!";
+"max_num_favorites" = "The maximum number of favorites in the free version of Ferd is 2.";
+"thank_you" = "Thank you! ❤️";
+"bought" = "You have bought Premium Favorites. Thank you very much for supporting Ferd, and helping independent developers do what they do best. \n\nYou also helped ensure that new and improved features keep coming in the future!";
+"restore_explain" = "Restore previous purchases";
+"restore" = "Restore";
 
 
 

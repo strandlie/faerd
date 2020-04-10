@@ -7,12 +7,13 @@
 //
 
 import WatchKit
-//import StoreKit
+import StoreKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
-        //SKPaymentQueue.default().add(StoreObserver.shared)
+        SKPaymentQueue.default().add(StoreObserver.shared)
+        StoreController.shared.fetchProductInformation()
     }
 
     func applicationDidBecomeActive() {

@@ -13,6 +13,7 @@ struct StopDetailView: View {
     let stop: BusStop
     let distance: String
     
+    
     // MARK: Localization
     static let now: LocalizedStringKey = "now"
     let no_departures: LocalizedStringKey = "no_departures"
@@ -29,6 +30,7 @@ struct StopDetailView: View {
     
     @State var numDeparturesToLoad = 20
     @State var favoritesWarningIsPresented = false
+    let premiumPrice = StoreController.shared.premiumFavoritesProduct?.regularPrice ?? " "
     
     // Show departures from 20 seconds ago and into the future
     static let filterClosure = { (departure: Departure) -> Bool in
@@ -44,7 +46,7 @@ struct StopDetailView: View {
             VStack {
                 Text(stop.name)
                     .bold()
-                    .lineLimit(3)
+                    .lineLimit(4)
                     .font(.title)
                     .truncationMode(.middle)
                 HStack {
@@ -125,8 +127,8 @@ struct StopDetailView: View {
         .alert(isPresented: $favoritesWarningIsPresented, content: {
             Alert(title: Text(premium_required),
                   message: Text(max_favorites) + Text("\n\n") + Text(upgrade_for_unlimited),
-                  primaryButton: .default(Text(upgrade)) {
-                    StoreController.shared.userWantsToBuyPremiumFavorites()
+                  primaryButton: .default(Text(upgrade) + Text("(\(premiumPrice))")) {
+                    StoreController.shared.userWantsToBuy(feature: UserDefaultsKeys.premiumFavoritesStatus.rawValue)
                     self.favoritesWarningIsPresented = false
                     } , secondaryButton: .destructive(Text(keep_free)) {
                     self.favoritesWarningIsPresented = false

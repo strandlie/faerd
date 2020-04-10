@@ -13,9 +13,6 @@ import SwiftUI
 class HostingController : WKHostingController<ContentView> {
     
     override var body: ContentView {
-        #if DEBUG
-        StoreController.shared.setPremiumFavoritesStatus(false)
-        #endif
         LocationController.shared.enableBasicLocationServices()
         return ContentView()
     }
