@@ -10,7 +10,7 @@ import Foundation
 
 class FavoriteList: ObservableObject {
     
-    static let FreeFavoriteLimit = 3
+    static let FreeFavoriteLimit = 2
     
     @Published var favorites: [Favorite]
     
@@ -85,10 +85,6 @@ class FavoriteList: ObservableObject {
     }
     
     func canAddMoreFavorites() -> Bool {
-        print("Free favorite count: \(FavoriteList.FreeFavoriteLimit)")
-        print("Has premium favorites: \(AppState.shared.hasPremiumFavorites)")
-        print("Returns: \(self.favorites.count < FavoriteList.FreeFavoriteLimit || AppState.shared.hasPremiumFavorites)")
-        print()
         return self.favorites.count < FavoriteList.FreeFavoriteLimit || AppState.shared.hasPremiumFavorites
     }
     

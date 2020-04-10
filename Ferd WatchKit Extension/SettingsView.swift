@@ -134,6 +134,7 @@ struct PremiumScreen: View {
     let benefits: LocalizedStringKey = "benefits"
     let thank_you: LocalizedStringKey = "thank_you"
     let bought: LocalizedStringKey = "bought"
+    let restore_explain: LocalizedStringKey = "restore_explain"
     let restore_string: LocalizedStringKey = "restore"
     
     var body: some View {
@@ -177,6 +178,7 @@ struct PremiumScreen: View {
             Divider().background(Color.red)
             Spacer(minLength: 20)
         
+            Text(restore_explain)
             Button(action: {self.restore() }) {
                 Text(restore_string)
             }

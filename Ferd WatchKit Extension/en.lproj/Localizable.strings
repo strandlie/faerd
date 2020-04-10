@@ -54,9 +54,10 @@
 // Premium Screen
 "useful" = "Has Ferd ever been useful to you?";
 "consider_upgrade" = "If so, I would really appreciate if you considered upgrading to Premium feature. \nFerd exists because of amazing people like you. Thank you!";
-"max_num_favorites" = "The maximum number of favorites in the free version of Ferd is 3.";
+"max_num_favorites" = "The maximum number of favorites in the free version of Ferd is 2.";
 "thank_you" = "Thank you! ❤️";
 "bought" = "You have bought Premium Favorites. Thank you very much for supporting Ferd, and helping independent developers do what they do best. \n\nYou also helped ensure that new and improved features keep coming in the future!";
+"restore_explain" = "Restore previous purchases";
 "restore" = "Restore";
 
 
