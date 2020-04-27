@@ -689,7 +689,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit Extension/Ferd WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Ferd WatchKit Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				ENABLE_PREVIEWS = YES;
@@ -718,7 +718,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit Extension/Ferd WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Ferd WatchKit Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				ENABLE_PREVIEWS = YES;
@@ -748,7 +748,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit App/Ferd.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				IBSC_MODULE = Ferd_WatchKit_Extension;
 				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
@@ -772,7 +772,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit App/Ferd.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				IBSC_MODULE = Ferd_WatchKit_Extension;
 				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
@@ -792,7 +792,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				INFOPLIST_FILE = Ferd/Info.plist;
 				MARKETING_VERSION = 1.2;
@@ -806,7 +806,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				INFOPLIST_FILE = Ferd/Info.plist;
 				MARKETING_VERSION = 1.2;
