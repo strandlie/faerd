@@ -14,7 +14,7 @@
 "no_stops" = "No stops nearby";
 "no_location_access" = "We do not have access to your location.";
 "open_iphone" = "On your iPhone";
-"instructions" = "go to \n\nSettings\n - Privacy\n - Location Services\n - Ferd \n\nand enable \"While Using the App\" to be able to use the app.";
+"instructions" = "go to \n\nSettings\n - Privacy\n - Location Services\n - Færd \n\nand enable \"While Using the App\" to be able to use the app.";
 
 // StopDetailView
 "departures" = "Departures";
@@ -31,7 +31,7 @@
 "about" = "About";
 "start_screen" = "Launch screen";
 "description" = "is developed with love for efficient travel. Feedback and bug reports are always appreciated, and can be made through";
-"website" = " strandlie.co/ferd";
+"website" = " strandlie.co/faerd";
 "credits" = "Credits";
 "entur" = "Data is fetched from EnTur. \ndeveloper.entur.org";
 "settings" = "Settings";
@@ -42,7 +42,7 @@
 "press" = "Press ";
 "to_begin" = " to add your first";
 "premium_favorites" = "Premium Favorites";
-"max_favorites" = "You have reached the maximum number of favorites in the free version of Ferd.";
+"max_favorites" = "You have reached the maximum number of favorites in the free version of Færd.";
 "upgrade" = "Upgrade";
 "benefits" = "to Premium Favorites and unlock as many favorites as you need.";
 
@@ -52,11 +52,11 @@
 "keep_free" = "Keep using free";
 
 // Premium Screen
-"useful" = "Has Ferd ever been useful to you?";
-"consider_upgrade" = "If so, I would really appreciate if you considered upgrading to Premium feature. \nFerd exists because of amazing people like you. Thank you!";
-"max_num_favorites" = "The maximum number of favorites in the free version of Ferd is 2.";
+"useful" = "Has Færd ever been useful to you?";
+"consider_upgrade" = "If so, I would really appreciate if you considered upgrading to Premium feature. \nFærd exists because of amazing people like you. Thank you!";
+"max_num_favorites" = "The maximum number of favorites in the free version of Færd is 2.";
 "thank_you" = "Thank you! ❤️";
-"bought" = "You have bought Premium Favorites. Thank you very much for supporting Ferd, and helping independent developers do what they do best. \n\nYou also helped ensure that new and improved features keep coming in the future!";
+"bought" = "You have bought Premium Favorites. Thank you very much for supporting Færd, and helping independent developers do what they do best. \n\nYou also helped ensure that new and improved features keep coming in the future!";
 "restore_explain" = "Restore previous purchases";
 "restore" = "Restore";
 

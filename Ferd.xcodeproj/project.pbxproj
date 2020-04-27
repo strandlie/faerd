@@ -99,7 +99,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		30482CE322BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CE322BC1CE000D7850D /* Færd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Færd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CE722BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CED22BC1CE000D7850D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		30482CF122BC1CE200D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		30482CE422BC1CE000D7850D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30482CE322BC1CE000D7850D /* Ferd.app */,
+				30482CE322BC1CE000D7850D /* Færd.app */,
 				30482CE722BC1CE000D7850D /* Ferd.app */,
 				30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */,
 			);
@@ -357,7 +357,7 @@
 			);
 			name = Ferd;
 			productName = BusTime;
-			productReference = 30482CE322BC1CE000D7850D /* Ferd.app */;
+			productReference = 30482CE322BC1CE000D7850D /* Færd.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
 		30482CE622BC1CE000D7850D /* Ferd WatchKit App */ = {
@@ -689,7 +689,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit Extension/Ferd WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ferd WatchKit Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				ENABLE_PREVIEWS = YES;
@@ -699,6 +699,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -717,7 +718,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit Extension/Ferd WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Ferd WatchKit Extension\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				ENABLE_PREVIEWS = YES;
@@ -727,6 +728,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -746,10 +748,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit App/Ferd.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				IBSC_MODULE = Ferd_WatchKit_Extension;
 				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp;
 				PRODUCT_NAME = Ferd;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -769,10 +772,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Ferd WatchKit App/Ferd.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				IBSC_MODULE = Ferd_WatchKit_Extension;
 				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp;
 				PRODUCT_NAME = Ferd;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -788,12 +792,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				INFOPLIST_FILE = Ferd/Info.plist;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd;
-				PRODUCT_NAME = Ferd;
+				PRODUCT_NAME = "Færd";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -802,12 +806,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZNYSJ75KPC;
 				INFOPLIST_FILE = Ferd/Info.plist;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd;
-				PRODUCT_NAME = Ferd;
+				PRODUCT_NAME = "Færd";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
