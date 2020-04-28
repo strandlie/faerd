@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30482CE222BC1CE000D7850D"
-               BuildableName = "Ferd.app"
+               BuildableName = "F&#xe6;rd.app"
                BlueprintName = "Ferd"
                ReferencedContainer = "container:Ferd.xcodeproj">
             </BuildableReference>

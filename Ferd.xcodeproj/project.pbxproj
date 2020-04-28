@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30482CE822BC1CE000D7850D /* Ferd.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* Ferd.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		30482CE822BC1CE000D7850D /* Færd.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 30482CE722BC1CE000D7850D /* Færd.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		30482CEE22BC1CE000D7850D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30482CEC22BC1CE000D7850D /* Interface.storyboard */; };
 		30482CF722BC1CE200D7850D /* Ferd WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		30482CFE22BC1CE200D7850D /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30482CFD22BC1CE200D7850D /* HostingController.swift */; };
@@ -91,7 +91,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				30482CE822BC1CE000D7850D /* Ferd.app in Embed Watch Content */,
+				30482CE822BC1CE000D7850D /* Færd.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,7 +100,7 @@
 
 /* Begin PBXFileReference section */
 		30482CE322BC1CE000D7850D /* Færd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Færd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		30482CE722BC1CE000D7850D /* Ferd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ferd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30482CE722BC1CE000D7850D /* Færd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Færd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30482CED22BC1CE000D7850D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		30482CF122BC1CE200D7850D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Ferd WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				30482CE322BC1CE000D7850D /* Færd.app */,
-				30482CE722BC1CE000D7850D /* Ferd.app */,
+				30482CE722BC1CE000D7850D /* Færd.app */,
 				30482CF622BC1CE200D7850D /* Ferd WatchKit Extension.appex */,
 			);
 			name = Products;
@@ -375,7 +375,7 @@
 			);
 			name = "Ferd WatchKit App";
 			productName = "BusTime WatchKit App";
-			productReference = 30482CE722BC1CE000D7850D /* Ferd.app */;
+			productReference = 30482CE722BC1CE000D7850D /* Færd.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		30482CF522BC1CE200D7850D /* Ferd WatchKit Extension */ = {
@@ -754,7 +754,7 @@
 				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp;
-				PRODUCT_NAME = Ferd;
+				PRODUCT_NAME = "Færd";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -778,7 +778,7 @@
 				INFOPLIST_FILE = "Ferd WatchKit App/Info.plist";
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Strandlie.Ferd.watchkitapp;
-				PRODUCT_NAME = Ferd;
+				PRODUCT_NAME = "Færd";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
