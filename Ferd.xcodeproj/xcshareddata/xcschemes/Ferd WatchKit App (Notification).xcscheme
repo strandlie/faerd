@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-               BuildableName = "Ferd.app"
+               BuildableName = "F&#xe6;rd.app"
                BlueprintName = "Ferd WatchKit App"
                ReferencedContainer = "container:Ferd.xcodeproj">
             </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-            BuildableName = "Ferd.app"
+            BuildableName = "F&#xe6;rd.app"
             BlueprintName = "Ferd WatchKit App"
             ReferencedContainer = "container:Ferd.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-            BuildableName = "Ferd.app"
+            BuildableName = "F&#xe6;rd.app"
             BlueprintName = "Ferd WatchKit App"
             ReferencedContainer = "container:Ferd.xcodeproj">
          </BuildableReference>
@@ -93,7 +93,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "30482CE622BC1CE000D7850D"
-            BuildableName = "Ferd.app"
+            BuildableName = "F&#xe6;rd.app"
             BlueprintName = "Ferd WatchKit App"
             ReferencedContainer = "container:Ferd.xcodeproj">
          </BuildableReference>
